@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ad Library — Jay</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface2: #1a1a26;
+      --border: #2a2a3a;
+      --teal: #00e5cc;
+      --teal-dim: rgba(0, 229, 204, 0.12);
+      --text: #e8e8f0;
+      --muted: #6b6b88;
+      --green: #00c97a;
+      --yellow: #f5a623;
+      --red: #ff4d6a;
+      --gray: #555570;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--teal);
+    }
+
+    .logo span { color: var(--text); }
+
+    .header-sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--teal);
+    }
+
+    .search-bar input::placeholder { color: var(--muted); }
+
+    .search-bar select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .search-bar button {
+      background: var(--teal);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .search-bar button:hover { opacity: 0.85; }
+    .search-bar button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .legend {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 28px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    .status-bar {
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--muted);
+      min-height: 20px;
+    }
+
+    .status-bar .highlight { color: var(--teal); }
+
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 60px 0;
+      color: var(--muted);
+    }
+
+    .loading.show { display: block; }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--teal);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .ad-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s;
+      position: relative;
+    }
+
+    .ad-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    .signal-bar {
+      height: 3px;
+      width: 100%;
+    }
+
+    .signal-green { background: var(--green); }
+    .signal-yellow { background: var(--yellow); }
+    .signal-red { background: var(--red); }
+    .signal-gray { background: var(--gray); }
+
+    .ad-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: var(--surface2);
+      display: block;
+    }
+
+    .ad-img-placeholder {
+      width: 100%;
+      height: 180px;
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .ad-body {
+      padding: 16px;
+    }
+
+    .ad-page {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ad-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .ad-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .run-badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .run-green { background: rgba(0,201,122,0.15); color: var(--green); }
+    .run-yellow { background: rgba(245,166,35,0.15); color: var(--yellow); }
+    .run-red { background: rgba(255,77,106,0.15); color: var(--red); }
+    .run-gray { background: rgba(85,85,112,0.2); color: var(--gray); }
+
+    .platforms {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .platform-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--surface2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .view-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    .view-link:hover { text-decoration: underline; }
+
+    .empty {
+      text-align: center;
+      padding: 60px 0;
+      color: var(--muted);
+      display: none;
+    }
+
+    .empty.show { display: block; }
+    .empty h3 { font-size: 16px; margin-bottom: 8px; color: var(--text); }
+
+    .error-msg {
+      background: rgba(255,77,106,0.1);
+      border: 1px solid rgba(255,77,106,0.3);
+      border-radius: 10px;
+      padding: 16px 20px;
+      color: var(--red);
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .error-msg.show { display: block; }
+
+    .tip {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .tip strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="logo">JAY<span>RX</span> — Ad Library</div>
+      <div class="header-sub">Facebook Ad Library scraper · performance signals</div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="search-bar">
+      <input type="text" id="queryInput" placeholder="Search advertiser or keyword (e.g. Retell AI, AI voice agent...)" />
+      <select id="countrySelect">
+        <option value="ALL">All Countries</option>
+        <option value="US" selected>United States</option>
+        <option value="GB">United Kingdom</option>
+        <option value="CA">Canada</option>
+        <option value="AU">Australia</option>
+        <option value="IN">India</option>
+      </select>
+      <button id="searchBtn" onclick="search()">Search</button>
+    </div>
+
+    <p class="tip"><strong>Performance signal:</strong> How long an ad has been running = the best public proxy for ROI. <span style="color:var(--green)">Green = 60+ days</span> · <span style="color:var(--yellow)">Yellow = 14–59 days</span> · <span style="color:var(--red)">Red = under 14 days</span></p>
+
+    <div class="legend">
+      <div class="legend-item"><div class="dot" style="background:var(--green)"></div>Long-running (likely winning)</div>
+      <div class="legend-item"><div class="dot" style="background:var(--yellow)"></div>Testing phase</div>
+      <div class="legend-item"><div class="dot" style="background:var(--red)"></div>Just launched</div>
+    </div>
+
+    <div class="error-msg" id="errorMsg"></div>
+    <div class="status-bar" id="statusBar"></div>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <div>Scraping Facebook Ad Library...<br><span style="font-size:12px">This takes 15–30 seconds</span></div>
+    </div>
+
+    <div class="empty" id="emptyState">
+      <h3>No ads found</h3>
+      <p>Try a different search term or business name</p>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <script>
+    const input = document.getElementById('queryInput');
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
+
+    async function search() {
+      const query = document.getElementById('queryInput').value.trim();
+      const country = document.getElementById('countrySelect').value;
+      if (!query) return;
+
+      const btn = document.getElementById('searchBtn');
+      const loading = document.getElementById('loading');
+      const grid = document.getElementById('grid');
+      const statusBar = document.getElementById('statusBar');
+      const emptyState = document.getElementById('emptyState');
+      const errorMsg = document.getElementById('errorMsg');
+
+      btn.disabled = true;
+      loading.classList.add('show');
+      grid.innerHTML = '';
+      emptyState.classList.remove('show');
+      errorMsg.classList.remove('show');
+      statusBar.innerHTML = `Searching for <span class="highlight">"${query}"</span>...`;
+
+      try {
+        const res = await fetch('/api/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query, country, limit: 24 }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) throw new Error(data.error || 'Search failed');
+
+        loading.classList.remove('show');
+
+        if (!data.ads || data.ads.length === 0) {
+          emptyState.classList.add('show');
+          statusBar.innerHTML = `No results for <span class="highlight">"${query}"</span>`;
+        } else {
+          statusBar.innerHTML = `Found <span class="highlight">${data.ads.length} ads</span> for <span class="highlight">"${query}"</span>`;
+          renderAds(data.ads);
+        }
+      } catch (err) {
+        loading.classList.remove('show');
+        errorMsg.textContent = `Error: ${err.message}`;
+        errorMsg.classList.add('show');
+        statusBar.innerHTML = '';
+      }
+
+      btn.disabled = false;
+    }
+
+    function renderAds(ads) {
+      const grid = document.getElementById('grid');
+      grid.innerHTML = '';
+
+      for (const ad of ads) {
+        const card = document.createElement('div');
+        card.className = 'ad-card';
+
+        const imgHtml = ad.imgSrc
+          ? `<img class="ad-img" src="${ad.imgSrc}" alt="Ad creative" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+            + `<div class="ad-img-placeholder" style="display:none">No preview</div>`
+          : `<div class="ad-img-placeholder">No image</div>`;
+
+        const runClass = `run-${ad.signal}`;
+        const signalClass = `signal-${ad.signal}`;
+        const runText = ad.runDays !== null
+          ? `Running ${ad.runLabel}`
+          : 'Run time unknown';
+
+        const platformTags = ad.platforms.length
+          ? ad.platforms.map(p => `<span class="platform-tag">${p}</span>`).join('')
+          : '<span class="platform-tag">Unknown</span>';
+
+        const viewLink = ad.adId
+          ? `<a class="view-link" href="https://www.facebook.com/ads/library/?id=${ad.adId}" target="_blank">View on FB →</a>`
+          : '';
+
+        card.innerHTML = `
+          <div class="signal-bar ${signalClass}"></div>
+          ${imgHtml}
+          <div class="ad-body">
+            <div class="ad-page">${escHtml(ad.pageName)}</div>
+            <div class="ad-text">${escHtml(ad.bodyText || 'No ad copy available')}</div>
+            <div class="ad-meta">
+              <span class="run-badge ${runClass}">${runText}</span>
+              <div class="platforms">${platformTags}</div>
+            </div>
+            ${viewLink}
+          </div>
+        `;
+
+        grid.appendChild(card);
+      }
+    }
+
+    function escHtml(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+  </script>
+</body>
+</html>

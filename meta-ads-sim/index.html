@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaSim — Practice Meta Ads</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MetaSim</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item active" data-view="dashboard" onclick="navigate('dashboard')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        Dashboard
+      </a>
+      <a class="nav-item" data-view="campaigns" onclick="navigate('campaigns')">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Campaigns
+      </a>
+      <a class="nav-item create-btn" onclick="startNewCampaign()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        New Campaign
+      </a>
+    </nav>
+    <div class="sidebar-balance">
+      <div class="balance-label">Practice Budget</div>
+      <div class="balance-amount" id="sidebar-balance">$1,000.00</div>
+      <div class="balance-bar-track">
+        <div class="balance-bar-fill" id="balance-bar-fill" style="width:100%"></div>
+      </div>
+      <div class="balance-sub">
+        <span id="sidebar-spent-label">$0 spent</span>
+        <span id="sidebar-roas-label">—</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div id="main">
+
+    <header id="topbar">
+      <h1 id="page-title">Dashboard</h1>
+      <div class="topbar-right">
+        <div class="account-pill">
+          <div class="account-avatar">J</div>
+          <span>Practice Account</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== DASHBOARD VIEW ===================== -->
+    <div id="view-dashboard" class="view active">
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#e7f0fd;color:#0866ff">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-lbl">Available Budget</span>
+            <strong class="stat-val" id="stat-balance">$1,000.00</strong>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fce8e8;color:#d93025">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-lbl">Total Ad Spend</span>
+            <strong class="stat-val" id="stat-spend">$0.00</strong>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#e6f4ea;color:#1e8e3e">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 8c0 1.1-.9 2-2 2-.18 0-.35-.02-.51-.07l-3.56 3.55c.05.16.07.34.07.52 0 1.1-.9 2-2 2s-2-.9-2-2c0-.18.02-.36.07-.52l-2.55-2.55c-.16.05-.34.07-.52.07s-.36-.02-.52-.07l-4.55 4.56c.05.16.07.33.07.51 0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2c.18 0 .35.02.51.07l4.56-4.55C8.02 9.36 8 9.18 8 9c0-1.1.9-2 2-2s2 .9 2 2c0 .18-.02.36-.07.52l2.55 2.55c.16-.05.34-.07.52-.07s.36.02.52.07l3.55-3.56C19.02 8.35 19 8.18 19 8c0-1.1.9-2 2-2s2 .9 2 2z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-lbl">Total Revenue</span>
+            <strong class="stat-val" id="stat-revenue">$0.00</strong>
+          </div>
+        </div>
+        <div class="stat-card profit-card">
+          <div class="stat-icon" style="background:#e8f5e9;color:#2e7d32">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-lbl">Net Profit/Loss</span>
+            <strong class="stat-val" id="stat-profit">$0.00</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div id="empty-state" class="empty-state">
+        <div class="empty-phone-wrap">
+          <div class="empty-phone">
+            <div class="empty-screen">
+              <div class="fake-post">
+                <div class="fake-header">
+                  <div class="fake-avatar"></div>
+                  <div class="fake-meta"><div class="fake-line w60"></div><div class="fake-line w40"></div></div>
+                </div>
+                <div class="fake-img"></div>
+                <div class="fake-footer">
+                  <div class="fake-line w80"></div>
+                  <div class="fake-line w50"></div>
+                  <div class="fake-cta-btn"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>Ready to practice?</h2>
+        <p>You have $1,000 in practice budget. Create a campaign, get AI feedback on your creatives, and see exactly how your ads would perform — profit and all.</p>
+        <button class="btn-primary btn-lg" onclick="startNewCampaign()">Create Your First Campaign</button>
+      </div>
+
+      <!-- Campaigns list -->
+      <div id="campaigns-section" class="hidden">
+        <div class="section-header">
+          <h2>Your Campaigns</h2>
+          <button class="btn-primary" onclick="startNewCampaign()">+ New Campaign</button>
+        </div>
+        <div id="campaigns-list"></div>
+      </div>
+
+    </div>
+
+    <!-- ===================== CREATE WIZARD ===================== -->
+    <div id="view-create" class="view hidden">
+
+      <!-- Step Progress -->
+      <div class="wizard-nav">
+        <button class="btn-ghost wizard-back-btn" id="wizard-back-btn" onclick="cancelWizard()">← Back</button>
+        <div class="step-progress" id="step-progress">
+          <div class="step-node active" id="node-1"><span class="node-num">1</span><span class="node-lbl">Objective</span></div>
+          <div class="step-connector" id="conn-1"></div>
+          <div class="step-node" id="node-2"><span class="node-num">2</span><span class="node-lbl">Budget</span></div>
+          <div class="step-connector" id="conn-2"></div>
+          <div class="step-node" id="node-3"><span class="node-num">3</span><span class="node-lbl">Audience</span></div>
+          <div class="step-connector" id="conn-3"></div>
+          <div class="step-node" id="node-4"><span class="node-num">4</span><span class="node-lbl">Creative</span></div>
+          <div class="step-connector" id="conn-4"></div>
+          <div class="step-node" id="node-5"><span class="node-num">5</span><span class="node-lbl">Review</span></div>
+        </div>
+      </div>
+
+      <!-- STEP 1: Objective -->
+      <div id="step-1" class="wizard-step">
+        <div class="step-body">
+          <div class="step-heading">
+            <h2>What's your campaign objective?</h2>
+            <p>Choose a goal aligned with your business objective</p>
+          </div>
+
+          <div class="obj-grid">
+            <div class="obj-card" data-obj="sales" onclick="selectObjective('sales')">
+              <div class="obj-icon">🛒</div>
+              <div class="obj-text"><strong>Sales</strong><p>Drive purchases and maximize conversions</p></div>
+              <div class="obj-check">✓</div>
+            </div>
+            <div class="obj-card" data-obj="leads" onclick="selectObjective('leads')">
+              <div class="obj-icon">📋</div>
+              <div class="obj-text"><strong>Leads</strong><p>Collect leads with instant forms or your website</p></div>
+              <div class="obj-check">✓</div>
+            </div>
+            <div class="obj-card" data-obj="traffic" onclick="selectObjective('traffic')">
+              <div class="obj-icon">🌐</div>
+              <div class="obj-text"><strong>Traffic</strong><p>Send people to your website or landing page</p></div>
+              <div class="obj-check">✓</div>
+            </div>
+            <div class="obj-card" data-obj="awareness" onclick="selectObjective('awareness')">
+              <div class="obj-icon">👁</div>
+              <div class="obj-text"><strong>Awareness</strong><p>Maximize brand reach and recognition</p></div>
+              <div class="obj-check">✓</div>
+            </div>
+            <div class="obj-card" data-obj="engagement" onclick="selectObjective('engagement')">
+              <div class="obj-icon">💬</div>
+              <div class="obj-text"><strong>Engagement</strong><p>Get reactions, comments, and shares</p></div>
+              <div class="obj-check">✓</div>
+            </div>
+            <div class="obj-card" data-obj="app" onclick="selectObjective('app')">
+              <div class="obj-icon">📱</div>
+              <div class="obj-text"><strong>App Promotion</strong><p>Get installs and engagement for your app</p></div>
+              <div class="obj-check">✓</div>
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div id="product-section" class="form-section hidden">
+            <div class="section-divider"></div>
+            <h3>Your Offer <span class="section-sub">— helps us calculate real profit</span></h3>
+            <div class="form-grid-2">
+              <div class="form-field full">
+                <label>Product / Service Name</label>
+                <input type="text" id="inp-product-name" placeholder="e.g., Premium Dog Training Course">
+              </div>
+              <div class="form-field">
+                <label>Selling Price ($)</label>
+                <input type="number" id="inp-selling-price" placeholder="97" min="1" step="0.01">
+              </div>
+              <div class="form-field">
+                <label>Cost Per Unit / Fulfillment ($)</label>
+                <input type="number" id="inp-product-cost" placeholder="20" min="0" step="0.01">
+              </div>
+              <div class="form-field">
+                <label>Landing Page Type</label>
+                <select id="inp-landing-page">
+                  <option value="vsl">Video Sales Letter (VSL)</option>
+                  <option value="sales">Long-Form Sales Page</option>
+                  <option value="shopify">Product Page (Shopify / eComm)</option>
+                  <option value="lead">Lead Capture Form</option>
+                  <option value="webinar">Webinar Registration</option>
+                  <option value="booking">Booking / Calendar</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Campaign Name</label>
+                <input type="text" id="inp-campaign-name" placeholder="My First Campaign">
+              </div>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn-ghost" onclick="cancelWizard()">Cancel</button>
+            <button class="btn-primary" onclick="goToStep(2)">Continue →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Budget -->
+      <div id="step-2" class="wizard-step hidden">
+        <div class="step-body">
+          <div class="step-heading">
+            <h2>Budget & Schedule</h2>
+            <p>Set how much you want to spend and for how long</p>
+          </div>
+
+          <div class="budget-section">
+            <div class="toggle-group">
+              <button class="toggle-btn active" id="btn-daily" onclick="setBudgetType('daily')">Daily Budget</button>
+              <button class="toggle-btn" id="btn-lifetime" onclick="setBudgetType('lifetime')">Lifetime Budget</button>
+            </div>
+
+            <div class="budget-input-wrap">
+              <span class="currency-sign">$</span>
+              <input type="number" id="inp-budget" class="budget-big-input" value="50" min="5" max="10000" step="1">
+              <span class="budget-unit-lbl" id="budget-unit-label">/ day</span>
+            </div>
+
+            <input type="range" id="budget-slider" class="budget-slider" min="5" max="1000" value="50">
+            <div class="slider-bounds"><span>$5</span><span>$1,000</span></div>
+          </div>
+
+          <div class="duration-section">
+            <h3>Campaign Duration</h3>
+            <div class="dur-grid">
+              <div class="dur-card active" data-days="7" onclick="setDuration(7)">
+                <strong>7 days</strong>
+                <span class="dur-spend" id="dur-7">$350 total</span>
+              </div>
+              <div class="dur-card" data-days="14" onclick="setDuration(14)">
+                <strong>14 days</strong>
+                <span class="dur-spend" id="dur-14">$700 total</span>
+              </div>
+              <div class="dur-card" data-days="30" onclick="setDuration(30)">
+                <strong>30 days</strong>
+                <span class="dur-spend" id="dur-30">$1,500 total</span>
+              </div>
+              <div class="dur-card" data-days="custom" id="dur-custom-card" onclick="setDuration('custom')">
+                <strong>Custom</strong>
+                <input type="number" id="inp-custom-days" placeholder="# days" min="1" max="365" onclick="event.stopPropagation()" oninput="updateCustomDuration()">
+              </div>
+            </div>
+            <div id="budget-warning" class="warning-banner hidden">
+              ⚠️ Total spend of <strong id="warn-total"></strong> exceeds your available budget of <strong id="warn-avail"></strong>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn-ghost" onclick="goToStep(1)">← Back</button>
+            <button class="btn-primary" onclick="goToStep(3)">Continue →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Audience -->
+      <div id="step-3" class="wizard-step hidden">
+        <div class="step-body">
+          <div class="step-heading">
+            <h2>Define Your Audience</h2>
+            <p>Who do you want your ads to reach?</p>
+          </div>
+
+          <div class="audience-layout">
+            <div class="audience-col">
+
+              <!-- Location -->
+              <div class="audience-block">
+                <h3>📍 Locations</h3>
+                <div class="location-input-row">
+                  <input type="text" id="inp-location" placeholder="Country, state, or city..." list="loc-suggestions">
+                  <datalist id="loc-suggestions">
+                    <option value="United States">
+                    <option value="United Kingdom">
+                    <option value="Canada">
+                    <option value="Australia">
+                    <option value="Germany">
+                    <option value="France">
+                    <option value="New York, NY">
+                    <option value="Los Angeles, CA">
+                    <option value="Chicago, IL">
+                    <option value="Miami, FL">
+                    <option value="Texas">
+                    <option value="California">
+                    <option value="Florida">
+                  </datalist>
+                  <button class="btn-add-tag" onclick="addLocation()">+ Add</button>
+                </div>
+                <div id="location-tags" class="tag-wrap"></div>
+              </div>
+
+              <!-- Demographics -->
+              <div class="audience-block">
+                <h3>👤 Demographics</h3>
+                <div class="demo-row">
+                  <div class="form-field">
+                    <label>Age Range</label>
+                    <div class="age-row">
+                      <select id="inp-age-min">
+                        <option value="18">18</option>
+                        <option value="21">21</option>
+                        <option value="25" selected>25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                        <option value="55">55</option>
+                      </select>
+                      <span class="age-dash">–</span>
+                      <select id="inp-age-max">
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="54" selected>54</option>
+                        <option value="64">64</option>
+                        <option value="65">65+</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-field">
+                    <label>Gender</label>
+                    <div class="gender-row">
+                      <label class="radio-lbl"><input type="radio" name="gender" value="all" checked> All</label>
+                      <label class="radio-lbl"><input type="radio" name="gender" value="male"> Men</label>
+                      <label class="radio-lbl"><input type="radio" name="gender" value="female"> Women</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="audience-col">
+              <!-- Interests -->
+              <div class="audience-block interests-block">
+                <h3>🎯 Detailed Targeting</h3>
+                <input type="text" id="inp-interest-search" class="interest-search" placeholder="Search interests..." oninput="filterInterests(this.value)">
+                <div id="interests-container" class="interests-container"></div>
+                <div class="selected-interests-wrap">
+                  <div class="selected-interests-header">Selected <span class="badge" id="interest-count-badge">0</span></div>
+                  <div id="selected-interest-tags" class="tag-wrap"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Audience Size Meter -->
+          <div class="audience-meter-wrap">
+            <div class="meter-header">
+              <span>Estimated Audience Size</span>
+              <strong id="audience-size-label">10M – 50M people</strong>
+            </div>
+            <div class="meter-track">
+              <div class="meter-sweet-zone"></div>
+              <div class="meter-needle" id="audience-needle"></div>
+            </div>
+            <div class="meter-labels-row">
+              <span>Too Specific</span>
+              <span class="meter-sweet-label">Sweet Spot</span>
+              <span>Too Broad</span>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn-ghost" onclick="goToStep(2)">← Back</button>
+            <button class="btn-primary" onclick="goToStep(4)">Continue →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: Creative -->
+      <div id="step-4" class="wizard-step hidden">
+        <div class="step-body creative-body">
+          <div class="step-heading">
+            <h2>Create Your Ad</h2>
+            <p>Write a compelling ad — the AI will score every element</p>
+          </div>
+
+          <div class="creative-layout">
+            <!-- Form -->
+            <div class="creative-form">
+
+              <div class="form-section">
+                <label class="form-label">Ad Format</label>
+                <div class="format-row">
+                  <div class="format-pill active" data-fmt="image" onclick="setFormat('image')">🖼 Feed (1:1 / 4:5)</div>
+                  <div class="format-pill" data-fmt="story" onclick="setFormat('story')">📱 Story / Reel (9:16)</div>
+                  <div class="format-pill" data-fmt="carousel" onclick="setFormat('carousel')">◫ Carousel (1:1)</div>
+                  <div class="format-pill" data-fmt="video" onclick="setFormat('video')">▶ In-Stream Video</div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <label class="form-label">Creative <span class="hint-tag">scored by AI</span></label>
+                <input type="file" id="inp-img-file" accept="image/*,video/*" style="display:none" onchange="handleMediaUpload(this)">
+                <div id="upload-drop-zone" class="upload-drop-zone" onclick="document.getElementById('inp-img-file').click()" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleMediaDrop(event)">
+                  <div id="upload-placeholder" class="upload-placeholder">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text">Click to upload or drag & drop</div>
+                    <div class="upload-sub">JPG, PNG, GIF, MP4 · Max 20MB</div>
+                  </div>
+                  <div id="upload-preview-wrap" class="upload-preview-wrap hidden">
+                    <img id="upload-preview-img" class="upload-preview-img" src="" alt="Preview">
+                    <div class="upload-preview-overlay">
+                      <button class="upload-change-btn" onclick="event.stopPropagation();document.getElementById('inp-img-file').click()">Change</button>
+                      <button class="upload-remove-btn" onclick="event.stopPropagation();removeMedia()">Remove</button>
+                    </div>
+                    <div class="upload-preview-name" id="upload-file-name"></div>
+                  </div>
+                </div>
+                <p class="field-hint" style="margin-top:8px">Also describe your creative for AI scoring — what's in the image, mood, colors, people, product placement, etc.</p>
+                <textarea id="inp-img-desc" rows="2" placeholder="e.g., Happy woman smiling holding product, bright white background, bold red headline overlay, product clearly visible..." maxlength="400" oninput="updatePreview();countChars('inp-img-desc','cnt-img-desc',400)"></textarea>
+                <div class="char-counter"><span id="cnt-img-desc">0</span>/400</div>
+              </div>
+
+              <div class="form-section">
+                <label class="form-label">Primary Text <span class="hint-tag">scored by AI</span></label>
+                <textarea id="inp-primary-text" rows="4" placeholder="e.g., Tired of your dog pulling the leash, ignoring commands, or jumping on guests? Our proven 7-day training system has helped over 50,000 dog owners. Money-back guarantee. 🐾" maxlength="500" oninput="updatePreview();countChars('inp-primary-text','cnt-primary',500)"></textarea>
+                <div class="char-counter"><span id="cnt-primary">0</span>/500</div>
+              </div>
+
+              <div class="form-section">
+                <label class="form-label">Headline <span class="hint-tag">scored by AI</span></label>
+                <input type="text" id="inp-headline" placeholder="e.g., Transform Your Dog in 7 Days — Guaranteed Results" maxlength="60" oninput="updatePreview();countChars('inp-headline','cnt-headline',60)">
+                <div class="char-counter"><span id="cnt-headline">0</span>/60</div>
+              </div>
+
+              <div class="form-section">
+                <label class="form-label">Description <span class="optional-lbl">optional</span></label>
+                <input type="text" id="inp-description" placeholder="e.g., Free shipping · 30-day money back guarantee" maxlength="80" oninput="updatePreview()">
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label class="form-label">Call to Action</label>
+                  <select id="inp-cta" onchange="updatePreview()">
+                    <option value="shop_now">Shop Now</option>
+                    <option value="learn_more">Learn More</option>
+                    <option value="sign_up">Sign Up</option>
+                    <option value="get_offer">Get Offer</option>
+                    <option value="buy_now">Buy Now</option>
+                    <option value="subscribe">Subscribe</option>
+                    <option value="book_now">Book Now</option>
+                    <option value="contact_us">Contact Us</option>
+                    <option value="download">Download</option>
+                    <option value="watch_more">Watch More</option>
+                    <option value="apply_now">Apply Now</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Page Name</label>
+                  <input type="text" id="inp-page-name" placeholder="Your Brand" oninput="updatePreview()">
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Ad Preview -->
+            <div class="ad-preview-wrap">
+              <div class="preview-title">Live Preview</div>
+              <div class="preview-device">
+                <div class="preview-post">
+                  <div class="preview-post-header">
+                    <div class="preview-post-avatar" id="prev-avatar-letter">A</div>
+                    <div class="preview-post-meta">
+                      <div class="preview-page-name" id="prev-page-name">Your Brand</div>
+                      <div class="preview-sponsored">Sponsored · <span>Facebook Feed</span></div>
+                    </div>
+                    <div class="preview-dots">···</div>
+                  </div>
+                  <div class="preview-body-text" id="prev-body-text">Your primary text will appear here...</div>
+                  <div class="preview-media" id="prev-media">
+                    <div class="preview-media-inner" id="prev-media-inner">
+                      <div class="preview-media-placeholder" id="prev-media-placeholder">
+                        <div class="placeholder-icon">🖼</div>
+                        <div id="prev-img-desc-short">Describe your creative above</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview-card-bottom">
+                    <div class="preview-card-text">
+                      <div class="preview-card-domain">yoursite.com</div>
+                      <div class="preview-card-headline" id="prev-headline">Your Headline</div>
+                      <div class="preview-card-desc" id="prev-desc"></div>
+                    </div>
+                    <button class="preview-cta-button" id="prev-cta-btn">Shop Now</button>
+                  </div>
+                  <div class="preview-reactions-bar">
+                    <span>👍 Like</span>
+                    <span>💬 Comment</span>
+                    <span>↗ Share</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn-ghost" onclick="goToStep(3)">← Back</button>
+            <button class="btn-primary" onclick="goToStep(5)">Analyze & Review →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5: AI Analysis -->
+      <div id="step-5" class="wizard-step hidden">
+        <div class="step-body">
+
+          <!-- Loading -->
+          <div id="analysis-loading">
+            <div class="ai-loader-wrap">
+              <div class="ai-brain-pulse">
+                <div class="pulse-ring r1"></div>
+                <div class="pulse-ring r2"></div>
+                <div class="pulse-ring r3"></div>
+                <div class="brain-emoji">🤖</div>
+              </div>
+              <h2>Analyzing your campaign...</h2>
+              <p id="analysis-status">Reading creative signals...</p>
+              <div class="loading-bar-track">
+                <div class="loading-bar-fill" id="loading-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div id="analysis-results" class="hidden">
+
+            <div class="analysis-top">
+              <div class="overall-score-wrap">
+                <div class="score-ring-svg">
+                  <svg viewBox="0 0 120 120" width="120" height="120">
+                    <circle cx="60" cy="60" r="52" class="ring-track"/>
+                    <circle cx="60" cy="60" r="52" class="ring-fill" id="ring-fill-circle"
+                      stroke-dasharray="326.7" stroke-dashoffset="326.7"
+                      transform="rotate(-90 60 60)"/>
+                  </svg>
+                  <div class="ring-inner">
+                    <div class="ring-score" id="ring-score">0</div>
+                    <div class="ring-max">/100</div>
+                  </div>
+                </div>
+                <div class="overall-score-labels">
+                  <div class="score-grade-badge" id="score-grade-badge">C</div>
+                  <div class="score-verdict-text" id="score-verdict-text">Analyzing...</div>
+                  <div class="score-sub-text" id="score-sub-text"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sub-scores -->
+            <div class="sub-scores">
+              <div class="sub-score-card">
+                <div class="sub-score-header">
+                  <span>🎨 Creative Quality</span>
+                  <span class="sub-score-val" id="score-creative">—</span>
+                </div>
+                <div class="sub-score-track"><div class="sub-score-fill creative-fill" id="fill-creative"></div></div>
+                <ul class="score-tips" id="tips-creative"></ul>
+              </div>
+              <div class="sub-score-card">
+                <div class="sub-score-header">
+                  <span>🎯 Audience Targeting</span>
+                  <span class="sub-score-val" id="score-audience-ana">—</span>
+                </div>
+                <div class="sub-score-track"><div class="sub-score-fill audience-fill" id="fill-audience"></div></div>
+                <ul class="score-tips" id="tips-audience"></ul>
+              </div>
+              <div class="sub-score-card">
+                <div class="sub-score-header">
+                  <span>💰 Offer Strength</span>
+                  <span class="sub-score-val" id="score-offer-ana">—</span>
+                </div>
+                <div class="sub-score-track"><div class="sub-score-fill offer-fill" id="fill-offer"></div></div>
+                <ul class="score-tips" id="tips-offer"></ul>
+              </div>
+            </div>
+
+            <!-- AI Narrative -->
+            <div class="ai-narrative-wrap">
+              <div class="ai-chat-bubble">
+                <div class="ai-chat-icon">🤖</div>
+                <div class="ai-chat-text" id="ai-narrative"></div>
+              </div>
+            </div>
+
+            <!-- Predicted Performance -->
+            <div class="predictions-section">
+              <h3>📊 Predicted Performance</h3>
+              <div class="predictions-grid">
+                <div class="pred-card">
+                  <span class="pred-lbl">Est. CPM</span>
+                  <strong class="pred-val" id="pred-cpm">—</strong>
+                  <span class="pred-sub">per 1,000 impressions</span>
+                </div>
+                <div class="pred-card">
+                  <span class="pred-lbl">Expected CTR</span>
+                  <strong class="pred-val" id="pred-ctr">—</strong>
+                  <span class="pred-sub">click-through rate</span>
+                </div>
+                <div class="pred-card">
+                  <span class="pred-lbl">Conv. Rate</span>
+                  <strong class="pred-val" id="pred-cvr">—</strong>
+                  <span class="pred-sub">of clicks convert</span>
+                </div>
+                <div class="pred-card highlight-pred">
+                  <span class="pred-lbl">Projected ROAS</span>
+                  <strong class="pred-val" id="pred-roas">—</strong>
+                  <span class="pred-sub">return on ad spend</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary Box -->
+            <div class="campaign-summary-box">
+              <h3>Campaign Summary</h3>
+              <div class="summary-rows">
+                <div class="summary-row"><span>Objective</span><strong id="sum-objective">—</strong></div>
+                <div class="summary-row"><span>Product</span><strong id="sum-product">—</strong></div>
+                <div class="summary-row"><span>Daily Budget</span><strong id="sum-budget">—</strong></div>
+                <div class="summary-row"><span>Duration</span><strong id="sum-duration">—</strong></div>
+                <div class="summary-row"><span>Total Spend</span><strong id="sum-spend">—</strong></div>
+                <div class="summary-row"><span>Audience Size</span><strong id="sum-audience">—</strong></div>
+                <div class="summary-row profit-row"><span>Projected Net Profit</span><strong id="sum-profit">—</strong></div>
+              </div>
+            </div>
+
+            <div class="step-footer">
+              <button class="btn-ghost" onclick="goToStep(4)">← Revise Creative</button>
+              <button class="btn-primary btn-lg launch-btn" onclick="launchCampaign()">
+                🚀 Launch Campaign
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===================== RESULTS VIEW ===================== -->
+    <div id="view-results" class="view hidden">
+      <div class="results-topbar">
+        <button class="btn-ghost" onclick="navigate('dashboard')">← Dashboard</button>
+        <h2 id="results-name">Campaign Running</h2>
+        <div class="running-badge" id="running-badge">
+          <span class="running-dot"></span>
+          <span id="running-status-text">Simulating...</span>
+        </div>
+      </div>
+
+      <!-- Day simulation banner -->
+      <div class="sim-banner">
+        <div class="day-display">
+          <span class="day-label">Day</span>
+          <span class="day-num" id="sim-day">0</span>
+          <span class="day-total" id="sim-day-total">of 14</span>
+        </div>
+        <div class="sim-progress-track">
+          <div class="sim-progress-fill" id="sim-progress-fill"></div>
+        </div>
+        <div class="speed-controls">
+          <button class="speed-btn active" id="speed-1x" onclick="setSpeed(1)">1x</button>
+          <button class="speed-btn" id="speed-5x" onclick="setSpeed(5)">5x</button>
+          <button class="speed-btn" id="speed-10x" onclick="setSpeed(10)">10x</button>
+        </div>
+      </div>
+
+      <!-- Live Metrics -->
+      <div class="live-metrics-grid">
+        <div class="live-metric-card">
+          <span class="lm-label">Ad Spend</span>
+          <strong class="lm-value spend-color" id="res-spend">$0.00</strong>
+          <span class="lm-daily" id="res-spend-daily"></span>
+        </div>
+        <div class="live-metric-card">
+          <span class="lm-label">Impressions</span>
+          <strong class="lm-value" id="res-impressions">0</strong>
+          <span class="lm-daily" id="res-cpm-label"></span>
+        </div>
+        <div class="live-metric-card">
+          <span class="lm-label">Clicks</span>
+          <strong class="lm-value" id="res-clicks">0</strong>
+          <span class="lm-daily" id="res-ctr-label"></span>
+        </div>
+        <div class="live-metric-card">
+          <span class="lm-label">Conversions</span>
+          <strong class="lm-value" id="res-conversions">0</strong>
+          <span class="lm-daily" id="res-cvr-label"></span>
+        </div>
+        <div class="live-metric-card" id="revenue-card">
+          <span class="lm-label">Revenue</span>
+          <strong class="lm-value revenue-color" id="res-revenue">$0.00</strong>
+          <span class="lm-daily" id="res-roas-label"></span>
+        </div>
+        <div class="live-metric-card profit-live-card" id="profit-live-card">
+          <span class="lm-label">Net Profit / Loss</span>
+          <strong class="lm-value" id="res-profit">$0.00</strong>
+          <span class="lm-daily" id="res-profit-daily"></span>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-wrap">
+        <div class="chart-header">
+          <h3>Cumulative Profit / Loss</h3>
+          <div class="chart-legend">
+            <span class="legend-dot green-dot"></span> Profit
+            <span class="legend-dot red-dot" style="margin-left:12px"></span> Loss
+          </div>
+        </div>
+        <canvas id="results-canvas" height="260"></canvas>
+      </div>
+
+      <!-- Final Breakdown -->
+      <div id="final-breakdown" class="hidden">
+        <div class="final-verdict-banner" id="final-verdict-banner">
+          <div class="verdict-icon" id="verdict-icon">📈</div>
+          <div class="verdict-text">
+            <h2 id="verdict-headline">Campaign Complete</h2>
+            <p id="verdict-sub">See your full breakdown below</p>
+          </div>
+        </div>
+
+        <div class="final-stats-grid">
+          <div class="fstat"><span>Total Spend</span><strong id="f-spend">—</strong></div>
+          <div class="fstat"><span>Total Revenue</span><strong id="f-revenue">—</strong></div>
+          <div class="fstat"><span>Gross Margin</span><strong id="f-gross">—</strong></div>
+          <div class="fstat"><span>Net Profit</span><strong id="f-profit">—</strong></div>
+          <div class="fstat"><span>ROAS</span><strong id="f-roas">—</strong></div>
+          <div class="fstat"><span>CPA</span><strong id="f-cpa">—</strong></div>
+          <div class="fstat"><span>Avg. CPM</span><strong id="f-cpm">—</strong></div>
+          <div class="fstat"><span>Avg. CTR</span><strong id="f-ctr">—</strong></div>
+          <div class="fstat"><span>Total Impressions</span><strong id="f-impressions">—</strong></div>
+          <div class="fstat"><span>Total Conversions</span><strong id="f-conversions">—</strong></div>
+        </div>
+
+        <div class="ai-lessons-box">
+          <div class="lessons-header">🤖 What Jay Learned From This Campaign</div>
+          <div id="ai-lessons-text" class="lessons-content"></div>
+        </div>
+
+        <div class="final-actions">
+          <button class="btn-secondary" onclick="navigate('dashboard')">Back to Dashboard</button>
+          <button class="btn-primary btn-lg" onclick="startNewCampaign()">Try Another Campaign →</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

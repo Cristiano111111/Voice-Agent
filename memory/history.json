@@ -1,0 +1,12 @@
+{
+  "searches": [
+    {
+      "date": "2026-05-24T20:16:00-04:00",
+      "source": "X via Thunderbit Google site search",
+      "query": "buyer-intent video editor, motion graphics, ad creative, UGC, animator, and video production searches",
+      "results": 84,
+      "output": "memory/x-leads.csv"
+    }
+  ],
+  "totalSearches": 1
+}

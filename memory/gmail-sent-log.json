@@ -1,0 +1,691 @@
+{
+  "sent": [
+    {
+      "to": "adam@redbarnrobotics.com",
+      "company": "Red Barn Robotics",
+      "sentAt": "2026-05-18T21:08:34.511Z"
+    },
+    {
+      "to": "cayden@mentra.glass",
+      "company": "Mentra",
+      "sentAt": "2026-05-18T21:08:36.844Z"
+    },
+    {
+      "to": "bernardo@blindpay.com",
+      "company": "BlindPay",
+      "sentAt": "2026-05-18T21:08:39.160Z"
+    },
+    {
+      "to": "love@vantel.ai",
+      "company": "Vantel",
+      "sentAt": "2026-05-18T21:08:41.339Z"
+    },
+    {
+      "to": "alex@firaresearch.com",
+      "company": "Fira",
+      "sentAt": "2026-05-18T21:08:43.566Z"
+    },
+    {
+      "to": "simon@assistant-ui.com",
+      "company": "assistant-ui",
+      "sentAt": "2026-05-18T21:08:45.909Z"
+    },
+    {
+      "to": "ross@artifact.engineer",
+      "company": "Artifact",
+      "sentAt": "2026-05-18T21:08:48.141Z"
+    },
+    {
+      "to": "samai@axal.ai",
+      "company": "Axal",
+      "sentAt": "2026-05-18T21:08:50.292Z"
+    },
+    {
+      "to": "regina@getdexterity.com",
+      "company": "Dexterity",
+      "sentAt": "2026-05-18T21:08:52.647Z"
+    },
+    {
+      "to": "jarrett@tallyhq.com",
+      "company": "Tally",
+      "sentAt": "2026-05-18T21:08:55.184Z"
+    },
+    {
+      "to": "joe@sammylabs.com",
+      "company": "Sammy Labs",
+      "sentAt": "2026-05-18T21:08:57.337Z"
+    },
+    {
+      "to": "alex@instinct-space.com",
+      "company": "Instinct",
+      "sentAt": "2026-05-18T21:08:59.945Z"
+    },
+    {
+      "to": "lukas@mercura.ai",
+      "company": "Mercura",
+      "sentAt": "2026-05-18T21:09:02.927Z"
+    },
+    {
+      "to": "joshua@tamlabs.ai",
+      "company": "TamLabs",
+      "sentAt": "2026-05-18T21:09:05.692Z"
+    },
+    {
+      "to": "graham@runcopycat.com",
+      "company": "CopyCat",
+      "sentAt": "2026-05-18T21:09:08.145Z"
+    },
+    {
+      "to": "pablo@paratushealth.com",
+      "company": "Paratus Health",
+      "sentAt": "2026-05-18T21:09:11.451Z"
+    },
+    {
+      "to": "tycho@tensorpool.dev",
+      "company": "TensorPool",
+      "sentAt": "2026-05-18T21:09:13.802Z"
+    },
+    {
+      "to": "sebastian@dalus.io",
+      "company": "Dalus",
+      "sentAt": "2026-05-18T21:09:16.057Z"
+    },
+    {
+      "to": "celia@rebolt.ai",
+      "company": "Rebolt",
+      "sentAt": "2026-05-18T21:09:18.235Z"
+    },
+    {
+      "to": "manu@spott.io",
+      "company": "Spott",
+      "sentAt": "2026-05-18T21:09:20.559Z"
+    },
+    {
+      "to": "ben@withwoz.com",
+      "company": "Woz",
+      "sentAt": "2026-05-18T21:09:22.956Z"
+    },
+    {
+      "to": "jay@proception.ai",
+      "company": "Proception",
+      "sentAt": "2026-05-18T21:09:25.272Z"
+    },
+    {
+      "to": "dev@joindemeter.com",
+      "company": "Demeter",
+      "sentAt": "2026-05-18T21:09:28.651Z"
+    }
+  ],
+  "failed": [
+    {
+      "to": "kaushik@wild-card.ai",
+      "company": "Wildcard",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bc83f926sm1639980885a.30 - gsmtp",
+      "failedAt": "2026-05-18T21:09:30.472Z"
+    },
+    {
+      "to": "adam@permitify.com",
+      "company": "Permitify",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bc83b18dsm1611529485a.31 - gsmtp",
+      "failedAt": "2026-05-18T21:09:32.273Z"
+    },
+    {
+      "to": "stef@reditus.space",
+      "company": "Reditus Space",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bc936407sm1623775685a.22 - gsmtp",
+      "failedAt": "2026-05-18T21:09:34.118Z"
+    },
+    {
+      "to": "christian@startpinch.com",
+      "company": "Pinch",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3618fe0bsm68115966d6.25 - gsmtp",
+      "failedAt": "2026-05-18T21:09:35.962Z"
+    },
+    {
+      "to": "sandra@retrofit.shop",
+      "company": "Retrofit",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba182540sm1618374685a.4 - gsmtp",
+      "failedAt": "2026-05-18T21:09:37.799Z"
+    },
+    {
+      "to": "george@archon.inc",
+      "company": "Archon",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3619061dsm70450616d6.28 - gsmtp",
+      "failedAt": "2026-05-18T21:09:39.714Z"
+    },
+    {
+      "to": "sam@mastra.ai",
+      "company": "Mastra",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bab3ad15sm1600468385a.16 - gsmtp",
+      "failedAt": "2026-05-18T21:09:41.656Z"
+    },
+    {
+      "to": "carlos@afterquery.com",
+      "company": "AfterQuery",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8cad98d4e3fsm17765506d6.8 - gsmtp",
+      "failedAt": "2026-05-18T21:09:43.610Z"
+    },
+    {
+      "to": "boateng@fuse.ai",
+      "company": "Fuse AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bad2dd8esm1627686485a.19 - gsmtp",
+      "failedAt": "2026-05-18T21:09:45.751Z"
+    },
+    {
+      "to": "tyrone@miyagilabs.ai",
+      "company": "Miyagi Labs",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164df7bfa7sm138594181cf.21 - gsmtp",
+      "failedAt": "2026-05-18T21:09:47.814Z"
+    },
+    {
+      "to": "yash@triplezip.ai",
+      "company": "TripleZip",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-9114edfd3ebsm1487481685a.23 - gsmtp",
+      "failedAt": "2026-05-18T21:09:49.746Z"
+    },
+    {
+      "to": "sachitt@usepeppr.ai",
+      "company": "Peppr",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-516456888f6sm151826511cf.3 - gsmtp",
+      "failedAt": "2026-05-18T21:09:51.591Z"
+    },
+    {
+      "to": "sriman@sennu.ai",
+      "company": "Sennu AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361aabe0sm68899316d6.44 - gsmtp",
+      "failedAt": "2026-05-18T21:09:53.525Z"
+    },
+    {
+      "to": "ben@orbitalops.tech",
+      "company": "Orbital Operations",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361aabe0sm68900096d6.44 - gsmtp",
+      "failedAt": "2026-05-18T21:09:55.381Z"
+    },
+    {
+      "to": "saurabh@usemesh.com",
+      "company": "Mesh",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36086b95sm68416246d6.5 - gsmtp",
+      "failedAt": "2026-05-18T21:09:57.325Z"
+    },
+    {
+      "to": "josh@outlit.ai",
+      "company": "Outlit",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-516460cda02sm146960621cf.18 - gsmtp",
+      "failedAt": "2026-05-18T21:09:59.141Z"
+    },
+    {
+      "to": "dakotah@harperinsure.com",
+      "company": "Harper",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba182540sm1618466585a.4 - gsmtp",
+      "failedAt": "2026-05-18T21:10:01.124Z"
+    },
+    {
+      "to": "kun@calltree.ai",
+      "company": "Calltree AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca360979c2sm68726526d6.18 - gsmtp",
+      "failedAt": "2026-05-18T21:10:02.926Z"
+    },
+    {
+      "to": "ben@nitrode.com",
+      "company": "Nitrode",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164f222806sm137711581cf.16 - gsmtp",
+      "failedAt": "2026-05-18T21:10:04.713Z"
+    },
+    {
+      "to": "shahryar@gokarsa.com",
+      "company": "Karsa",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910baf22315sm1649906485a.21 - gsmtp",
+      "failedAt": "2026-05-18T21:10:06.651Z"
+    },
+    {
+      "to": "pranav@exla.ai",
+      "company": "Exla",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3619dbc2sm68938526d6.38 - gsmtp",
+      "failedAt": "2026-05-18T21:10:08.586Z"
+    },
+    {
+      "to": "shaun@withriviera.com",
+      "company": "Riviera",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bc83b0f9sm1642443085a.29 - gsmtp",
+      "failedAt": "2026-05-18T21:10:10.740Z"
+    },
+    {
+      "to": "charlie@vovana.com",
+      "company": "Vovana",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bab32bd0sm1626726185a.14 - gsmtp",
+      "failedAt": "2026-05-18T21:10:12.570Z"
+    },
+    {
+      "to": "sankeerth@agentin.ai",
+      "company": "Agentin AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-516a6c61fc4sm3903451cf.9 - gsmtp",
+      "failedAt": "2026-05-18T21:10:15.217Z"
+    },
+    {
+      "to": "wilco@rejot.dev",
+      "company": "ReJot",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca360979c2sm68733456d6.18 - gsmtp",
+      "failedAt": "2026-05-18T21:10:17.028Z"
+    },
+    {
+      "to": "joshua@generaltrajectory.com",
+      "company": "General Trajectory",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bc8408f1sm1621444085a.24 - gsmtp",
+      "failedAt": "2026-05-18T21:10:19.033Z"
+    },
+    {
+      "to": "mark@solidroad.com",
+      "company": "SolidRoad",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba182535sm1613894585a.8 - gsmtp",
+      "failedAt": "2026-05-18T21:10:20.895Z"
+    },
+    {
+      "to": "eric@trytrata.com",
+      "company": "Trata",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36086a61sm69060436d6.4 - gsmtp",
+      "failedAt": "2026-05-18T21:10:22.937Z"
+    },
+    {
+      "to": "ansh@sophris.ai",
+      "company": "Sophris",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361905bdsm68418326d6.23 - gsmtp",
+      "failedAt": "2026-05-18T21:10:24.870Z"
+    },
+    {
+      "to": "abhinav@lucidic.ai",
+      "company": "Lucidic AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164585c5e0sm142618041cf.29 - gsmtp",
+      "failedAt": "2026-05-18T21:10:26.918Z"
+    },
+    {
+      "to": "naijide@mundoai.world",
+      "company": "Mundo AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bd8211e2sm1632150085a.47 - gsmtp",
+      "failedAt": "2026-05-18T21:10:28.722Z"
+    },
+    {
+      "to": "alan@athenahq.ai",
+      "company": "AthenaHQ",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3608bb6bsm68907006d6.6 - gsmtp",
+      "failedAt": "2026-05-18T21:10:30.567Z"
+    },
+    {
+      "to": "aamish@lopus.ai",
+      "company": "Lopus AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-51645d51f06sm141964211cf.19 - gsmtp",
+      "failedAt": "2026-05-18T21:10:32.376Z"
+    },
+    {
+      "to": "kofi@joincenote.com",
+      "company": "Cenote",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8cad98d4e08sm17773936d6.9 - gsmtp",
+      "failedAt": "2026-05-18T21:10:34.411Z"
+    },
+    {
+      "to": "sophia@harbera.com",
+      "company": "Harbera",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361bcb15sm72391506d6.47 - gsmtp",
+      "failedAt": "2026-05-18T21:10:36.222Z"
+    },
+    {
+      "to": "linus@augento.ai",
+      "company": "Augento",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910b785935bsm1605307185a.0 - gsmtp",
+      "failedAt": "2026-05-18T21:10:38.487Z"
+    },
+    {
+      "to": "haokun@galevisa.com",
+      "company": "Gale",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164581fdf9sm143665861cf.24 - gsmtp",
+      "failedAt": "2026-05-18T21:10:40.354Z"
+    },
+    {
+      "to": "josh@pave-robotics.com",
+      "company": "Pave Robotics",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36086ac6sm70075176d6.7 - gsmtp",
+      "failedAt": "2026-05-18T21:10:42.283Z"
+    },
+    {
+      "to": "bardia@fromolive.com",
+      "company": "Olive",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5168c968930sm54560901cf.0 - gsmtp",
+      "failedAt": "2026-05-18T21:10:44.075Z"
+    },
+    {
+      "to": "jay@hud.so",
+      "company": "HUD",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bc83bbf5sm1623417885a.28 - gsmtp",
+      "failedAt": "2026-05-18T21:10:45.963Z"
+    },
+    {
+      "to": "yong@cuckoo.so",
+      "company": "Cuckoo Labs",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-51645856d4esm142775851cf.27 - gsmtp",
+      "failedAt": "2026-05-18T21:10:48.320Z"
+    },
+    {
+      "to": "ahmed@mecha-health.ai",
+      "company": "Mecha Health",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bcf3584esm1592632985a.34 - gsmtp",
+      "failedAt": "2026-05-18T21:10:50.369Z"
+    },
+    {
+      "to": "max@gradewiz.ai",
+      "company": "GradeWiz",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361b8b10sm70046516d6.46 - gsmtp",
+      "failedAt": "2026-05-18T21:10:52.225Z"
+    },
+    {
+      "to": "josh@gethealthkey.com",
+      "company": "HealthKey",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bcf3776dsm1690826785a.39 - gsmtp",
+      "failedAt": "2026-05-18T21:10:54.027Z"
+    },
+    {
+      "to": "moses@mosaicco.com",
+      "company": "Mosaic",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3619a384sm68399416d6.35 - gsmtp",
+      "failedAt": "2026-05-18T21:10:55.836Z"
+    },
+    {
+      "to": "ghita@zeroentropy.dev",
+      "company": "ZeroEntropy",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-51645801211sm143085611cf.20 - gsmtp",
+      "failedAt": "2026-05-18T21:10:57.634Z"
+    },
+    {
+      "to": "areg@cardamon.ai",
+      "company": "Cardamon",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca360b274bsm68258246d6.21 - gsmtp",
+      "failedAt": "2026-05-18T21:10:59.463Z"
+    },
+    {
+      "to": "yos@tryamby.com",
+      "company": "Amby Health",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bc9363fcsm1627814385a.27 - gsmtp",
+      "failedAt": "2026-05-18T21:11:01.281Z"
+    },
+    {
+      "to": "alex@carecycle.ai",
+      "company": "careCycle",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba36e68csm1615897885a.10 - gsmtp",
+      "failedAt": "2026-05-18T21:11:03.101Z"
+    },
+    {
+      "to": "ishir@heysift.com",
+      "company": "Sift Dev",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361a7284sm72222076d6.40 - gsmtp",
+      "failedAt": "2026-05-18T21:11:04.901Z"
+    },
+    {
+      "to": "david@maive.ai",
+      "company": "Maive",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3609784bsm68422276d6.16 - gsmtp",
+      "failedAt": "2026-05-18T21:11:06.721Z"
+    },
+    {
+      "to": "ethan@caseflood.ai",
+      "company": "Caseflood",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36086afcsm69317856d6.10 - gsmtp",
+      "failedAt": "2026-05-18T21:11:08.539Z"
+    },
+    {
+      "to": "gaurav@trytejas.ai",
+      "company": "Tejas AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba463814sm1606819485a.5 - gsmtp",
+      "failedAt": "2026-05-18T21:11:10.344Z"
+    },
+    {
+      "to": "pushkar@usevora.ai",
+      "company": "Vora AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba182535sm1614116685a.8 - gsmtp",
+      "failedAt": "2026-05-18T21:11:12.183Z"
+    },
+    {
+      "to": "justin@maritimefusion.com",
+      "company": "Maritime Fusion",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361905bdsm68440686d6.23 - gsmtp",
+      "failedAt": "2026-05-18T21:11:14.129Z"
+    },
+    {
+      "to": "pasha@a1base.com",
+      "company": "A1Base",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bcf3584esm1592739785a.34 - gsmtp",
+      "failedAt": "2026-05-18T21:11:16.186Z"
+    },
+    {
+      "to": "kashyab@verbiflow.com",
+      "company": "Verbiflow",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-516a6c61fc4sm3929111cf.9 - gsmtp",
+      "failedAt": "2026-05-18T21:11:18.123Z"
+    },
+    {
+      "to": "johnny@toothy.ai",
+      "company": "Toothy AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164581f1eesm140298771cf.25 - gsmtp",
+      "failedAt": "2026-05-18T21:11:20.068Z"
+    },
+    {
+      "to": "alan@rocketable.com",
+      "company": "Rocketable",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361a6e8esm67993836d6.41 - gsmtp",
+      "failedAt": "2026-05-18T21:11:21.905Z"
+    },
+    {
+      "to": "dylan@sublingual.ai",
+      "company": "Sublingual",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36086afcsm69325136d6.10 - gsmtp",
+      "failedAt": "2026-05-18T21:11:23.694Z"
+    },
+    {
+      "to": "aditya@contrario.ai",
+      "company": "Contrario",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-9138a830c89sm817047085a.6 - gsmtp",
+      "failedAt": "2026-05-18T21:11:25.616Z"
+    },
+    {
+      "to": "andrew@ovlo.ai",
+      "company": "Ovlo",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36086afcsm69326856d6.10 - gsmtp",
+      "failedAt": "2026-05-18T21:11:27.441Z"
+    },
+    {
+      "to": "shaunak@trytruffle.ai",
+      "company": "Truffle AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bcf353b9sm1673631385a.35 - gsmtp",
+      "failedAt": "2026-05-18T21:11:29.388Z"
+    },
+    {
+      "to": "adina@superglue.ai",
+      "company": "superglue",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164581aed3sm142965611cf.23 - gsmtp",
+      "failedAt": "2026-05-18T21:11:31.637Z"
+    },
+    {
+      "to": "aaron@closure-intel.com",
+      "company": "Closure",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3619dbc2sm68976796d6.38 - gsmtp",
+      "failedAt": "2026-05-18T21:11:33.468Z"
+    },
+    {
+      "to": "prithvi@gopromptless.ai",
+      "company": "Promptless",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bab3ad15sm1600956385a.16 - gsmtp",
+      "failedAt": "2026-05-18T21:11:35.324Z"
+    },
+    {
+      "to": "pranav@scoutforschools.com",
+      "company": "Scout",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36094f6bsm72749636d6.11 - gsmtp",
+      "failedAt": "2026-05-18T21:11:37.243Z"
+    },
+    {
+      "to": "adhityaa@subtrace.dev",
+      "company": "Subtrace",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca36096575sm68415606d6.13 - gsmtp",
+      "failedAt": "2026-05-18T21:11:39.036Z"
+    },
+    {
+      "to": "brogan@vocalityhealth.com",
+      "company": "Vocality Health",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164585fa0asm155680821cf.31 - gsmtp",
+      "failedAt": "2026-05-18T21:11:40.978Z"
+    },
+    {
+      "to": "alex@astroenergy.ai",
+      "company": "Astro",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361905bdsm68453646d6.23 - gsmtp",
+      "failedAt": "2026-05-18T21:11:42.803Z"
+    },
+    {
+      "to": "thomas@dollyglot.com",
+      "company": "Dollyglot",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-516456d5c4dsm142983021cf.12 - gsmtp",
+      "failedAt": "2026-05-18T21:11:45.004Z"
+    },
+    {
+      "to": "archit@stampmail.ai",
+      "company": "Stamp",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bcf3776dsm1691074885a.39 - gsmtp",
+      "failedAt": "2026-05-18T21:11:46.894Z"
+    },
+    {
+      "to": "kevin@guse.io",
+      "company": "Guse",
+      "error": "Invalid login: 454-4.7.0 Too many login attempts, please try again later. For more information,\n454-4.7.0 go to\n454 4.7.0  https://support.google.com/mail/answer/7126229 d75a77b69052e-5164585affesm142983431cf.28 - gsmtp",
+      "failedAt": "2026-05-18T21:11:48.470Z"
+    },
+    {
+      "to": "alex@subimage.io",
+      "company": "SubImage",
+      "error": "Invalid login: 454-4.7.0 Too many login attempts, please try again later. For more information,\n454-4.7.0 go to\n454 4.7.0  https://support.google.com/mail/answer/7126229 d75a77b69052e-516456d5c4dsm142985231cf.12 - gsmtp",
+      "failedAt": "2026-05-18T21:11:50.051Z"
+    },
+    {
+      "to": "jason@nextbyte.ai",
+      "company": "NextByte",
+      "error": "Invalid login: 454-4.7.0 Too many login attempts, please try again later. For more information,\n454-4.7.0 go to\n454 4.7.0  https://support.google.com/mail/answer/7126229 6a1803df08f44-8ca360ac735sm68718436d6.19 - gsmtp",
+      "failedAt": "2026-05-18T21:11:51.625Z"
+    },
+    {
+      "to": "kevin@leapingai.com",
+      "company": "Leaping AI",
+      "error": "Invalid login: 454-4.7.0 Too many login attempts, please try again later. For more information,\n454-4.7.0 go to\n454 4.7.0  https://support.google.com/mail/answer/7126229 6a1803df08f44-8ca36086a61sm69098896d6.4 - gsmtp",
+      "failedAt": "2026-05-18T21:11:53.195Z"
+    },
+    {
+      "to": "roop@bild.ai",
+      "company": "Bild AI",
+      "error": "Invalid login: 454-4.7.0 Too many login attempts, please try again later. For more information,\n454-4.7.0 go to\n454 4.7.0  https://support.google.com/mail/answer/7126229 d75a77b69052e-516456df09csm144266501cf.13 - gsmtp",
+      "failedAt": "2026-05-18T21:11:54.787Z"
+    },
+    {
+      "to": "kaushik@wild-card.ai",
+      "company": "Wildcard",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-9114edfd3ebsm1515147585a.23 - gsmtp",
+      "failedAt": "2026-05-18T23:10:04.618Z"
+    },
+    {
+      "to": "adam@permitify.com",
+      "company": "Permitify",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bcf353b9sm1701465385a.35 - gsmtp",
+      "failedAt": "2026-05-18T23:10:06.438Z"
+    },
+    {
+      "to": "stef@reditus.space",
+      "company": "Reditus Space",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca360b4950sm71249126d6.20 - gsmtp",
+      "failedAt": "2026-05-18T23:10:08.370Z"
+    },
+    {
+      "to": "christian@startpinch.com",
+      "company": "Pinch",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164568a275sm146374471cf.5 - gsmtp",
+      "failedAt": "2026-05-18T23:10:10.543Z"
+    },
+    {
+      "to": "sandra@retrofit.shop",
+      "company": "Retrofit",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca360b274bsm71030936d6.21 - gsmtp",
+      "failedAt": "2026-05-18T23:10:12.435Z"
+    },
+    {
+      "to": "george@archon.inc",
+      "company": "Archon",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca360ac735sm71491736d6.19 - gsmtp",
+      "failedAt": "2026-05-18T23:10:14.471Z"
+    },
+    {
+      "to": "sam@mastra.ai",
+      "company": "Mastra",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910baf2236fsm1646721285a.20 - gsmtp",
+      "failedAt": "2026-05-18T23:10:16.313Z"
+    },
+    {
+      "to": "carlos@afterquery.com",
+      "company": "AfterQuery",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba182535sm1641263785a.8 - gsmtp",
+      "failedAt": "2026-05-18T23:10:18.211Z"
+    },
+    {
+      "to": "boateng@fuse.ai",
+      "company": "Fuse AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-516456d0bd6sm147739651cf.11 - gsmtp",
+      "failedAt": "2026-05-18T23:10:20.113Z"
+    },
+    {
+      "to": "tyrone@miyagilabs.ai",
+      "company": "Miyagi Labs",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-51645688bd9sm145810651cf.6 - gsmtp",
+      "failedAt": "2026-05-18T23:10:21.958Z"
+    },
+    {
+      "to": "yash@triplezip.ai",
+      "company": "TripleZip",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca361aabe0sm71769386d6.44 - gsmtp",
+      "failedAt": "2026-05-18T23:10:23.811Z"
+    },
+    {
+      "to": "sachitt@usepeppr.ai",
+      "company": "Peppr",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca360b4950sm71255406d6.20 - gsmtp",
+      "failedAt": "2026-05-18T23:10:25.598Z"
+    },
+    {
+      "to": "sriman@sennu.ai",
+      "company": "Sennu AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bab3a207sm1632634985a.15 - gsmtp",
+      "failedAt": "2026-05-18T23:10:27.419Z"
+    },
+    {
+      "to": "ben@orbitalops.tech",
+      "company": "Orbital Operations",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 6a1803df08f44-8ca3619c29asm71325426d6.34 - gsmtp",
+      "failedAt": "2026-05-18T23:10:29.238Z"
+    },
+    {
+      "to": "saurabh@usemesh.com",
+      "company": "Mesh",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910ba943761sm1662206685a.11 - gsmtp",
+      "failedAt": "2026-05-18T23:10:33.617Z"
+    },
+    {
+      "to": "josh@outlit.ai",
+      "company": "Outlit",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 d75a77b69052e-5164585fa0asm158398061cf.31 - gsmtp",
+      "failedAt": "2026-05-18T23:10:35.612Z"
+    },
+    {
+      "to": "dakotah@harperinsure.com",
+      "company": "Harper",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-91433530506sm552294385a.44 - gsmtp",
+      "failedAt": "2026-05-18T23:10:37.526Z"
+    },
+    {
+      "to": "kun@calltree.ai",
+      "company": "Calltree AI",
+      "error": "Data command failed: 550-5.4.5 Daily user sending limit exceeded. For more information on Gmail\n550-5.4.5 sending limits go to\n550 5.4.5  https://support.google.com/a/answer/166852 af79cd13be357-910bd623819sm1659502385a.43 - gsmtp",
+      "failedAt": "2026-05-18T23:10:39.462Z"
+    }
+  ]
+}

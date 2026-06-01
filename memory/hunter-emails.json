@@ -1,0 +1,1090 @@
+[
+  {
+    "company": "Red Barn Robotics",
+    "domain": "redbarnrobotics.com",
+    "hunterEmail": "sales@redbarnrobotics.com",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 99,
+    "allEmails": [
+      "sales@redbarnrobotics.com",
+      "alex@redbarnrobotics.com"
+    ]
+  },
+  {
+    "company": "Mentra",
+    "domain": "mentra.glass",
+    "hunterEmail": "carl@mentra.glass",
+    "firstName": "Carl",
+    "lastName": "Allen",
+    "confidence": 99,
+    "allEmails": [
+      "carl@mentra.glass",
+      "cayden@mentra.glass",
+      "nicolo@mentra.glass"
+    ]
+  },
+  {
+    "company": "BlindPay",
+    "domain": "blindpay.com",
+    "hunterEmail": "bernardo@blindpay.com",
+    "firstName": "Bernardo",
+    "lastName": "Moura",
+    "confidence": 99,
+    "allEmails": [
+      "bernardo@blindpay.com",
+      "paulo@blindpay.com",
+      "joao@blindpay.com",
+      "gustavo@blindpay.com",
+      "founders@blindpay.com"
+    ]
+  },
+  {
+    "company": "Vantel",
+    "domain": "vantel.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Fira",
+    "domain": "firaresearch.com",
+    "hunterEmail": "alex@firaresearch.com",
+    "firstName": "Alex",
+    "lastName": "Tkachenko",
+    "confidence": 99,
+    "allEmails": [
+      "alex@firaresearch.com",
+      "founders@firaresearch.com"
+    ]
+  },
+  {
+    "company": "assistant-ui",
+    "domain": "assistant-ui.com",
+    "hunterEmail": "sam.dickson@assistant-ui.com",
+    "firstName": "Sam",
+    "lastName": "Dickson",
+    "confidence": 91,
+    "allEmails": [
+      "sam.dickson@assistant-ui.com",
+      "simon@assistant-ui.com",
+      "hello@assistant-ui.com",
+      "showcase@assistant-ui.com"
+    ]
+  },
+  {
+    "company": "Artifact",
+    "domain": "artifact.engineer",
+    "hunterEmail": "antony@artifact.engineer",
+    "firstName": "Antony",
+    "lastName": "Samuel",
+    "confidence": 99,
+    "allEmails": [
+      "antony@artifact.engineer",
+      "corbin@artifact.engineer",
+      "zack@artifact.engineer",
+      "info@artifact.engineer",
+      "careers@artifact.engineer"
+    ]
+  },
+  {
+    "company": "Axal",
+    "domain": "axal.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Dexterity",
+    "domain": "getdexterity.com",
+    "hunterEmail": "regina@getdexterity.com",
+    "firstName": "Regina",
+    "lastName": "Lin",
+    "confidence": 99,
+    "allEmails": [
+      "regina@getdexterity.com"
+    ]
+  },
+  {
+    "company": "Tally",
+    "domain": "tallyhq.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Sammy Labs",
+    "domain": "sammylabs.com",
+    "hunterEmail": "shav@sammylabs.com",
+    "firstName": "Shav",
+    "lastName": "Vimalendiran",
+    "confidence": 98,
+    "allEmails": [
+      "shav@sammylabs.com"
+    ]
+  },
+  {
+    "company": "Instinct",
+    "domain": "instinct-space.com",
+    "hunterEmail": "joaquim.dickson@instinct-space.com",
+    "firstName": "Joaquim",
+    "lastName": "Dickson",
+    "confidence": 66,
+    "allEmails": [
+      "joaquim.dickson@instinct-space.com",
+      "ashwin.iyer@instinct-space.com",
+      "founders@instinct-space.com"
+    ]
+  },
+  {
+    "company": "Mercura",
+    "domain": "mercura.ai",
+    "hunterEmail": "lukas.bock@mercura.ai",
+    "firstName": "Lukas",
+    "lastName": "Bock",
+    "confidence": 99,
+    "allEmails": [
+      "lukas.bock@mercura.ai",
+      "sean.sdahl@mercura.ai",
+      "bernhard.metzger@mercura.ai",
+      "ben.beinke@mercura.ai",
+      "max.schallermayer@mercura.ai"
+    ]
+  },
+  {
+    "company": "TamLabs",
+    "domain": "tamlabs.ai",
+    "hunterEmail": "ben@tamlabs.ai",
+    "firstName": "Ben",
+    "lastName": "Doolan",
+    "confidence": 99,
+    "allEmails": [
+      "ben@tamlabs.ai",
+      "founders@tamlabs.ai",
+      "hello@tamlabs.ai"
+    ]
+  },
+  {
+    "company": "CopyCat",
+    "domain": "runcopycat.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Paratus Health",
+    "domain": "paratushealth.com",
+    "hunterEmail": "pablo@paratushealth.com",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 95,
+    "allEmails": [
+      "pablo@paratushealth.com"
+    ]
+  },
+  {
+    "company": "TensorPool",
+    "domain": "tensorpool.dev",
+    "hunterEmail": "team@tensorpool.dev",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 99,
+    "allEmails": [
+      "team@tensorpool.dev"
+    ]
+  },
+  {
+    "company": "Dalus",
+    "domain": "dalus.io",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Rebolt",
+    "domain": "rebolt.ai",
+    "hunterEmail": "celia@rebolt.ai",
+    "firstName": "Celia",
+    "lastName": "Manzano",
+    "confidence": 99,
+    "allEmails": [
+      "celia@rebolt.ai",
+      "javier@rebolt.ai",
+      "javi@rebolt.ai",
+      "founders@rebolt.ai",
+      "careers@rebolt.ai"
+    ]
+  },
+  {
+    "company": "Spott",
+    "domain": "spott.io",
+    "hunterEmail": "manu@spott.io",
+    "firstName": "Manu",
+    "lastName": "Vanderveeren",
+    "confidence": 94,
+    "allEmails": [
+      "manu@spott.io",
+      "lander@spott.io",
+      "samuel@spott.io",
+      "sander@spott.io",
+      "tom@spott.io"
+    ]
+  },
+  {
+    "company": "Woz",
+    "domain": "withwoz.com",
+    "hunterEmail": "founders@withwoz.com",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 50,
+    "allEmails": [
+      "founders@withwoz.com"
+    ]
+  },
+  {
+    "company": "Proception",
+    "domain": "proception.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Demeter",
+    "domain": "joindemeter.com",
+    "hunterEmail": "dev@joindemeter.com",
+    "firstName": "Dev",
+    "lastName": "Jain",
+    "confidence": 99,
+    "allEmails": [
+      "dev@joindemeter.com"
+    ]
+  },
+  {
+    "company": "Wildcard",
+    "domain": "wild-card.ai",
+    "hunterEmail": "info@wild-card.ai",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 95,
+    "allEmails": [
+      "info@wild-card.ai"
+    ]
+  },
+  {
+    "company": "Permitify",
+    "domain": "permitify.com",
+    "hunterEmail": "founders@permitify.com",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 99,
+    "allEmails": [
+      "founders@permitify.com",
+      "info@permitify.com"
+    ]
+  },
+  {
+    "company": "Reditus Space",
+    "domain": "reditus.space",
+    "hunterEmail": "ebenezer.arunkumar@reditus.space",
+    "firstName": "Ebenezer",
+    "lastName": "Arunkumar",
+    "confidence": 99,
+    "allEmails": [
+      "ebenezer.arunkumar@reditus.space",
+      "stef.crum@reditus.space",
+      "will.sherman@reditus.space",
+      "mark.ortega@reditus.space",
+      "mason.placanica@reditus.space"
+    ]
+  },
+  {
+    "company": "Pinch",
+    "domain": "startpinch.com",
+    "hunterEmail": "support@startpinch.com",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 99,
+    "allEmails": [
+      "support@startpinch.com"
+    ]
+  },
+  {
+    "company": "Retrofit",
+    "domain": "retrofit.shop",
+    "hunterEmail": "sandra@retrofit.shop",
+    "firstName": "Sandra",
+    "lastName": "Lifshits",
+    "confidence": 99,
+    "allEmails": [
+      "sandra@retrofit.shop",
+      "info@retrofit.shop"
+    ]
+  },
+  {
+    "company": "Archon",
+    "domain": "archon.inc",
+    "hunterEmail": "george@archon.inc",
+    "firstName": "George",
+    "lastName": "Parks",
+    "confidence": 94,
+    "allEmails": [
+      "george@archon.inc",
+      "founders@archon.inc"
+    ]
+  },
+  {
+    "company": "Mastra",
+    "domain": "mastra.ai",
+    "hunterEmail": "shane@mastra.ai",
+    "firstName": "Shane",
+    "lastName": "Thomas",
+    "confidence": 94,
+    "allEmails": [
+      "shane@mastra.ai",
+      "sam.bhagwat@mastra.ai",
+      "abhi@mastra.ai",
+      "caleb@mastra.ai",
+      "tony@mastra.ai"
+    ]
+  },
+  {
+    "company": "AfterQuery",
+    "domain": "afterquery.com",
+    "hunterEmail": "christian@afterquery.com",
+    "firstName": "Christian",
+    "lastName": "Stiker",
+    "confidence": 98,
+    "allEmails": [
+      "christian@afterquery.com",
+      "spencer@afterquery.com",
+      "raymond@afterquery.com",
+      "devansh@afterquery.com",
+      "nathan@afterquery.com"
+    ]
+  },
+  {
+    "company": "Fuse AI",
+    "domain": "fuse.ai",
+    "hunterEmail": "santodomingo@fuse.ai",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 87,
+    "allEmails": [
+      "santodomingo@fuse.ai",
+      "kathmandu@fuse.ai",
+      "info@fuse.ai"
+    ]
+  },
+  {
+    "company": "Miyagi Labs",
+    "domain": "miyagilabs.ai",
+    "hunterEmail": "guang@miyagilabs.ai",
+    "firstName": "Guang",
+    "lastName": "Cui",
+    "confidence": 99,
+    "allEmails": [
+      "guang@miyagilabs.ai",
+      "founders@miyagilabs.ai"
+    ]
+  },
+  {
+    "company": "TripleZip",
+    "domain": "triplezip.ai",
+    "hunterEmail": "grayson@triplezip.ai",
+    "firstName": "Grayson",
+    "lastName": "Pike",
+    "confidence": 99,
+    "allEmails": [
+      "grayson@triplezip.ai",
+      "info@triplezip.ai"
+    ]
+  },
+  {
+    "company": "Peppr",
+    "domain": "usepeppr.ai",
+    "hunterEmail": "sachitt@usepeppr.ai",
+    "firstName": "Sachitt",
+    "lastName": "Arora",
+    "confidence": 99,
+    "allEmails": [
+      "sachitt@usepeppr.ai",
+      "support@usepeppr.ai"
+    ]
+  },
+  {
+    "company": "Sennu AI",
+    "domain": "sennu.ai",
+    "hunterEmail": "sukhjit@sennu.ai",
+    "firstName": "Sukhjit",
+    "lastName": "Singh",
+    "confidence": 99,
+    "allEmails": [
+      "sukhjit@sennu.ai",
+      "contact@sennu.ai"
+    ]
+  },
+  {
+    "company": "Orbital Operations",
+    "domain": "orbitalops.tech",
+    "hunterEmail": "info@orbitalops.tech",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 77,
+    "allEmails": [
+      "info@orbitalops.tech"
+    ]
+  },
+  {
+    "company": "Mesh",
+    "domain": "usemesh.com",
+    "hunterEmail": "product@usemesh.com",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 99,
+    "allEmails": [
+      "product@usemesh.com"
+    ]
+  },
+  {
+    "company": "Outlit",
+    "domain": "outlit.ai",
+    "hunterEmail": "josh@outlit.ai",
+    "firstName": "Josh",
+    "lastName": "Earle",
+    "confidence": 92,
+    "allEmails": [
+      "josh@outlit.ai",
+      "hello@outlit.ai"
+    ]
+  },
+  {
+    "company": "Harper",
+    "domain": "harperinsure.com",
+    "hunterEmail": "corey@harperinsure.com",
+    "firstName": "Corey",
+    "lastName": "Harper",
+    "confidence": 94,
+    "allEmails": [
+      "corey@harperinsure.com",
+      "sebastian@harperinsure.com",
+      "dakotah@harperinsure.com",
+      "jessyca@harperinsure.com",
+      "mia@harperinsure.com"
+    ]
+  },
+  {
+    "company": "Calltree AI",
+    "domain": "calltree.ai",
+    "hunterEmail": "masayuki@calltree.ai",
+    "firstName": "Masayuki",
+    "lastName": "Hayashi",
+    "confidence": 98,
+    "allEmails": [
+      "masayuki@calltree.ai",
+      "kun@calltree.ai",
+      "legal@calltree.ai"
+    ]
+  },
+  {
+    "company": "Nitrode",
+    "domain": "nitrode.com",
+    "hunterEmail": "sejoon@nitrode.com",
+    "firstName": "Sejoon",
+    "lastName": "Chang",
+    "confidence": 99,
+    "allEmails": [
+      "sejoon@nitrode.com",
+      "support@nitrode.com"
+    ]
+  },
+  {
+    "company": "Karsa",
+    "domain": "gokarsa.com",
+    "hunterEmail": "shahryar@gokarsa.com",
+    "firstName": "Shahryar",
+    "lastName": "Hasnani",
+    "confidence": 99,
+    "allEmails": [
+      "shahryar@gokarsa.com",
+      "danish@gokarsa.com",
+      "support@gokarsa.com"
+    ]
+  },
+  {
+    "company": "Exla",
+    "domain": "exla.ai",
+    "hunterEmail": "founders@exla.ai",
+    "firstName": null,
+    "lastName": null,
+    "confidence": 95,
+    "allEmails": [
+      "founders@exla.ai",
+      "contact@exla.ai"
+    ]
+  },
+  {
+    "company": "Riviera",
+    "domain": "withriviera.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Vovana",
+    "domain": "vovana.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Agentin AI",
+    "domain": "agentin.ai",
+    "hunterEmail": "sankeerth@agentin.ai",
+    "firstName": "Sankeerth",
+    "lastName": "Karingula",
+    "confidence": 99,
+    "allEmails": [
+      "sankeerth@agentin.ai",
+      "sankeerthrao@agentin.ai"
+    ]
+  },
+  {
+    "company": "ReJot",
+    "domain": "rejot.dev",
+    "hunterEmail": "jan@rejot.dev",
+    "firstName": "Jan",
+    "lastName": "Schutte",
+    "confidence": 93,
+    "allEmails": [
+      "jan@rejot.dev",
+      "wilco@rejot.dev",
+      "fragno@rejot.dev",
+      "founders@rejot.dev"
+    ]
+  },
+  {
+    "company": "General Trajectory",
+    "domain": "generaltrajectory.com",
+    "hunterEmail": "joshua@generaltrajectory.com",
+    "firstName": "Joshua",
+    "lastName": "Belofsky",
+    "confidence": 99,
+    "allEmails": [
+      "joshua@generaltrajectory.com"
+    ]
+  },
+  {
+    "company": "SolidRoad",
+    "domain": "solidroad.com",
+    "hunterEmail": "robbie@solidroad.com",
+    "firstName": "Robbie",
+    "lastName": "Carroll",
+    "confidence": 98,
+    "allEmails": [
+      "robbie@solidroad.com",
+      "mark@solidroad.com",
+      "patrick@solidroad.com",
+      "rhiannon@solidroad.com",
+      "romy@solidroad.com"
+    ]
+  },
+  {
+    "company": "Trata",
+    "domain": "trytrata.com",
+    "hunterEmail": "eric@trytrata.com",
+    "firstName": "Eric",
+    "lastName": "Cho",
+    "confidence": 99,
+    "allEmails": [
+      "eric@trytrata.com",
+      "alexander@trytrata.com",
+      "legal@trytrata.com",
+      "hello@trytrata.com",
+      "dmca@trytrata.com"
+    ]
+  },
+  {
+    "company": "Sophris",
+    "domain": "sophris.ai",
+    "hunterEmail": "ansh@sophris.ai",
+    "firstName": "Ansh",
+    "lastName": "Gupta",
+    "confidence": 99,
+    "allEmails": [
+      "ansh@sophris.ai",
+      "adarsh@sophris.ai"
+    ]
+  },
+  {
+    "company": "Lucidic AI",
+    "domain": "lucidic.ai",
+    "hunterEmail": "andy@lucidic.ai",
+    "firstName": "Andy",
+    "lastName": "Liang",
+    "confidence": 99,
+    "allEmails": [
+      "andy@lucidic.ai",
+      "abhinav@lucidic.ai",
+      "jeremy@lucidic.ai",
+      "team@lucidic.ai"
+    ]
+  },
+  {
+    "company": "Mundo AI",
+    "domain": "mundoai.world",
+    "hunterEmail": "garreth@mundoai.world",
+    "firstName": "Garreth",
+    "lastName": "Lee",
+    "confidence": 99,
+    "allEmails": [
+      "garreth@mundoai.world",
+      "naijide@mundoai.world",
+      "jason@mundoai.world",
+      "contact@mundoai.world"
+    ]
+  },
+  {
+    "company": "AthenaHQ",
+    "domain": "athenahq.ai",
+    "hunterEmail": "andrew@athenahq.ai",
+    "firstName": "Andrew",
+    "lastName": "Yan",
+    "confidence": 96,
+    "allEmails": [
+      "andrew@athenahq.ai",
+      "james@athenahq.ai",
+      "ganesh@athenahq.ai",
+      "ryan@athenahq.ai",
+      "guido@athenahq.ai"
+    ]
+  },
+  {
+    "company": "Lopus AI",
+    "domain": "lopus.ai",
+    "hunterEmail": "aamish@lopus.ai",
+    "firstName": "Aamish",
+    "lastName": "Beg",
+    "confidence": 99,
+    "allEmails": [
+      "aamish@lopus.ai",
+      "danylo@lopus.ai",
+      "founders@lopus.ai"
+    ]
+  },
+  {
+    "company": "Cenote",
+    "domain": "joincenote.com",
+    "hunterEmail": "kofi@joincenote.com",
+    "firstName": "Kofi",
+    "lastName": "Ansong",
+    "confidence": 99,
+    "allEmails": [
+      "kofi@joincenote.com",
+      "kristy@joincenote.com",
+      "founders@joincenote.com"
+    ]
+  },
+  {
+    "company": "Harbera",
+    "domain": "harbera.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Augento",
+    "domain": "augento.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Gale",
+    "domain": "galevisa.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Pave Robotics",
+    "domain": "pave-robotics.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Olive",
+    "domain": "fromolive.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "HUD",
+    "domain": "hud.so",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Cuckoo Labs",
+    "domain": "cuckoo.so",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Mecha Health",
+    "domain": "mecha-health.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "GradeWiz",
+    "domain": "gradewiz.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "HealthKey",
+    "domain": "gethealthkey.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Mosaic",
+    "domain": "mosaicco.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "ZeroEntropy",
+    "domain": "zeroentropy.dev",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Cardamon",
+    "domain": "cardamon.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Amby Health",
+    "domain": "tryamby.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "careCycle",
+    "domain": "carecycle.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Sift Dev",
+    "domain": "heysift.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Maive",
+    "domain": "maive.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Caseflood",
+    "domain": "caseflood.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Tejas AI",
+    "domain": "trytejas.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Vora AI",
+    "domain": "usevora.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Maritime Fusion",
+    "domain": "maritimefusion.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "A1Base",
+    "domain": "a1base.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Verbiflow",
+    "domain": "verbiflow.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Toothy AI",
+    "domain": "toothy.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Rocketable",
+    "domain": "rocketable.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Sublingual",
+    "domain": "sublingual.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Contrario",
+    "domain": "contrario.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Ovlo",
+    "domain": "ovlo.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Truffle AI",
+    "domain": "trytruffle.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "superglue",
+    "domain": "superglue.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Closure",
+    "domain": "closure-intel.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Promptless",
+    "domain": "gopromptless.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Scout",
+    "domain": "scoutforschools.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Subtrace",
+    "domain": "subtrace.dev",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Vocality Health",
+    "domain": "vocalityhealth.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Astro",
+    "domain": "astroenergy.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Dollyglot",
+    "domain": "dollyglot.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Stamp",
+    "domain": "stampmail.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Guse",
+    "domain": "guse.io",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "SubImage",
+    "domain": "subimage.io",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "NextByte",
+    "domain": "nextbyte.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Leaping AI",
+    "domain": "leapingai.com",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  },
+  {
+    "company": "Bild AI",
+    "domain": "bild.ai",
+    "hunterEmail": null,
+    "firstName": null,
+    "lastName": null,
+    "confidence": null,
+    "allEmails": []
+  }
+]

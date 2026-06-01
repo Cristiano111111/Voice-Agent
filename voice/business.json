@@ -1,0 +1,8 @@
+{
+  "name": "Test Business",
+  "type": "local business",
+  "hours": "Monday through Saturday, 9am to 7pm",
+  "address": "123 Main Street, Rockville, MD",
+  "services": ["service one", "service two", "service three"],
+  "booking_info": "You can book online at our website or I can take a message for the team."
+}

@@ -1,0 +1,390 @@
+{
+  "sent": [
+    {
+      "to": "kaushik@wild-card.ai",
+      "company": "Wildcard",
+      "sentAt": "2026-05-20T00:24:36.584Z"
+    },
+    {
+      "to": "adam@permitify.com",
+      "company": "Permitify",
+      "sentAt": "2026-05-20T00:24:37.705Z"
+    },
+    {
+      "to": "stef@reditus.space",
+      "company": "Reditus Space",
+      "sentAt": "2026-05-20T00:24:40.754Z"
+    },
+    {
+      "to": "christian@startpinch.com",
+      "company": "Pinch",
+      "sentAt": "2026-05-20T00:24:41.843Z"
+    },
+    {
+      "to": "sandra@retrofit.shop",
+      "company": "Retrofit",
+      "sentAt": "2026-05-20T00:24:43.054Z"
+    },
+    {
+      "to": "george@archon.inc",
+      "company": "Archon",
+      "sentAt": "2026-05-20T00:24:44.326Z"
+    },
+    {
+      "to": "sam@mastra.ai",
+      "company": "Mastra",
+      "sentAt": "2026-05-20T00:24:45.413Z"
+    },
+    {
+      "to": "carlos@afterquery.com",
+      "company": "AfterQuery",
+      "sentAt": "2026-05-20T00:24:46.535Z"
+    },
+    {
+      "to": "boateng@fuse.ai",
+      "company": "Fuse AI",
+      "sentAt": "2026-05-20T00:24:47.658Z"
+    },
+    {
+      "to": "tyrone@miyagilabs.ai",
+      "company": "Miyagi Labs",
+      "sentAt": "2026-05-20T00:24:48.973Z"
+    },
+    {
+      "to": "yash@triplezip.ai",
+      "company": "TripleZip",
+      "sentAt": "2026-05-20T00:24:50.067Z"
+    },
+    {
+      "to": "sachitt@usepeppr.ai",
+      "company": "Peppr",
+      "sentAt": "2026-05-20T00:24:51.172Z"
+    },
+    {
+      "to": "sriman@sennu.ai",
+      "company": "Sennu AI",
+      "sentAt": "2026-05-20T00:24:52.280Z"
+    },
+    {
+      "to": "ben@orbitalops.tech",
+      "company": "Orbital Operations",
+      "sentAt": "2026-05-20T00:24:53.497Z"
+    },
+    {
+      "to": "saurabh@usemesh.com",
+      "company": "Mesh",
+      "sentAt": "2026-05-20T00:24:54.602Z"
+    },
+    {
+      "to": "josh@outlit.ai",
+      "company": "Outlit",
+      "sentAt": "2026-05-20T00:24:55.699Z"
+    },
+    {
+      "to": "dakotah@harperinsure.com",
+      "company": "Harper",
+      "sentAt": "2026-05-20T00:24:56.816Z"
+    },
+    {
+      "to": "kun@calltree.ai",
+      "company": "Calltree AI",
+      "sentAt": "2026-05-20T00:24:58.000Z"
+    },
+    {
+      "to": "ben@nitrode.com",
+      "company": "Nitrode",
+      "sentAt": "2026-05-20T00:24:59.211Z"
+    },
+    {
+      "to": "shahryar@gokarsa.com",
+      "company": "Karsa",
+      "sentAt": "2026-05-20T00:25:00.321Z"
+    },
+    {
+      "to": "pranav@exla.ai",
+      "company": "Exla",
+      "sentAt": "2026-05-20T00:25:01.468Z"
+    },
+    {
+      "to": "shaun@withriviera.com",
+      "company": "Riviera",
+      "sentAt": "2026-05-20T00:25:02.573Z"
+    },
+    {
+      "to": "charlie@vovana.com",
+      "company": "Vovana",
+      "sentAt": "2026-05-20T00:25:03.721Z"
+    },
+    {
+      "to": "sankeerth@agentin.ai",
+      "company": "Agentin AI",
+      "sentAt": "2026-05-20T00:25:04.822Z"
+    },
+    {
+      "to": "wilco@rejot.dev",
+      "company": "ReJot",
+      "sentAt": "2026-05-20T00:25:06.075Z"
+    },
+    {
+      "to": "joshua@generaltrajectory.com",
+      "company": "General Trajectory",
+      "sentAt": "2026-05-20T00:25:07.260Z"
+    },
+    {
+      "to": "mark@solidroad.com",
+      "company": "SolidRoad",
+      "sentAt": "2026-05-20T00:25:08.533Z"
+    },
+    {
+      "to": "eric@trytrata.com",
+      "company": "Trata",
+      "sentAt": "2026-05-20T00:25:09.763Z"
+    },
+    {
+      "to": "ansh@sophris.ai",
+      "company": "Sophris",
+      "sentAt": "2026-05-20T00:25:11.099Z"
+    },
+    {
+      "to": "abhinav@lucidic.ai",
+      "company": "Lucidic AI",
+      "sentAt": "2026-05-20T00:25:12.220Z"
+    },
+    {
+      "to": "naijide@mundoai.world",
+      "company": "Mundo AI",
+      "sentAt": "2026-05-20T00:25:16.232Z"
+    },
+    {
+      "to": "alan@athenahq.ai",
+      "company": "AthenaHQ",
+      "sentAt": "2026-05-20T00:25:17.353Z"
+    },
+    {
+      "to": "aamish@lopus.ai",
+      "company": "Lopus AI",
+      "sentAt": "2026-05-20T00:25:18.452Z"
+    },
+    {
+      "to": "kofi@joincenote.com",
+      "company": "Cenote",
+      "sentAt": "2026-05-20T00:25:19.673Z"
+    },
+    {
+      "to": "sophia@harbera.com",
+      "company": "Harbera",
+      "sentAt": "2026-05-20T00:25:20.922Z"
+    },
+    {
+      "to": "linus@augento.ai",
+      "company": "Augento",
+      "sentAt": "2026-05-20T00:25:22.009Z"
+    },
+    {
+      "to": "haokun@galevisa.com",
+      "company": "Gale",
+      "sentAt": "2026-05-20T00:25:23.378Z"
+    },
+    {
+      "to": "josh@pave-robotics.com",
+      "company": "Pave Robotics",
+      "sentAt": "2026-05-20T00:25:24.488Z"
+    },
+    {
+      "to": "bardia@fromolive.com",
+      "company": "Olive",
+      "sentAt": "2026-05-20T00:25:25.736Z"
+    },
+    {
+      "to": "jay@hud.so",
+      "company": "HUD",
+      "sentAt": "2026-05-20T00:25:26.872Z"
+    },
+    {
+      "to": "yong@cuckoo.so",
+      "company": "Cuckoo Labs",
+      "sentAt": "2026-05-20T00:25:27.963Z"
+    },
+    {
+      "to": "ahmed@mecha-health.ai",
+      "company": "Mecha Health",
+      "sentAt": "2026-05-20T00:25:29.048Z"
+    },
+    {
+      "to": "max@gradewiz.ai",
+      "company": "GradeWiz",
+      "sentAt": "2026-05-20T00:25:30.142Z"
+    },
+    {
+      "to": "josh@gethealthkey.com",
+      "company": "HealthKey",
+      "sentAt": "2026-05-20T00:25:31.265Z"
+    },
+    {
+      "to": "moses@mosaicco.com",
+      "company": "Mosaic",
+      "sentAt": "2026-05-20T00:25:32.354Z"
+    },
+    {
+      "to": "ghita@zeroentropy.dev",
+      "company": "ZeroEntropy",
+      "sentAt": "2026-05-20T00:25:33.444Z"
+    },
+    {
+      "to": "areg@cardamon.ai",
+      "company": "Cardamon",
+      "sentAt": "2026-05-20T00:25:34.552Z"
+    },
+    {
+      "to": "yos@tryamby.com",
+      "company": "Amby Health",
+      "sentAt": "2026-05-20T00:25:35.671Z"
+    },
+    {
+      "to": "alex@carecycle.ai",
+      "company": "careCycle",
+      "sentAt": "2026-05-20T00:25:36.895Z"
+    },
+    {
+      "to": "ishir@heysift.com",
+      "company": "Sift Dev",
+      "sentAt": "2026-05-20T00:25:38.187Z"
+    },
+    {
+      "to": "david@maive.ai",
+      "company": "Maive",
+      "sentAt": "2026-05-20T00:25:39.352Z"
+    },
+    {
+      "to": "ethan@caseflood.ai",
+      "company": "Caseflood",
+      "sentAt": "2026-05-20T00:25:40.459Z"
+    },
+    {
+      "to": "gaurav@trytejas.ai",
+      "company": "Tejas AI",
+      "sentAt": "2026-05-20T00:25:41.591Z"
+    },
+    {
+      "to": "pushkar@usevora.ai",
+      "company": "Vora AI",
+      "sentAt": "2026-05-20T00:25:42.840Z"
+    },
+    {
+      "to": "justin@maritimefusion.com",
+      "company": "Maritime Fusion",
+      "sentAt": "2026-05-20T00:25:44.067Z"
+    },
+    {
+      "to": "pasha@a1base.com",
+      "company": "A1Base",
+      "sentAt": "2026-05-20T00:25:45.180Z"
+    },
+    {
+      "to": "kashyab@verbiflow.com",
+      "company": "Verbiflow",
+      "sentAt": "2026-05-20T00:25:46.267Z"
+    },
+    {
+      "to": "johnny@toothy.ai",
+      "company": "Toothy AI",
+      "sentAt": "2026-05-20T00:25:47.390Z"
+    },
+    {
+      "to": "alan@rocketable.com",
+      "company": "Rocketable",
+      "sentAt": "2026-05-20T00:25:48.497Z"
+    },
+    {
+      "to": "dylan@sublingual.ai",
+      "company": "Sublingual",
+      "sentAt": "2026-05-20T00:25:49.609Z"
+    },
+    {
+      "to": "aditya@contrario.ai",
+      "company": "Contrario",
+      "sentAt": "2026-05-20T00:25:50.693Z"
+    },
+    {
+      "to": "andrew@ovlo.ai",
+      "company": "Ovlo",
+      "sentAt": "2026-05-20T00:25:51.804Z"
+    },
+    {
+      "to": "shaunak@trytruffle.ai",
+      "company": "Truffle AI",
+      "sentAt": "2026-05-20T00:25:52.939Z"
+    },
+    {
+      "to": "adina@superglue.ai",
+      "company": "superglue",
+      "sentAt": "2026-05-20T00:25:54.037Z"
+    },
+    {
+      "to": "aaron@closure-intel.com",
+      "company": "Closure",
+      "sentAt": "2026-05-20T00:25:55.327Z"
+    },
+    {
+      "to": "prithvi@gopromptless.ai",
+      "company": "Promptless",
+      "sentAt": "2026-05-20T00:25:56.418Z"
+    },
+    {
+      "to": "pranav@scoutforschools.com",
+      "company": "Scout",
+      "sentAt": "2026-05-20T00:25:57.504Z"
+    },
+    {
+      "to": "adhityaa@subtrace.dev",
+      "company": "Subtrace",
+      "sentAt": "2026-05-20T00:25:58.708Z"
+    },
+    {
+      "to": "brogan@vocalityhealth.com",
+      "company": "Vocality Health",
+      "sentAt": "2026-05-20T00:26:00.040Z"
+    },
+    {
+      "to": "alex@astroenergy.ai",
+      "company": "Astro",
+      "sentAt": "2026-05-20T00:26:01.145Z"
+    },
+    {
+      "to": "thomas@dollyglot.com",
+      "company": "Dollyglot",
+      "sentAt": "2026-05-20T00:26:02.232Z"
+    },
+    {
+      "to": "archit@stampmail.ai",
+      "company": "Stamp",
+      "sentAt": "2026-05-20T00:26:03.447Z"
+    },
+    {
+      "to": "kevin@guse.io",
+      "company": "Guse",
+      "sentAt": "2026-05-20T00:26:04.682Z"
+    },
+    {
+      "to": "alex@subimage.io",
+      "company": "SubImage",
+      "sentAt": "2026-05-20T00:26:05.798Z"
+    },
+    {
+      "to": "jason@nextbyte.ai",
+      "company": "NextByte",
+      "sentAt": "2026-05-20T00:26:07.004Z"
+    },
+    {
+      "to": "kevin@leapingai.com",
+      "company": "Leaping AI",
+      "sentAt": "2026-05-20T00:26:08.170Z"
+    },
+    {
+      "to": "roop@bild.ai",
+      "company": "Bild AI",
+      "sentAt": "2026-05-20T00:26:09.247Z"
+    }
+  ],
+  "failed": []
+}

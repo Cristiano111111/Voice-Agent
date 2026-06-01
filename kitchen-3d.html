@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3D Kitchen</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { overflow:hidden; background:#000; font-family:system-ui,sans-serif; }
+canvas { display:block; }
+#ui {
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,0.72); color:#fff; flex-direction:column; gap:12px; cursor:pointer;
+}
+#ui h1 { font-size:28px; font-weight:700; letter-spacing:0.05em; }
+#ui p  { font-size:14px; color:#aaa; }
+#ui .btn {
+  margin-top:8px; background:#fff; color:#000; padding:12px 32px;
+  border-radius:30px; font-weight:700; font-size:15px;
+}
+#hud {
+  position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+  background:rgba(0,0,0,0.55); color:#fff; font-size:13px;
+  padding:8px 20px; border-radius:20px; display:none; white-space:nowrap;
+}
+#crosshair {
+  position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:22px; height:22px; pointer-events:none; display:none;
+}
+#crosshair::before,#crosshair::after {
+  content:''; position:absolute; background:rgba(255,255,255,0.85);
+}
+#crosshair::before { width:2px; height:100%; left:50%; transform:translateX(-50%); }
+#crosshair::after  { width:100%; height:2px; top:50%; transform:translateY(-50%); }
+#tip {
+  position:fixed; top:42%; left:50%; transform:translateX(-50%);
+  background:rgba(0,0,0,0.5); color:#fff; font-size:13px;
+  padding:6px 16px; border-radius:20px; display:none; pointer-events:none;
+}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui">
+  <h1>🏠 Your Kitchen</h1>
+  <p>Fully interactive 3D walkthrough</p>
+  <div class="btn">Click to Enter</div>
+  <p style="font-size:12px;margin-top:4px">WASD · move &nbsp;|&nbsp; Mouse · look &nbsp;|&nbsp; Click · open cabinets & drawers</p>
+</div>
+<div id="hud">W/S · forward/back &nbsp;·&nbsp; A/D · strafe &nbsp;·&nbsp; Mouse · look &nbsp;·&nbsp; Click · interact &nbsp;·&nbsp; ESC · pause</div>
+<div id="crosshair"></div>
+<div id="tip">E or Click to open</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script>
+// ── Renderer ────────────────────────────────────────────────────────
+const canvas = document.getElementById('c');
+const R = new THREE.WebGLRenderer({ canvas, antialias:true });
+R.setPixelRatio(Math.min(devicePixelRatio,2));
+R.setSize(innerWidth,innerHeight);
+R.shadowMap.enabled = true;
+R.shadowMap.type = THREE.PCFSoftShadowMap;
+R.outputEncoding = THREE.sRGBEncoding;
+R.toneMapping = THREE.ACESFilmicToneMapping;
+R.toneMappingExposure = 1.15;
+
+window.addEventListener('resize',()=>{
+  R.setSize(innerWidth,innerHeight);
+  cam.aspect = innerWidth/innerHeight;
+  cam.updateProjectionMatrix();
+});
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xfff5ee);
+scene.fog = new THREE.Fog(0xfff5ee, 18, 35);
+
+const cam = new THREE.PerspectiveCamera(72, innerWidth/innerHeight, 0.05, 60);
+cam.position.set(0, 1.65, 5.5);
+
+// ── Materials ───────────────────────────────────────────────────────
+const M = (c,r=0.8,m=0) => new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:m});
+
+const matOak     = M(0xd4b48c, 0.82);
+const matOakD    = M(0xc0a070, 0.85);
+const matMarble  = new THREE.MeshStandardMaterial({color:0xf4ede4,roughness:0.08,metalness:0});
+const matSteel   = M(0xb2bec3, 0.25, 0.85);
+const matFloor   = M(0x5a3825, 0.92);
+const matWall    = M(0xfaf5ee, 0.95);
+const matBrass   = M(0xc8a84a, 0.25, 0.75);
+const matLeather = M(0x1e1410, 0.88);
+const matWood    = M(0x4a2c1a, 0.9);
+const matQuartz  = M(0xf0ebe2, 0.12);
+const matBlack   = M(0x111111, 0.7);
+const matRug     = M(0x8c3a28, 0.95);
+
+// ── Interactable registry ───────────────────────────────────────────
+const INTERACT = [];
+
+// ── Geometry helpers ────────────────────────────────────────────────
+function addBox(w,h,d,mat,x,y,z,ry=0,parent=scene){
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w,h,d), mat);
+  m.position.set(x,y,z);
+  m.rotation.y = ry;
+  m.castShadow = true;
+  m.receiveShadow = true;
+  parent.add(m);
+  return m;
+}
+function addCyl(rt,rb,h,mat,x,y,z,segs=16,parent=scene){
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(rt,rb,h,segs),mat);
+  m.position.set(x,y,z);
+  m.castShadow=true;
+  parent.add(m);
+  return m;
+}
+function addSphere(r,mat,x,y,z){
+  const m = new THREE.Mesh(new THREE.SphereGeometry(r,16,16),mat);
+  m.position.set(x,y,z);
+  scene.add(m);
+  return m;
+}
+
+// Cabinet door — hinged, clickable
+function addDoor(w,h,thickness,mat,hingeX,hingeY,hingeZ,hangDir,openDir,roomRY=0){
+  const pivot = new THREE.Object3D();
+  pivot.position.set(hingeX,hingeY,hingeZ);
+  pivot.rotation.y = roomRY;
+  scene.add(pivot);
+
+  const door = addBox(w,h,thickness,mat, hangDir==='L'?w/2:-w/2, 0, 0, 0, pivot);
+
+  // Brass knob
+  const knob = addBox(0.018,0.075,0.018,matBrass,
+    hangDir==='L'? w-0.07 : -(w-0.07), 0, thickness/2+0.01, 0, door);
+
+  INTERACT.push({
+    mesh: door, pivot,
+    type:'door', open:false,
+    openAngle:  roomRY + openDir * Math.PI/2,
+    closeAngle: roomRY,
+    speed: 3.5
+  });
+  return pivot;
+}
+
+// Drawer — slides out, clickable
+function addDrawer(w,h,d,mat,x,y,z,ry=0){
+  const drw = addBox(w,h,d,mat,x,y,z,ry);
+  // Handle bar
+  addBox(w*0.38,0.018,0.016,matBrass, 0,0,d/2+0.012, 0, drw);
+
+  const closePos = new THREE.Vector3(x,y,z);
+  const fwd = new THREE.Vector3(0,0,1).applyAxisAngle(new THREE.Vector3(0,1,0), ry);
+  INTERACT.push({
+    mesh:drw, type:'drawer', open:false,
+    closePos: closePos.clone(),
+    openPos:  closePos.clone().addScaledVector(fwd, 0.32),
+    speed: 2.5
+  });
+  return drw;
+}
+
+// ── ROOM ────────────────────────────────────────────────────────────
+const RW=10.5, RD=7.5, RH=3.05; // half-width, half-depth, full height
+
+// Floor
+const fl = new THREE.Mesh(new THREE.PlaneGeometry(RW*2,RD*2,1,1),matFloor);
+fl.rotation.x=-Math.PI/2; fl.receiveShadow=true; scene.add(fl);
+
+// Walls
+addBox(RW*2,RH,0.12,matWall, 0,RH/2,-RD);          // back
+addBox(0.12,RH,RD*2,matWall,-RW,RH/2,0);            // left
+addBox(0.12,RH,RD*2,matWall, RW,RH/2,0);            // right
+addBox(3.5,RH,0.12,matWall,-RW+1.75,RH/2, RD);     // front-left partial
+addBox(3.5,RH,0.12,matWall, RW-1.75,RH/2, RD);     // front-right partial
+// Ceiling
+const cl=new THREE.Mesh(new THREE.PlaneGeometry(RW*2,RD*2),matWall);
+cl.rotation.x=Math.PI/2; cl.position.y=RH; scene.add(cl);
+// Crown molding
+addBox(RW*2,0.07,0.07,matWall,0,RH-0.035,-RD+0.06);
+addBox(RW*2,0.07,0.07,matWall,0,RH-0.035, RD-0.06);
+
+// ── LEFT WALL CABINETS ──────────────────────────────────────────────
+const LX=-RW; const CD=0.61; const CH=0.91; const UCH=0.78; const UCY=2.08;
+
+// Lower cabinet body
+addBox(CD,CH,8.8,matOak, LX+CD/2,CH/2,-1.1);
+// Countertop
+addBox(CD+0.05,0.05,8.8,matQuartz, LX+CD/2,CH+0.025,-1.1);
+
+// Upper cabinet body (front section, no ovens)
+addBox(0.33,UCH,3.8,matOak, LX+0.17,UCY+UCH/2,0.5);
+
+// Lower doors (3 pairs)
+const LFace = LX+CD+0.005;
+for(let i=0;i<3;i++){
+  const z=-3.8+i*2.2;
+  addDoor(0.52,CH-0.1,0.02,matOakD, LFace,CH/2,z+0.26,'L',-1,0);
+  addDoor(0.52,CH-0.1,0.02,matOakD, LFace+0.52,CH/2,z+0.26,'R',1,0);
+}
+// Lower drawers
+for(let i=0;i<4;i++){
+  addDrawer(0.5,0.19,0.02,matOakD, LFace+0.26, CH-0.12, 2.0+i*0.42);
+}
+// Upper doors
+for(let i=0;i<2;i++){
+  const z=i*1.75-0.2;
+  addDoor(0.28,UCH-0.08,0.02,matOakD, LX+0.02,UCY+UCH/2,z,'L',-1,0);
+}
+
+// ── WALL OVEN STACK (left wall, back) ───────────────────────────────
+const OVZ=-5.5;
+addBox(CD+0.02,1.42,0.82,matOak, LX+CD/2,CH+0.71,OVZ); // housing
+addBox(0.58,0.42,0.58,matSteel, LX+CD/2,CH+1.25,OVZ); // microwave
+addBox(0.58,0.58,0.58,matSteel, LX+CD/2,CH+0.59,OVZ); // oven
+// Glass doors (dark tinted)
+addBox(0.54,0.38,0.01,M(0x1a1a1a,0.0,0.5), LX+CD/2,CH+1.25,OVZ+0.31);
+addBox(0.54,0.54,0.01,M(0x1a1a1a,0.0,0.5), LX+CD/2,CH+0.59,OVZ+0.31);
+// Handles
+addBox(0.32,0.025,0.04,matSteel, LX+CD/2,CH+1.4,OVZ+0.31);
+addBox(0.32,0.025,0.04,matSteel, LX+CD/2,CH+0.82,OVZ+0.31);
+// Controls strip
+addBox(0.55,0.12,0.01,M(0x222222), LX+CD/2,CH+0.92,OVZ+0.31);
+
+// ── SINK (left wall, mid) ────────────────────────────────────────────
+addBox(0.5,0.17,0.57,M(0x222222,0.15,0.9), LX+CD/2-0.01,CH-0.06,1.1); // basin
+const faucetM=M(0xc8a44a,0.2,0.85);
+addBox(0.018,0.28,0.018,faucetM, LX+CD/2+0.06,CH+0.16,0.92);
+addBox(0.16,0.018,0.018,faucetM, LX+CD/2+0.06,CH+0.27,0.98);
+addCyl(0.022,0.022,0.06,faucetM, LX+CD/2+0.06+0.08,CH+0.27,1.01,8);
+
+// Dishwasher
+addBox(CD,CH,0.6,matSteel, LX+CD/2,CH/2,2.3);
+addBox(CD-0.06,CH-0.04,0.01,M(0x999999,0.2,0.7), LX+CD/2,CH/2,2.62);
+addBox(0.32,0.022,0.04,matSteel, LX+CD/2,CH-0.1,2.62);
+
+// ── FRIDGE (back wall) ──────────────────────────────────────────────
+addBox(1.0,2.0,0.74,matSteel, -2.0,1.0,-RD+0.38);
+addBox(0.01,1.95,0.01,M(0x777777), -2.0,1.0,-RD+0.76);
+addBox(0.038,0.62,0.052,matSteel, -2.38,1.25,-RD+0.77);
+addBox(0.038,0.62,0.052,matSteel, -1.62,1.25,-RD+0.77);
+
+// ── RIGHT WALL CABINETS ─────────────────────────────────────────────
+const RX=RW;
+addBox(CD,CH,8.8,matOak, RX-CD/2,CH/2,-1.1);
+addBox(CD+0.05,0.05,8.8,matQuartz, RX-CD/2,CH+0.025,-1.1);
+addBox(0.33,UCH,4.2,matOak, RX-0.17,UCY+UCH/2,-1.9);
+
+const RFace = RX-CD-0.005;
+for(let i=0;i<3;i++){
+  const z=-3.8+i*2.2;
+  addDoor(0.52,CH-0.1,0.02,matOakD, RFace,CH/2,z+0.26,'L',-1,Math.PI);
+  addDoor(0.52,CH-0.1,0.02,matOakD, RFace-0.52,CH/2,z+0.26,'R',1,Math.PI);
+}
+for(let i=0;i<4;i++){
+  addDrawer(0.5,0.19,0.02,matOakD, RFace-0.26, CH-0.12, 2.0+i*0.42, Math.PI);
+}
+for(let i=0;i<3;i++){
+  const z=-4.8+i*1.75;
+  addDoor(0.28,UCH-0.08,0.02,matOakD, RX-0.02,UCY+UCH/2,z,'L',-1,Math.PI);
+}
+
+// ── RANGE + HOOD (right wall back) ──────────────────────────────────
+const RGZ=-5.2;
+addBox(0.92,CH,0.64,matSteel, RX-CD/2,CH/2,RGZ);
+// burners
+[[-.22,-.18],[-.22,0],[-.22,.18],[.22,-.18],[.22,0],[.22,.18]].forEach(([bx,bz])=>{
+  addCyl(0.055,0.055,0.018,M(0x2a2a2a), RX-CD/2+bx,CH+0.008,RGZ+bz,10);
+  addCyl(0.025,0.025,0.025,M(0x111111), RX-CD/2+bx,CH+0.015,RGZ+bz,8);
+});
+// knobs
+for(let i=0;i<6;i++){
+  addCyl(0.032,0.028,0.04,M(0xcc2a2a,0.4), RX-CD/2-0.33+i*0.135,CH+0.34,RGZ-0.33,8);
+}
+// Backsplash
+addBox(0.01,CH+0.5,0.85,M(0xf0ebe2,0.4), RX-CD-0.01,CH/2+0.25,RGZ);
+
+// Hood
+addBox(1.05,0.48,0.7,matWall, RX-CD/2,UCY+0.04,RGZ);
+addBox(0.95,0.07,0.65,M(0xccc5b5), RX-CD/2,UCY-0.205,RGZ);
+addBox(0.65,0.65,0.4,matWall, RX-CD/2,UCY+0.6,RGZ);
+// Under-hood lights
+addBox(0.8,0.03,0.04,M(0xffffee,0.1), RX-CD/2,UCY-0.24,RGZ-0.3);
+const hoodLight = new THREE.PointLight(0xfff8d0,0.8,2.5);
+hoodLight.position.set(RX-CD/2-0.05,UCY-0.25,RGZ-0.3);
+scene.add(hoodLight);
+
+// ── OPEN SHELVING (right wall, front) ───────────────────────────────
+addBox(0.28,1.3,1.0,matOak, RX-0.15,UCY+0.65,2.5);
+[0.08,0.52,0.96,1.4].forEach(oy=>{
+  addBox(0.25,0.03,0.9,matOakD, RX-0.145,UCY+oy,2.5);
+});
+// shelf items
+addCyl(0.055,0.055,0.09,M(0xeae0d0,0.7), RX-0.17,UCY+0.16,2.35,8);
+addCyl(0.04,0.04,0.14,M(0x8a6b3a,0.8), RX-0.17,UCY+0.62,2.6,8);
+addCyl(0.05,0.05,0.07,M(0xcca870,0.8), RX-0.17,UCY+1.06,2.38,8);
+addBox(0.018,0.14,0.018,M(0x2d6b35,0.9), RX-0.17,UCY+1.17,2.38);
+
+// ── BACK WALL UPPERS (over fridge area) ─────────────────────────────
+addBox(1.2,UCH,0.33,matOak, -2.0,UCY+UCH/2,-RD+0.18);
+addDoor(0.55,UCH-0.08,0.02,matOakD, -2.3,UCY+UCH/2,-RD+0.18+0.02,'L',-1,0);
+addDoor(0.55,UCH-0.08,0.02,matOakD, -1.75,UCY+UCH/2,-RD+0.18+0.02,'R',1,0);
+
+// ── ISLAND ──────────────────────────────────────────────────────────
+const ISX=0.7, ISZ=-0.2, ISW=1.08, ISL=4.9, ISH=0.93;
+
+// Body
+addBox(ISW,ISH,ISL,matOak, ISX,ISH/2,ISZ);
+// Rounded end — half-cylinder
+const endBody=new THREE.Mesh(new THREE.CylinderGeometry(ISW/2,ISW/2,ISH,20,1,false,0,Math.PI),matOak);
+endBody.position.set(ISX,ISH/2,ISZ+ISL/2);
+endBody.castShadow=true; scene.add(endBody);
+
+// Marble countertop
+addBox(ISW+0.1,0.06,ISL,matMarble, ISX,ISH+0.03,ISZ);
+const endTop=new THREE.Mesh(new THREE.CylinderGeometry((ISW+0.1)/2,(ISW+0.1)/2,0.06,20,1,false,0,Math.PI),matMarble);
+endTop.position.set(ISX,ISH+0.03,ISZ+ISL/2);
+scene.add(endTop);
+
+// Fluted panel detail on island face
+for(let i=0;i<12;i++){
+  addBox(0.015,ISH-0.05,0.02,M(0xc8aa80,0.88), ISX-ISW/2-0.01,ISH/2,ISZ-ISL/2+0.35+i*0.38);
+}
+
+// Island drawers (facing camera)
+for(let i=0;i<3;i++){
+  addDrawer(0.29,0.2,0.02,matOakD, ISX-ISW/2-0.012, ISH-0.13-i*0.28, ISZ-1.0+i*0.05, -Math.PI/2);
+}
+// Island cabinet doors (back face)
+for(let i=0;i<2;i++){
+  addDoor(0.48,ISH-0.1,0.02,matOakD, ISX+ISW/2+0.008,ISH/2,ISZ-1.5+i*1.6,'L',1,0);
+}
+// Hardware strip
+for(let i=0;i<8;i++){
+  addBox(0.012,0.065,0.012,matBrass, ISX-ISW/2-0.012,ISH-0.14,ISZ-ISL/2+0.5+i*0.55);
+}
+
+// Island sink (prep sink)
+addBox(0.4,0.16,0.48,M(0x222222,0.15,0.9), ISX,ISH-0.05,ISZ-1.5);
+addBox(0.016,0.2,0.016,faucetM, ISX,ISH+0.13,ISZ-1.62);
+addBox(0.12,0.014,0.014,faucetM, ISX,ISH+0.2,ISZ-1.57);
+
+// Pendant rod
+addBox(0.01,0.02,0.5,matBrass, ISX+0.15,RH-0.02,ISZ);
+
+// ── BARSTOOLS ───────────────────────────────────────────────────────
+function barstool(x,z){
+  const SH=0.78;
+  // Seat
+  const seat=new THREE.Mesh(new THREE.CylinderGeometry(0.2,0.18,0.07,20),matLeather);
+  seat.position.set(x,SH,z); seat.castShadow=true; scene.add(seat);
+  // Nailhead torus
+  const nails=new THREE.Mesh(new THREE.TorusGeometry(0.2,0.012,6,22),matBrass);
+  nails.position.set(x,SH-0.01,z); nails.rotation.x=Math.PI/2; scene.add(nails);
+  // Legs
+  for(let i=0;i<4;i++){
+    const a=(i/4)*Math.PI*2+Math.PI/4;
+    addBox(0.04,SH,0.04,matWood, x+Math.cos(a)*0.14,SH/2,z+Math.sin(a)*0.14);
+  }
+  // Footrest
+  const fr=new THREE.Mesh(new THREE.TorusGeometry(0.15,0.016,6,20),matWood);
+  fr.position.set(x,0.3,z); fr.rotation.x=Math.PI/2; scene.add(fr);
+}
+barstool(ISX-ISW/2-0.52, ISZ+1.3);
+barstool(ISX-ISW/2-0.52, ISZ+0.0);
+barstool(ISX-ISW/2-0.52, ISZ-1.3);
+
+// ── RUG ─────────────────────────────────────────────────────────────
+const rugBorder=new THREE.Mesh(new THREE.PlaneGeometry(1.35,5.8),M(0x4a1e12,0.96));
+rugBorder.rotation.x=-Math.PI/2; rugBorder.position.set(-3.5,0.001,-1.0); scene.add(rugBorder);
+const rug=new THREE.Mesh(new THREE.PlaneGeometry(1.15,5.6),matRug);
+rug.rotation.x=-Math.PI/2; rug.position.set(-3.5,0.002,-1.0); rug.receiveShadow=true; scene.add(rug);
+// Simple geometric rug pattern (border lines)
+for(let i=0;i<3;i++){
+  const inner=new THREE.Mesh(new THREE.PlaneGeometry(0.92-i*0.12,5.35-i*0.15),M(i%2===0?0x6b2a1c:0x9c4030,0.96));
+  inner.rotation.x=-Math.PI/2; inner.position.set(-3.5,0.003+i*0.0005,-1.0); scene.add(inner);
+}
+
+// ── PENDANT LIGHTS ──────────────────────────────────────────────────
+function pendant(x,z){
+  // Cord
+  addBox(0.01,0.75,0.01,matBlack, x,RH-0.38,z);
+  // Metal cap
+  addCyl(0.07,0.1,0.08,matBlack, x,RH-0.8,z,12);
+  // Globe
+  const glass=new THREE.Mesh(new THREE.SphereGeometry(0.14,18,18),
+    new THREE.MeshStandardMaterial({color:0xffffff,roughness:0,metalness:0,transparent:true,opacity:0.22,side:THREE.DoubleSide}));
+  glass.position.set(x,RH-0.96,z); scene.add(glass);
+  // Inner glow bulb
+  addSphere(0.04,new THREE.MeshStandardMaterial({color:0xffe8a0,emissive:0xffe8a0,emissiveIntensity:2}), x,RH-0.96,z);
+  // Light
+  const pl=new THREE.PointLight(0xfff2d0,1.4,5);
+  pl.position.set(x,RH-0.96,z); pl.castShadow=true; scene.add(pl);
+}
+pendant(ISX+0.1,ISZ+1.55);
+pendant(ISX+0.1,ISZ);
+pendant(ISX+0.1,ISZ-1.55);
+
+// ── RECESSED CANS ───────────────────────────────────────────────────
+[[-3.5,-4],[-3.5,0],[-3.5,3.5],[3.5,-4],[3.5,0],[3.5,3.5],[0,-5],[0,4]].forEach(([x,z])=>{
+  addCyl(0.065,0.065,0.04,M(0xe0e0e0), x,RH-0.02,z,12);
+  const pl=new THREE.PointLight(0xfff6f0,0.45,5.5);
+  pl.position.set(x,RH-0.08,z); scene.add(pl);
+});
+
+// ── AMBIENT + SUN ────────────────────────────────────────────────────
+scene.add(new THREE.AmbientLight(0xfff8f0, 0.55));
+const sun=new THREE.DirectionalLight(0xfff9e8,0.5);
+sun.position.set(-6,8,4); sun.castShadow=true;
+sun.shadow.mapSize.set(2048,2048);
+scene.add(sun);
+
+// Under-cabinet warm fill
+[-1.8, 0.8, 3.0].forEach(z=>{
+  const ucl=new THREE.PointLight(0xffe8c0,0.35,2.2);
+  ucl.position.set(LX+CD+0.1,CH+0.08,z); scene.add(ucl);
+});
+
+// ── COUNTERTOP PROPS ─────────────────────────────────────────────────
+// Left counter — plants + potted
+addCyl(0.05,0.05,0.07,M(0xc8a870,0.8), LX+CD+0.08,CH+0.035,1.8,8);
+addCyl(0.03,0.03,0.13,M(0x2c6b35,0.9), LX+CD+0.08,CH+0.1,1.8,8);
+addCyl(0.05,0.05,0.07,M(0xd0b080,0.8), LX+CD+0.08,CH+0.035,3.2,8);
+addBox(0.02,0.12,0.02,M(0x3a7040), LX+CD+0.08,CH+0.095,3.2);
+
+// Right counter — knife block + bottles + plant
+addBox(0.1,0.26,0.14,matWood, RX-CD-0.09,CH+0.13,2.8);
+for(let i=0;i<5;i++) addBox(0.005,0.2+i*0.015,0.004,M(0x888888,0.3,0.8), RX-CD-0.06+i*0.02,CH+0.22+i*0.006,2.8);
+addCyl(0.042,0.038,0.36,M(0x1a3820,0.25,0.1), RX-CD-0.09,CH+0.18,3.4,8);
+addCyl(0.042,0.038,0.36,M(0x2a1808,0.25,0.1), RX-CD-0.09,CH+0.18,3.65,8);
+addCyl(0.05,0.05,0.07,M(0xd0b880,0.8), RX-CD-0.09,CH+0.035,2.0,8);
+addBox(0.018,0.15,0.018,M(0x336b3a), RX-CD-0.09,CH+0.11,2.0);
+
+// Island — bowl
+addCyl(0.18,0.14,0.06,M(0x8b6428,0.75), ISX,ISH+0.06,ISZ+0.6,18);
+addCyl(0.04,0.04,0.06,M(0x2d6b30,0.9), ISX-0.06,ISH+0.11,ISZ+0.6,8);
+addCyl(0.035,0.035,0.05,M(0x5a8b28,0.8), ISX+0.04,ISH+0.1,ISZ+0.58,8);
+
+// ── DINING ROOM GLIMPSE (through back opening) ──────────────────────
+// Chandelier hint
+addCyl(0.01,0.01,0.4,matBlack, 4.5,RH-0.2,-RD+0.06,6);
+const cr=new THREE.Mesh(new THREE.TorusGeometry(0.2,0.015,6,16),M(0xc8a840,0.2,0.8));
+cr.position.set(4.5,RH-0.5,-RD+0.06); cr.rotation.x=Math.PI/2; scene.add(cr);
+const chl=new THREE.PointLight(0xfff0c8,0.6,4);
+chl.position.set(4.5,RH-0.5,-RD+0.06); scene.add(chl);
+
+// ── FPS CONTROLS ────────────────────────────────────────────────────
+const ui_el  = document.getElementById('ui');
+const hud_el = document.getElementById('hud');
+const cross  = document.getElementById('crosshair');
+const tip_el = document.getElementById('tip');
+
+let locked=false, yaw=0, pitch=0;
+const keys={};
+
+ui_el.addEventListener('click',()=> canvas.requestPointerLock());
+document.addEventListener('pointerlockchange',()=>{
+  locked = document.pointerLockElement===canvas;
+  ui_el.style.display  = locked?'none':'flex';
+  hud_el.style.display = locked?'block':'none';
+  cross.style.display  = locked?'block':'none';
+  if(!locked) tip_el.style.display='none';
+});
+document.addEventListener('mousemove',e=>{
+  if(!locked)return;
+  yaw   -= e.movementX*0.0022;
+  pitch  = Math.max(-1.1, Math.min(1.1, pitch - e.movementY*0.0022));
+});
+document.addEventListener('keydown',e=>{ keys[e.code]=true; });
+document.addEventListener('keyup',  e=>{ keys[e.code]=false; });
+
+// Interact on click or E
+function tryInteract(){
+  if(!locked)return;
+  const rc=new THREE.Raycaster();
+  rc.setFromCamera(new THREE.Vector2(0,0),cam);
+  const meshes=INTERACT.map(i=>i.mesh);
+  const hits=rc.intersectObjects(meshes,true);
+  if(hits.length>0 && hits[0].distance<2.4){
+    const obj=hits[0].object;
+    let item=INTERACT.find(i=>i.mesh===obj);
+    if(!item) item=INTERACT.find(i=>i.mesh.children.includes(obj));
+    if(item) item.open=!item.open;
+  }
+}
+document.addEventListener('click',tryInteract);
+document.addEventListener('keydown',e=>{ if(e.code==='KeyE') tryInteract(); });
+
+// Collision helpers
+function clamp(pos){
+  // Room walls
+  pos.x=Math.max(-RW+1.0, Math.min(RW-1.0, pos.x));
+  pos.z=Math.max(-RD+0.9, Math.min(RD-0.9, pos.z));
+  // Left cabinets
+  if(pos.x < LX+CD+0.75) pos.x = LX+CD+0.75;
+  // Right cabinets
+  if(pos.x > RX-CD-0.75) pos.x = RX-CD-0.75;
+  // Island
+  const dx=pos.x-ISX, dz=pos.z-ISZ;
+  const hw=ISW/2+0.65, hd=ISL/2+0.65;
+  if(Math.abs(dx)<hw && Math.abs(dz)<hd){
+    const ox=hw-Math.abs(dx), od=hd-Math.abs(dz);
+    if(ox<od) pos.x+=Math.sign(dx)*ox;
+    else      pos.z+=Math.sign(dz)*od;
+  }
+}
+
+// ── ANIMATION LOOP ───────────────────────────────────────────────────
+const clock=new THREE.Clock();
+const euler=new THREE.Euler(0,0,0,'YXZ');
+const mv=new THREE.Vector3();
+
+function tick(){
+  requestAnimationFrame(tick);
+  const dt=Math.min(clock.getDelta(),0.05);
+
+  euler.set(pitch,yaw,0);
+  cam.quaternion.setFromEuler(euler);
+
+  if(locked){
+    mv.set(0,0,0);
+    if(keys['KeyW']||keys['ArrowUp'])   mv.z-=1;
+    if(keys['KeyS']||keys['ArrowDown']) mv.z+=1;
+    if(keys['KeyA']||keys['ArrowLeft']) mv.x-=1;
+    if(keys['KeyD']||keys['ArrowRight'])mv.x+=1;
+    if(mv.lengthSq()>0){
+      mv.normalize().applyQuaternion(cam.quaternion);
+      mv.y=0; mv.normalize();
+      cam.position.addScaledVector(mv,3.8*dt);
+    }
+    cam.position.y=1.65;
+    clamp(cam.position);
+
+    // Hover hint
+    const rc=new THREE.Raycaster();
+    rc.setFromCamera(new THREE.Vector2(0,0),cam);
+    const hits=rc.intersectObjects(INTERACT.map(i=>i.mesh),true);
+    tip_el.style.display=(hits.length>0&&hits[0].distance<2.4)?'block':'none';
+  }
+
+  // Animate doors + drawers
+  INTERACT.forEach(item=>{
+    if(item.type==='door'){
+      const t=item.open?item.openAngle:item.closeAngle;
+      item.pivot.rotation.y+=(t-item.pivot.rotation.y)*Math.min(1,item.speed*dt);
+    } else {
+      const t=item.open?item.openPos:item.closePos;
+      item.mesh.position.lerp(t, Math.min(1,item.speed*dt));
+    }
+  });
+
+  R.render(scene,cam);
+}
+tick();
+</script>
+</body>
+</html>

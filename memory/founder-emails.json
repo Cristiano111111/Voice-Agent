@@ -1,0 +1,702 @@
+[
+  {
+    "name": "Red Barn Robotics",
+    "domain": "redbarnrobotics.com",
+    "slug": "red-barn-robotics",
+    "founderFirstName": "adam",
+    "email": "adam@redbarnrobotics.com"
+  },
+  {
+    "name": "Mentra",
+    "domain": "mentra.glass",
+    "slug": "mentra",
+    "founderFirstName": "cayden",
+    "email": "cayden@mentra.glass"
+  },
+  {
+    "name": "BlindPay",
+    "domain": "blindpay.com",
+    "slug": "blindpay",
+    "founderFirstName": "bernardo",
+    "email": "bernardo@blindpay.com"
+  },
+  {
+    "name": "Vantel",
+    "domain": "vantel.ai",
+    "slug": "vantel",
+    "founderFirstName": "love",
+    "email": "love@vantel.ai"
+  },
+  {
+    "name": "Fira",
+    "domain": "firaresearch.com",
+    "slug": "fira",
+    "founderFirstName": "alex",
+    "email": "alex@firaresearch.com"
+  },
+  {
+    "name": "assistant-ui",
+    "domain": "assistant-ui.com",
+    "slug": "assistant-ui",
+    "founderFirstName": "simon",
+    "email": "simon@assistant-ui.com"
+  },
+  {
+    "name": "Artifact",
+    "domain": "artifact.engineer",
+    "slug": "artifact",
+    "founderFirstName": "ross",
+    "email": "ross@artifact.engineer"
+  },
+  {
+    "name": "Axal",
+    "domain": "axal.ai",
+    "slug": "axal",
+    "founderFirstName": "samai",
+    "email": "samai@axal.ai"
+  },
+  {
+    "name": "Dexterity",
+    "domain": "getdexterity.com",
+    "slug": "dexterity",
+    "founderFirstName": "regina",
+    "email": "regina@getdexterity.com"
+  },
+  {
+    "name": "Tally",
+    "domain": "tallyhq.com",
+    "slug": "tally",
+    "founderFirstName": "jarrett",
+    "email": "jarrett@tallyhq.com"
+  },
+  {
+    "name": "Sammy Labs",
+    "domain": "sammylabs.com",
+    "slug": "sammy-labs",
+    "founderFirstName": "joe",
+    "email": "joe@sammylabs.com"
+  },
+  {
+    "name": "Instinct",
+    "domain": "instinct-space.com",
+    "slug": "instinct",
+    "founderFirstName": "alex",
+    "email": "alex@instinct-space.com"
+  },
+  {
+    "name": "Mercura",
+    "domain": "mercura.ai",
+    "slug": "mercura",
+    "founderFirstName": "lukas",
+    "email": "lukas@mercura.ai"
+  },
+  {
+    "name": "TamLabs",
+    "domain": "tamlabs.ai",
+    "slug": "tamlabs",
+    "founderFirstName": "joshua",
+    "email": "joshua@tamlabs.ai"
+  },
+  {
+    "name": "CopyCat",
+    "domain": "runcopycat.com",
+    "slug": "copycat",
+    "founderFirstName": "graham",
+    "email": "graham@runcopycat.com"
+  },
+  {
+    "name": "Paratus Health",
+    "domain": "paratushealth.com",
+    "slug": "paratus-health",
+    "founderFirstName": "pablo",
+    "email": "pablo@paratushealth.com"
+  },
+  {
+    "name": "TensorPool",
+    "domain": "tensorpool.dev",
+    "slug": "tensorpool",
+    "founderFirstName": "tycho",
+    "email": "tycho@tensorpool.dev"
+  },
+  {
+    "name": "Dalus",
+    "domain": "dalus.io",
+    "slug": "dalus",
+    "founderFirstName": "sebastian",
+    "email": "sebastian@dalus.io"
+  },
+  {
+    "name": "Rebolt",
+    "domain": "rebolt.ai",
+    "slug": "rebolt",
+    "founderFirstName": "celia",
+    "email": "celia@rebolt.ai"
+  },
+  {
+    "name": "Spott",
+    "domain": "spott.io",
+    "slug": "spott",
+    "founderFirstName": "manu",
+    "email": "manu@spott.io"
+  },
+  {
+    "name": "Woz",
+    "domain": "withwoz.com",
+    "slug": "woz",
+    "founderFirstName": "ben",
+    "email": "ben@withwoz.com"
+  },
+  {
+    "name": "Proception",
+    "domain": "proception.ai",
+    "slug": "proception",
+    "founderFirstName": "jay",
+    "email": "jay@proception.ai"
+  },
+  {
+    "name": "Demeter",
+    "domain": "joindemeter.com",
+    "slug": "demeter",
+    "founderFirstName": "dev",
+    "email": "dev@joindemeter.com"
+  },
+  {
+    "name": "Wildcard",
+    "domain": "wild-card.ai",
+    "slug": "wildcard",
+    "founderFirstName": "kaushik",
+    "email": "kaushik@wild-card.ai"
+  },
+  {
+    "name": "Permitify",
+    "domain": "permitify.com",
+    "slug": "permitify",
+    "founderFirstName": "adam",
+    "email": "adam@permitify.com"
+  },
+  {
+    "name": "Reditus Space",
+    "domain": "reditus.space",
+    "slug": "reditus-space",
+    "founderFirstName": "stef",
+    "email": "stef@reditus.space"
+  },
+  {
+    "name": "Pinch",
+    "domain": "startpinch.com",
+    "slug": "pinch",
+    "founderFirstName": "christian",
+    "email": "christian@startpinch.com"
+  },
+  {
+    "name": "Retrofit",
+    "domain": "retrofit.shop",
+    "slug": "retrofit",
+    "founderFirstName": "sandra",
+    "email": "sandra@retrofit.shop"
+  },
+  {
+    "name": "Archon",
+    "domain": "archon.inc",
+    "slug": "archon",
+    "founderFirstName": "george",
+    "email": "george@archon.inc"
+  },
+  {
+    "name": "Mastra",
+    "domain": "mastra.ai",
+    "slug": "mastra",
+    "founderFirstName": "sam",
+    "email": "sam@mastra.ai"
+  },
+  {
+    "name": "AfterQuery",
+    "domain": "afterquery.com",
+    "slug": "afterquery",
+    "founderFirstName": "carlos",
+    "email": "carlos@afterquery.com"
+  },
+  {
+    "name": "Fuse AI",
+    "domain": "fuse.ai",
+    "slug": "fuse-ai",
+    "founderFirstName": "boateng",
+    "email": "boateng@fuse.ai"
+  },
+  {
+    "name": "Miyagi Labs",
+    "domain": "miyagilabs.ai",
+    "slug": "miyagi-labs",
+    "founderFirstName": "tyrone",
+    "email": "tyrone@miyagilabs.ai"
+  },
+  {
+    "name": "TripleZip",
+    "domain": "triplezip.ai",
+    "slug": "triplezip",
+    "founderFirstName": "yash",
+    "email": "yash@triplezip.ai"
+  },
+  {
+    "name": "Peppr",
+    "domain": "usepeppr.ai",
+    "slug": "peppr",
+    "founderFirstName": "sachitt",
+    "email": "sachitt@usepeppr.ai"
+  },
+  {
+    "name": "Sennu AI",
+    "domain": "sennu.ai",
+    "slug": "sennu-ai",
+    "founderFirstName": "sriman",
+    "email": "sriman@sennu.ai"
+  },
+  {
+    "name": "Orbital Operations",
+    "domain": "orbitalops.tech",
+    "slug": "orbital-operations",
+    "founderFirstName": "ben",
+    "email": "ben@orbitalops.tech"
+  },
+  {
+    "name": "Mesh",
+    "domain": "usemesh.com",
+    "slug": "mesh",
+    "founderFirstName": "saurabh",
+    "email": "saurabh@usemesh.com"
+  },
+  {
+    "name": "Outlit",
+    "domain": "outlit.ai",
+    "slug": "outlit",
+    "founderFirstName": "josh",
+    "email": "josh@outlit.ai"
+  },
+  {
+    "name": "Harper",
+    "domain": "harperinsure.com",
+    "slug": "harper",
+    "founderFirstName": "dakotah",
+    "email": "dakotah@harperinsure.com"
+  },
+  {
+    "name": "Calltree AI",
+    "domain": "calltree.ai",
+    "slug": "calltree-ai",
+    "founderFirstName": "kun",
+    "email": "kun@calltree.ai"
+  },
+  {
+    "name": "Nitrode",
+    "domain": "nitrode.com",
+    "slug": "nitrode",
+    "founderFirstName": "ben",
+    "email": "ben@nitrode.com"
+  },
+  {
+    "name": "Karsa",
+    "domain": "gokarsa.com",
+    "slug": "karsa",
+    "founderFirstName": "shahryar",
+    "email": "shahryar@gokarsa.com"
+  },
+  {
+    "name": "Exla",
+    "domain": "exla.ai",
+    "slug": "exla",
+    "founderFirstName": "pranav",
+    "email": "pranav@exla.ai"
+  },
+  {
+    "name": "Riviera",
+    "domain": "withriviera.com",
+    "slug": "riviera",
+    "founderFirstName": "shaun",
+    "email": "shaun@withriviera.com"
+  },
+  {
+    "name": "Vovana",
+    "domain": "vovana.com",
+    "slug": "vovana",
+    "founderFirstName": "charlie",
+    "email": "charlie@vovana.com"
+  },
+  {
+    "name": "Agentin AI",
+    "domain": "agentin.ai",
+    "slug": "agentin-ai",
+    "founderFirstName": "sankeerth",
+    "email": "sankeerth@agentin.ai"
+  },
+  {
+    "name": "ReJot",
+    "domain": "rejot.dev",
+    "slug": "rejot",
+    "founderFirstName": "wilco",
+    "email": "wilco@rejot.dev"
+  },
+  {
+    "name": "General Trajectory",
+    "domain": "generaltrajectory.com",
+    "slug": "general-trajectory",
+    "founderFirstName": "joshua",
+    "email": "joshua@generaltrajectory.com"
+  },
+  {
+    "name": "SolidRoad",
+    "domain": "solidroad.com",
+    "slug": "solidroad",
+    "founderFirstName": "mark",
+    "email": "mark@solidroad.com"
+  },
+  {
+    "name": "Trata",
+    "domain": "trytrata.com",
+    "slug": "trata",
+    "founderFirstName": "eric",
+    "email": "eric@trytrata.com"
+  },
+  {
+    "name": "Sophris",
+    "domain": "sophris.ai",
+    "slug": "sophris",
+    "founderFirstName": "ansh",
+    "email": "ansh@sophris.ai"
+  },
+  {
+    "name": "Lucidic AI",
+    "domain": "lucidic.ai",
+    "slug": "lucidic-ai",
+    "founderFirstName": "abhinav",
+    "email": "abhinav@lucidic.ai"
+  },
+  {
+    "name": "Mundo AI",
+    "domain": "mundoai.world",
+    "slug": "mundo-ai",
+    "founderFirstName": "naijide",
+    "email": "naijide@mundoai.world"
+  },
+  {
+    "name": "AthenaHQ",
+    "domain": "athenahq.ai",
+    "slug": "athenahq",
+    "founderFirstName": "alan",
+    "email": "alan@athenahq.ai"
+  },
+  {
+    "name": "Lopus AI",
+    "domain": "lopus.ai",
+    "slug": "lopus-ai",
+    "founderFirstName": "aamish",
+    "email": "aamish@lopus.ai"
+  },
+  {
+    "name": "Cenote",
+    "domain": "joincenote.com",
+    "slug": "cenote",
+    "founderFirstName": "kofi",
+    "email": "kofi@joincenote.com"
+  },
+  {
+    "name": "Harbera",
+    "domain": "harbera.com",
+    "slug": "harbera",
+    "founderFirstName": "sophia",
+    "email": "sophia@harbera.com"
+  },
+  {
+    "name": "Augento",
+    "domain": "augento.ai",
+    "slug": "augento",
+    "founderFirstName": "linus",
+    "email": "linus@augento.ai"
+  },
+  {
+    "name": "Gale",
+    "domain": "galevisa.com",
+    "slug": "gale",
+    "founderFirstName": "haokun",
+    "email": "haokun@galevisa.com"
+  },
+  {
+    "name": "Pave Robotics",
+    "domain": "pave-robotics.com",
+    "slug": "pave-robotics",
+    "founderFirstName": "josh",
+    "email": "josh@pave-robotics.com"
+  },
+  {
+    "name": "Olive",
+    "domain": "fromolive.com",
+    "slug": "olive",
+    "founderFirstName": "bardia",
+    "email": "bardia@fromolive.com"
+  },
+  {
+    "name": "HUD",
+    "domain": "hud.so",
+    "slug": "hud",
+    "founderFirstName": "jay",
+    "email": "jay@hud.so"
+  },
+  {
+    "name": "Cuckoo Labs",
+    "domain": "cuckoo.so",
+    "slug": "cuckoo-labs",
+    "founderFirstName": "yong",
+    "email": "yong@cuckoo.so"
+  },
+  {
+    "name": "Mecha Health",
+    "domain": "mecha-health.ai",
+    "slug": "mecha-health",
+    "founderFirstName": "ahmed",
+    "email": "ahmed@mecha-health.ai"
+  },
+  {
+    "name": "GradeWiz",
+    "domain": "gradewiz.ai",
+    "slug": "gradewiz",
+    "founderFirstName": "max",
+    "email": "max@gradewiz.ai"
+  },
+  {
+    "name": "HealthKey",
+    "domain": "gethealthkey.com",
+    "slug": "healthkey",
+    "founderFirstName": "josh",
+    "email": "josh@gethealthkey.com"
+  },
+  {
+    "name": "Mosaic",
+    "domain": "mosaicco.com",
+    "slug": "mosaic",
+    "founderFirstName": "moses",
+    "email": "moses@mosaicco.com"
+  },
+  {
+    "name": "ZeroEntropy",
+    "domain": "zeroentropy.dev",
+    "slug": "zeroentropy",
+    "founderFirstName": "ghita",
+    "email": "ghita@zeroentropy.dev"
+  },
+  {
+    "name": "Cardamon",
+    "domain": "cardamon.ai",
+    "slug": "cardamon",
+    "founderFirstName": "areg",
+    "email": "areg@cardamon.ai"
+  },
+  {
+    "name": "Amby Health",
+    "domain": "tryamby.com",
+    "slug": "amby-health",
+    "founderFirstName": "yos",
+    "email": "yos@tryamby.com"
+  },
+  {
+    "name": "careCycle",
+    "domain": "carecycle.ai",
+    "slug": "carecycle",
+    "founderFirstName": "alex",
+    "email": "alex@carecycle.ai"
+  },
+  {
+    "name": "Sift Dev",
+    "domain": "heysift.com",
+    "slug": "sift-dev",
+    "founderFirstName": "ishir",
+    "email": "ishir@heysift.com"
+  },
+  {
+    "name": "Maive",
+    "domain": "maive.ai",
+    "slug": "maive",
+    "founderFirstName": "david",
+    "email": "david@maive.ai"
+  },
+  {
+    "name": "Caseflood",
+    "domain": "caseflood.ai",
+    "slug": "caseflood",
+    "founderFirstName": "ethan",
+    "email": "ethan@caseflood.ai"
+  },
+  {
+    "name": "Tejas AI",
+    "domain": "trytejas.ai",
+    "slug": "tejas-ai",
+    "founderFirstName": "gaurav",
+    "email": "gaurav@trytejas.ai"
+  },
+  {
+    "name": "Vora AI",
+    "domain": "usevora.ai",
+    "slug": "vora-ai",
+    "founderFirstName": "pushkar",
+    "email": "pushkar@usevora.ai"
+  },
+  {
+    "name": "Maritime Fusion",
+    "domain": "maritimefusion.com",
+    "slug": "maritime-fusion",
+    "founderFirstName": "justin",
+    "email": "justin@maritimefusion.com"
+  },
+  {
+    "name": "A1Base",
+    "domain": "a1base.com",
+    "slug": "a1base",
+    "founderFirstName": "pasha",
+    "email": "pasha@a1base.com"
+  },
+  {
+    "name": "Verbiflow",
+    "domain": "verbiflow.com",
+    "slug": "verbiflow",
+    "founderFirstName": "kashyab",
+    "email": "kashyab@verbiflow.com"
+  },
+  {
+    "name": "Toothy AI",
+    "domain": "toothy.ai",
+    "slug": "toothy-ai",
+    "founderFirstName": "johnny",
+    "email": "johnny@toothy.ai"
+  },
+  {
+    "name": "Rocketable",
+    "domain": "rocketable.com",
+    "slug": "rocketable",
+    "founderFirstName": "alan",
+    "email": "alan@rocketable.com"
+  },
+  {
+    "name": "Sublingual",
+    "domain": "sublingual.ai",
+    "slug": "sublingual",
+    "founderFirstName": "dylan",
+    "email": "dylan@sublingual.ai"
+  },
+  {
+    "name": "Contrario",
+    "domain": "contrario.ai",
+    "slug": "contrario",
+    "founderFirstName": "aditya",
+    "email": "aditya@contrario.ai"
+  },
+  {
+    "name": "Ovlo",
+    "domain": "ovlo.ai",
+    "slug": "ovlo",
+    "founderFirstName": "andrew",
+    "email": "andrew@ovlo.ai"
+  },
+  {
+    "name": "Truffle AI",
+    "domain": "trytruffle.ai",
+    "slug": "truffle-ai",
+    "founderFirstName": "shaunak",
+    "email": "shaunak@trytruffle.ai"
+  },
+  {
+    "name": "superglue",
+    "domain": "superglue.ai",
+    "slug": "superglue",
+    "founderFirstName": "adina",
+    "email": "adina@superglue.ai"
+  },
+  {
+    "name": "Closure",
+    "domain": "closure-intel.com",
+    "slug": "closure",
+    "founderFirstName": "aaron",
+    "email": "aaron@closure-intel.com"
+  },
+  {
+    "name": "Promptless",
+    "domain": "gopromptless.ai",
+    "slug": "promptless",
+    "founderFirstName": "prithvi",
+    "email": "prithvi@gopromptless.ai"
+  },
+  {
+    "name": "Scout",
+    "domain": "scoutforschools.com",
+    "slug": "scout",
+    "founderFirstName": "pranav",
+    "email": "pranav@scoutforschools.com"
+  },
+  {
+    "name": "Subtrace",
+    "domain": "subtrace.dev",
+    "slug": "subtrace",
+    "founderFirstName": "adhityaa",
+    "email": "adhityaa@subtrace.dev"
+  },
+  {
+    "name": "Vocality Health",
+    "domain": "vocalityhealth.com",
+    "slug": "vocality-health",
+    "founderFirstName": "brogan",
+    "email": "brogan@vocalityhealth.com"
+  },
+  {
+    "name": "Astro",
+    "domain": "astroenergy.ai",
+    "slug": "astro",
+    "founderFirstName": "alex",
+    "email": "alex@astroenergy.ai"
+  },
+  {
+    "name": "Dollyglot",
+    "domain": "dollyglot.com",
+    "slug": "dollyglot",
+    "founderFirstName": "thomas",
+    "email": "thomas@dollyglot.com"
+  },
+  {
+    "name": "Stamp",
+    "domain": "stampmail.ai",
+    "slug": "stamp",
+    "founderFirstName": "archit",
+    "email": "archit@stampmail.ai"
+  },
+  {
+    "name": "Guse",
+    "domain": "guse.io",
+    "slug": "guse",
+    "founderFirstName": "kevin",
+    "email": "kevin@guse.io"
+  },
+  {
+    "name": "SubImage",
+    "domain": "subimage.io",
+    "slug": "subimage",
+    "founderFirstName": "alex",
+    "email": "alex@subimage.io"
+  },
+  {
+    "name": "NextByte",
+    "domain": "nextbyte.ai",
+    "slug": "nextbyte",
+    "founderFirstName": "jason",
+    "email": "jason@nextbyte.ai"
+  },
+  {
+    "name": "Leaping AI",
+    "domain": "leapingai.com",
+    "slug": "leaping-ai",
+    "founderFirstName": "kevin",
+    "email": "kevin@leapingai.com"
+  },
+  {
+    "name": "Bild AI",
+    "domain": "bild.ai",
+    "slug": "bild-ai",
+    "founderFirstName": "roop",
+    "email": "roop@bild.ai"
+  }
+]

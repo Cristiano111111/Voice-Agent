@@ -1,0 +1,26 @@
+{
+  "sources": {
+    "yelp": {
+      "baseUrl": "https://www.yelp.com/search",
+      "enabled": true,
+      "rateLimit": 2000
+    },
+    "yellowpages": {
+      "baseUrl": "https://www.yellowpages.com/search",
+      "enabled": true,
+      "rateLimit": 2000
+    },
+    "manta": {
+      "baseUrl": "https://www.manta.com/search",
+      "enabled": false,
+      "rateLimit": 3000
+    }
+  },
+  "globalSettings": {
+    "defaultMaxResults": 30,
+    "requestTimeout": 10000,
+    "respectRobotsTxt": true,
+    "retryAttempts": 2,
+    "retryDelay": 1500
+  }
+}

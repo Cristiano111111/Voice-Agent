@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>ARX AI — 8s Motion Graphic</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body {
+  width:100vw; height:100vh; overflow:hidden;
+  background:#000;
+  font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  display:flex; align-items:center; justify-content:center;
+}
+
+/* 16:9 wrapper — scales to fill viewport while keeping ratio */
+#stage {
+  position:relative;
+  width:100vw;
+  height:calc(100vw * 9 / 16);
+  max-height:100vh;
+  max-width:calc(100vh * 16 / 9);
+  overflow:hidden;
+  background:#000;
+}
+
+/* ── Canvas layers ── */
+#bgCanvas  { position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; }
+#fxCanvas  { position:absolute; top:0; left:0; width:100%; height:100%; z-index:3; pointer-events:none; }
+
+/* ── Main UI layer ── */
+#ui {
+  position:absolute; top:0; left:0; z-index:2;
+  width:100%; height:100%;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:0;
+}
+
+/* ── SCENE 1: Logo reveal ── */
+.logo-row {
+  display:flex; align-items:center; gap:18px;
+  opacity:0;
+}
+.logo-row.show { animation: logoIn 0.7s cubic-bezier(.16,1,.3,1) forwards; }
+@keyframes logoIn {
+  from { opacity:0; transform:scale(0.7) translateY(30px); filter:blur(12px); }
+  to   { opacity:1; transform:scale(1)   translateY(0);    filter:blur(0);    }
+}
+
+.hexagon {
+  width:70px; height:70px;
+  position:relative;
+}
+.hexagon svg { width:100%; height:100%; }
+
+.brand {
+  font-size:80px; font-weight:900; letter-spacing:10px; text-transform:uppercase; line-height:1;
+  background:linear-gradient(120deg,#fff 0%,#00d4ff 45%,#8b5cf6 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  filter:drop-shadow(0 0 40px rgba(0,212,255,.5));
+}
+
+/* ── SCENE 2: Slash line ── */
+.slash-line {
+  width:0; height:2px; margin:24px 0 22px;
+  background:linear-gradient(90deg,transparent,#00d4ff,#8b5cf6,transparent);
+  opacity:0;
+}
+.slash-line.show {
+  animation: slashIn 0.6s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes slashIn {
+  from { width:0;    opacity:0; }
+  to   { width:560px; opacity:1; }
+}
+
+/* ── SCENE 3: Tagline ── */
+.tagline {
+  font-size:19px; letter-spacing:5px; text-transform:uppercase;
+  color:rgba(255,255,255,0); font-weight:400;
+  white-space:nowrap; overflow:hidden;
+}
+.tagline.show { animation: tagIn 0.8s ease forwards; }
+@keyframes tagIn {
+  from { color:rgba(255,255,255,0); letter-spacing:16px; }
+  to   { color:rgba(255,255,255,.8); letter-spacing:5px; }
+}
+.tagline .accent { color:#00d4ff; font-weight:700; }
+
+/* ── SCENE 4: Waveform ── */
+.waveform {
+  display:flex; align-items:center; gap:5px;
+  height:60px; margin-top:36px; opacity:0;
+}
+.waveform.show { animation: fadeUp 0.5s ease forwards; }
+.bar {
+  width:4px; border-radius:4px;
+  background:linear-gradient(180deg,#00d4ff,#8b5cf6);
+  box-shadow:0 0 8px rgba(0,212,255,.6);
+  height:6px;
+}
+.bar.animate {
+  animation: waveAnim var(--dur) ease-in-out var(--del) infinite alternate;
+}
+@keyframes waveAnim {
+  from { height:6px; opacity:.4; }
+  to   { height:var(--h); opacity:1; }
+}
+
+/* ── SCENE 5: Pills ── */
+.pills {
+  display:flex; gap:16px; margin-top:28px; opacity:0;
+}
+.pills.show { animation: fadeUp 0.6s ease forwards; }
+.pill {
+  padding:9px 24px; border-radius:100px; font-size:12px; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase;
+  border:1px solid rgba(0,212,255,.35);
+  background:rgba(0,212,255,.07); color:rgba(255,255,255,.75);
+  backdrop-filter:blur(8px);
+  transform:translateY(20px); opacity:0;
+}
+.pill.pop { animation: pillPop 0.5s cubic-bezier(.22,1,.36,1) var(--pd) forwards; }
+@keyframes pillPop {
+  from { transform:translateY(20px); opacity:0; }
+  to   { transform:translateY(0);    opacity:1; }
+}
+
+/* ── SCENE 6: Live badge ── */
+.badge {
+  display:flex; align-items:center; gap:9px; margin-top:28px;
+  padding:10px 26px; border-radius:100px;
+  border:1px solid rgba(0,212,255,.3);
+  background:rgba(0,212,255,.05);
+  opacity:0;
+}
+.badge.show { animation: fadeUp 0.5s ease forwards; }
+.dot { width:9px; height:9px; border-radius:50%; background:#00d4ff;
+       box-shadow:0 0 12px #00d4ff; animation:blink 1.3s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+.badge-txt { font-size:12px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.6); }
+
+/* ── URL ── */
+.url-tag {
+  position:absolute; bottom:30px;
+  font-size:12px; letter-spacing:4px; text-transform:uppercase;
+  color:rgba(255,255,255,.2); opacity:0;
+}
+.url-tag.show { animation: fadeUp 0.6s ease forwards; }
+
+/* ── Outro overlay ── */
+#outro {
+  position:absolute; top:0; left:0; z-index:20;
+  width:1280px; height:720px;
+  background:#000; opacity:0; pointer-events:none;
+}
+#outro.fadeout { animation: outroFade 0.7s ease forwards; }
+@keyframes outroFade { from{opacity:0} to{opacity:1} }
+
+/* ── Shared ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<canvas id="bgCanvas"></canvas>
+
+<div id="ui">
+  <!-- Logo -->
+  <div class="logo-row" id="logoRow">
+    <div class="hexagon">
+      <svg viewBox="0 0 70 70" fill="none">
+        <polygon points="35,4 64,19 64,51 35,66 6,51 6,19"
+          stroke="url(#hg)" stroke-width="1.8" fill="none"/>
+        <path d="M22 45 L35 22 L48 45" stroke="url(#hg)" stroke-width="3"
+          stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="26" y1="37" x2="44" y2="37" stroke="url(#hg)" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="35" cy="22" r="3.5" fill="#00d4ff"/>
+        <defs>
+          <linearGradient id="hg" x1="6" y1="4" x2="64" y2="66" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00d4ff"/>
+            <stop offset="1" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="brand">ARX AI</div>
+  </div>
+
+  <!-- Divider -->
+  <div class="slash-line" id="slashLine"></div>
+
+  <!-- Tagline -->
+  <div class="tagline" id="tagline">
+    <span class="accent">24/7</span> AI Voice Agents for Your Business
+  </div>
+
+  <!-- Waveform -->
+  <div class="waveform" id="waveform"></div>
+
+  <!-- Pills -->
+  <div class="pills" id="pills">
+    <div class="pill" style="--pd:0s">Voice AI</div>
+    <div class="pill" style="--pd:0.12s">24/7 Availability</div>
+    <div class="pill" style="--pd:0.24s">Business Automation</div>
+    <div class="pill" style="--pd:0.36s">Always Intelligent</div>
+  </div>
+
+  <!-- Badge -->
+  <div class="badge" id="badge">
+    <div class="dot"></div>
+    <div class="badge-txt">Live &nbsp;·&nbsp; Autonomous &nbsp;·&nbsp; Scalable</div>
+  </div>
+
+  <!-- URL -->
+  <div class="url-tag" id="urlTag">arxai.us</div>
+</div>
+
+<canvas id="fxCanvas"></canvas>
+<div id="outro"></div>
+
+</div><!-- /#stage -->
+
+<script>
+// ── Timeline (seconds) ───────────────────────────────────────────────────────
+const T = {
+  logoIn:    0.4,
+  slashIn:   1.2,
+  taglineIn: 1.9,
+  waveIn:    2.7,
+  pillsIn:   3.8,
+  badgeIn:   4.8,
+  urlIn:     5.6,
+  outroAt:   7.3,
+};
+
+const start = performance.now();
+
+function elapsed() { return (performance.now() - start) / 1000; }
+
+function at(t, fn) {
+  const check = () => {
+    if (elapsed() >= t) fn();
+    else requestAnimationFrame(check);
+  };
+  requestAnimationFrame(check);
+}
+
+// ── Trigger scene elements ───────────────────────────────────────────────────
+at(T.logoIn,    () => document.getElementById('logoRow').classList.add('show'));
+at(T.slashIn,   () => document.getElementById('slashLine').classList.add('show'));
+at(T.taglineIn, () => document.getElementById('tagline').classList.add('show'));
+at(T.waveIn,    () => {
+  const wf = document.getElementById('waveform');
+  wf.classList.add('show');
+  const hs = [8,14,22,34,50,44,38,54,46,32,54,42,30,20,10,
+               8,14,22,34,50,44,38,54,46,32,54,42,30,20,10];
+  hs.forEach(h => {
+    const b = document.createElement('div');
+    b.className = 'bar animate';
+    b.style.cssText = `--h:${h}px;--dur:${(.55+Math.random()*.7).toFixed(2)}s;--del:${(Math.random()*.5).toFixed(2)}s`;
+    wf.appendChild(b);
+  });
+});
+at(T.pillsIn, () => {
+  document.getElementById('pills').classList.add('show');
+  document.querySelectorAll('.pill').forEach(p => p.classList.add('pop'));
+});
+at(T.badgeIn, () => document.getElementById('badge').classList.add('show'));
+at(T.urlIn,   () => document.getElementById('urlTag').classList.add('show'));
+at(T.outroAt, () => document.getElementById('outro').classList.add('fadeout'));
+
+// ── Background: neural net + radial glow ────────────────────────────────────
+const bgC  = document.getElementById('bgCanvas');
+const bgX  = bgC.getContext('2d');
+const fxC  = document.getElementById('fxCanvas');
+const fxX2 = fxC.getContext('2d');
+const stage = document.getElementById('stage');
+
+function getSize() {
+  return { W: stage.clientWidth, H: stage.clientHeight };
+}
+function resizeCanvases() {
+  const {W,H} = getSize();
+  bgC.width = W; bgC.height = H;
+  fxC.width = W; fxC.height = H;
+}
+resizeCanvases();
+window.addEventListener('resize', resizeCanvases);
+
+let { W, H } = getSize();
+
+const NODES = 80;
+const DIST  = 140;
+const pts   = Array.from({length:NODES}, () => ({
+  x: Math.random()*W, y: Math.random()*H,
+  vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
+  r: Math.random()*1.6+.5,
+}));
+
+function drawBg() {
+  const {W,H} = getSize();
+  const cx = W/2, cy = H/2;
+  bgX.clearRect(0,0,W,H);
+
+  // Radial glow
+  const t = elapsed();
+  const pulse = 0.12 + Math.sin(t*1.2)*0.04;
+  const grd = bgX.createRadialGradient(cx,cy,0, cx,cy,H*0.58);
+  grd.addColorStop(0,   `rgba(0,80,120,${pulse})`);
+  grd.addColorStop(0.5, `rgba(60,20,120,${pulse*0.5})`);
+  grd.addColorStop(1,   'rgba(0,0,0,0)');
+  bgX.fillStyle = grd;
+  bgX.fillRect(0,0,W,H);
+
+  // Move nodes
+  pts.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    if(p.x<0||p.x>W) p.vx*=-1;
+    if(p.y<0||p.y>H) p.vy*=-1;
+  });
+
+  // Lines
+  for(let i=0;i<pts.length;i++) {
+    for(let j=i+1;j<pts.length;j++) {
+      const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<DIST) {
+        const a=(1-d/DIST)*0.22;
+        bgX.beginPath();
+        bgX.moveTo(pts[i].x,pts[i].y);
+        bgX.lineTo(pts[j].x,pts[j].y);
+        bgX.strokeStyle=`rgba(0,200,255,${a})`;
+        bgX.lineWidth=0.8;
+        bgX.stroke();
+      }
+    }
+  }
+
+  // Dots
+  pts.forEach(p => {
+    bgX.beginPath();
+    bgX.arc(p.x,p.y,p.r,0,Math.PI*2);
+    bgX.fillStyle='rgba(0,210,255,.55)';
+    bgX.fill();
+  });
+
+  if(elapsed() < 8.5) requestAnimationFrame(drawBg);
+}
+drawBg();
+
+// ── FX Canvas: scan line + vignette ──────────────────────────────────────────
+const fxX = fxX2;
+
+function drawFX() {
+  const {W,H} = getSize();
+  const cx = W/2, cy = H/2;
+  fxX.clearRect(0,0,W,H);
+
+  // Vignette
+  const vig = fxX.createRadialGradient(cx,cy,H*0.28, cx,cy,H*1.05);
+  vig.addColorStop(0,'rgba(0,0,0,0)');
+  vig.addColorStop(1,'rgba(0,0,0,0.72)');
+  fxX.fillStyle=vig;
+  fxX.fillRect(0,0,W,H);
+
+  // Subtle scan line sweep
+  const t = elapsed();
+  const sy = ((t * 0.15) % 1) * H;
+  const sl = fxX.createLinearGradient(0,sy-40,0,sy+40);
+  sl.addColorStop(0,'rgba(0,220,255,0)');
+  sl.addColorStop(0.5,'rgba(0,220,255,0.035)');
+  sl.addColorStop(1,'rgba(0,220,255,0)');
+  fxX.fillStyle=sl;
+  fxX.fillRect(0,sy-40,W,80);
+
+  if(elapsed() < 8.5) requestAnimationFrame(drawFX);
+}
+drawFX();
+</script>
+</body>
+</html>

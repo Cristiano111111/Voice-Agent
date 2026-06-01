@@ -1,0 +1,506 @@
+{
+  "date": "2026-05-18",
+  "sent": 100,
+  "log": [
+    {
+      "to": "hello@redbarnrobotics.com",
+      "subject": "Quick brand video idea for Red Barn Robotics",
+      "sentAt": "2026-05-18T20:44:43.618Z"
+    },
+    {
+      "to": "hello@mentra.glass",
+      "subject": "Quick brand video idea for Mentra",
+      "sentAt": "2026-05-18T20:44:45.722Z"
+    },
+    {
+      "to": "hello@blindpay.com",
+      "subject": "Quick brand video idea for BlindPay",
+      "sentAt": "2026-05-18T20:44:47.821Z"
+    },
+    {
+      "to": "hello@vantel.ai",
+      "subject": "Quick brand video idea for Vantel",
+      "sentAt": "2026-05-18T20:44:49.924Z"
+    },
+    {
+      "to": "hello@firaresearch.com",
+      "subject": "Quick brand video idea for Fira",
+      "sentAt": "2026-05-18T20:44:52.142Z"
+    },
+    {
+      "to": "hello@assistant-ui.com",
+      "subject": "Quick brand video idea for assistant-ui",
+      "sentAt": "2026-05-18T20:44:54.233Z"
+    },
+    {
+      "to": "hello@artifact.engineer",
+      "subject": "Quick brand video idea for Artifact",
+      "sentAt": "2026-05-18T20:44:56.330Z"
+    },
+    {
+      "to": "hello@axal.ai",
+      "subject": "Quick brand video idea for Axal",
+      "sentAt": "2026-05-18T20:44:58.456Z"
+    },
+    {
+      "to": "hello@getdexterity.com",
+      "subject": "Quick brand video idea for Dexterity",
+      "sentAt": "2026-05-18T20:45:00.576Z"
+    },
+    {
+      "to": "hello@tallyhq.com",
+      "subject": "Quick brand video idea for Tally",
+      "sentAt": "2026-05-18T20:45:02.783Z"
+    },
+    {
+      "to": "hello@sammylabs.com",
+      "subject": "Quick brand video idea for Sammy Labs",
+      "sentAt": "2026-05-18T20:45:04.885Z"
+    },
+    {
+      "to": "hello@instinct-space.com",
+      "subject": "Quick brand video idea for Instinct",
+      "sentAt": "2026-05-18T20:45:07.087Z"
+    },
+    {
+      "to": "hello@mercura.ai",
+      "subject": "Quick brand video idea for Mercura",
+      "sentAt": "2026-05-18T20:45:09.238Z"
+    },
+    {
+      "to": "hello@tamlabs.ai",
+      "subject": "Quick brand video idea for TamLabs",
+      "sentAt": "2026-05-18T20:45:11.490Z"
+    },
+    {
+      "to": "hello@runcopycat.com",
+      "subject": "Quick brand video idea for CopyCat",
+      "sentAt": "2026-05-18T20:45:13.580Z"
+    },
+    {
+      "to": "hello@paratushealth.com",
+      "subject": "Quick brand video idea for Paratus Health",
+      "sentAt": "2026-05-18T20:45:15.686Z"
+    },
+    {
+      "to": "hello@tensorpool.dev",
+      "subject": "Quick brand video idea for TensorPool",
+      "sentAt": "2026-05-18T20:45:17.784Z"
+    },
+    {
+      "to": "hello@dalus.io",
+      "subject": "Quick brand video idea for Dalus",
+      "sentAt": "2026-05-18T20:45:19.887Z"
+    },
+    {
+      "to": "hello@rebolt.ai",
+      "subject": "Quick brand video idea for Rebolt",
+      "sentAt": "2026-05-18T20:45:21.989Z"
+    },
+    {
+      "to": "hello@spott.io",
+      "subject": "Quick brand video idea for Spott",
+      "sentAt": "2026-05-18T20:45:24.188Z"
+    },
+    {
+      "to": "hello@withwoz.com",
+      "subject": "Quick brand video idea for Woz",
+      "sentAt": "2026-05-18T20:45:26.286Z"
+    },
+    {
+      "to": "hello@proception.ai",
+      "subject": "Quick brand video idea for Proception",
+      "sentAt": "2026-05-18T20:45:28.381Z"
+    },
+    {
+      "to": "hello@joindemeter.com",
+      "subject": "Quick brand video idea for Demeter",
+      "sentAt": "2026-05-18T20:45:30.472Z"
+    },
+    {
+      "to": "hello@wild-card.ai",
+      "subject": "Quick brand video idea for Wildcard",
+      "sentAt": "2026-05-18T20:45:32.571Z"
+    },
+    {
+      "to": "hello@permitify.com",
+      "subject": "Quick brand video idea for Permitify",
+      "sentAt": "2026-05-18T20:45:34.653Z"
+    },
+    {
+      "to": "hello@reditus.space",
+      "subject": "Quick brand video idea for Reditus Space",
+      "sentAt": "2026-05-18T20:45:36.748Z"
+    },
+    {
+      "to": "hello@startpinch.com",
+      "subject": "Quick brand video idea for Pinch",
+      "sentAt": "2026-05-18T20:45:38.848Z"
+    },
+    {
+      "to": "hello@retrofit.shop",
+      "subject": "Quick brand video idea for Retrofit",
+      "sentAt": "2026-05-18T20:45:40.936Z"
+    },
+    {
+      "to": "hello@archon.inc",
+      "subject": "Quick brand video idea for Archon",
+      "sentAt": "2026-05-18T20:45:43.012Z"
+    },
+    {
+      "to": "hello@mastra.ai",
+      "subject": "Quick brand video idea for Mastra",
+      "sentAt": "2026-05-18T20:45:45.383Z"
+    },
+    {
+      "to": "hello@afterquery.com",
+      "subject": "Quick brand video idea for AfterQuery",
+      "sentAt": "2026-05-18T20:45:47.492Z"
+    },
+    {
+      "to": "hello@fuse.ai",
+      "subject": "Quick brand video idea for Fuse AI",
+      "sentAt": "2026-05-18T20:45:49.596Z"
+    },
+    {
+      "to": "hello@miyagilabs.ai",
+      "subject": "Quick brand video idea for Miyagi Labs",
+      "sentAt": "2026-05-18T20:45:51.681Z"
+    },
+    {
+      "to": "hello@triplezip.ai",
+      "subject": "Quick brand video idea for TripleZip",
+      "sentAt": "2026-05-18T20:45:53.762Z"
+    },
+    {
+      "to": "hello@usepeppr.ai",
+      "subject": "Quick brand video idea for Peppr",
+      "sentAt": "2026-05-18T20:45:55.849Z"
+    },
+    {
+      "to": "hello@sennu.ai",
+      "subject": "Quick brand video idea for Sennu AI",
+      "sentAt": "2026-05-18T20:45:57.990Z"
+    },
+    {
+      "to": "hello@orbitalops.tech",
+      "subject": "Quick brand video idea for Orbital Operations",
+      "sentAt": "2026-05-18T20:46:00.107Z"
+    },
+    {
+      "to": "hello@usemesh.com",
+      "subject": "Quick brand video idea for Mesh",
+      "sentAt": "2026-05-18T20:46:02.219Z"
+    },
+    {
+      "to": "hello@outlit.ai",
+      "subject": "Quick brand video idea for Outlit",
+      "sentAt": "2026-05-18T20:46:04.315Z"
+    },
+    {
+      "to": "hello@harperinsure.com",
+      "subject": "Quick brand video idea for Harper",
+      "sentAt": "2026-05-18T20:46:06.401Z"
+    },
+    {
+      "to": "hello@calltree.ai",
+      "subject": "Quick brand video idea for Calltree AI",
+      "sentAt": "2026-05-18T20:46:08.510Z"
+    },
+    {
+      "to": "hello@nitrode.com",
+      "subject": "Quick brand video idea for Nitrode",
+      "sentAt": "2026-05-18T20:46:10.596Z"
+    },
+    {
+      "to": "hello@gokarsa.com",
+      "subject": "Quick brand video idea for Karsa",
+      "sentAt": "2026-05-18T20:46:12.714Z"
+    },
+    {
+      "to": "hello@exla.ai",
+      "subject": "Quick brand video idea for Exla",
+      "sentAt": "2026-05-18T20:46:14.809Z"
+    },
+    {
+      "to": "hello@withriviera.com",
+      "subject": "Quick brand video idea for Riviera",
+      "sentAt": "2026-05-18T20:46:16.902Z"
+    },
+    {
+      "to": "hello@vovana.com",
+      "subject": "Quick brand video idea for Vovana",
+      "sentAt": "2026-05-18T20:46:18.984Z"
+    },
+    {
+      "to": "hello@agentin.ai",
+      "subject": "Quick brand video idea for Agentin AI",
+      "sentAt": "2026-05-18T20:46:21.068Z"
+    },
+    {
+      "to": "hello@rejot.dev",
+      "subject": "Quick brand video idea for ReJot",
+      "sentAt": "2026-05-18T20:46:23.162Z"
+    },
+    {
+      "to": "hello@generaltrajectory.com",
+      "subject": "Quick brand video idea for General Trajectory",
+      "sentAt": "2026-05-18T20:46:25.241Z"
+    },
+    {
+      "to": "hello@solidroad.com",
+      "subject": "Quick brand video idea for SolidRoad",
+      "sentAt": "2026-05-18T20:46:27.353Z"
+    },
+    {
+      "to": "hello@trytrata.com",
+      "subject": "Quick brand video idea for Trata",
+      "sentAt": "2026-05-18T20:46:29.461Z"
+    },
+    {
+      "to": "hello@sophris.ai",
+      "subject": "Quick brand video idea for Sophris",
+      "sentAt": "2026-05-18T20:46:31.554Z"
+    },
+    {
+      "to": "hello@lucidic.ai",
+      "subject": "Quick brand video idea for Lucidic AI",
+      "sentAt": "2026-05-18T20:46:33.637Z"
+    },
+    {
+      "to": "hello@mundoai.world",
+      "subject": "Quick brand video idea for Mundo AI",
+      "sentAt": "2026-05-18T20:46:35.872Z"
+    },
+    {
+      "to": "hello@athenahq.ai",
+      "subject": "Quick brand video idea for AthenaHQ",
+      "sentAt": "2026-05-18T20:46:38.017Z"
+    },
+    {
+      "to": "hello@lopus.ai",
+      "subject": "Quick brand video idea for Lopus AI",
+      "sentAt": "2026-05-18T20:46:40.124Z"
+    },
+    {
+      "to": "hello@joincenote.com",
+      "subject": "Quick brand video idea for Cenote",
+      "sentAt": "2026-05-18T20:46:42.212Z"
+    },
+    {
+      "to": "hello@harbera.com",
+      "subject": "Quick brand video idea for Harbera",
+      "sentAt": "2026-05-18T20:46:44.311Z"
+    },
+    {
+      "to": "hello@augento.ai",
+      "subject": "Quick brand video idea for Augento",
+      "sentAt": "2026-05-18T20:46:46.423Z"
+    },
+    {
+      "to": "hello@galevisa.com",
+      "subject": "Quick brand video idea for Gale",
+      "sentAt": "2026-05-18T20:46:48.534Z"
+    },
+    {
+      "to": "hello@pave-robotics.com",
+      "subject": "Quick brand video idea for Pave Robotics",
+      "sentAt": "2026-05-18T20:46:50.617Z"
+    },
+    {
+      "to": "hello@fromolive.com",
+      "subject": "Quick brand video idea for Olive",
+      "sentAt": "2026-05-18T20:46:52.764Z"
+    },
+    {
+      "to": "hello@hud.so",
+      "subject": "Quick brand video idea for HUD",
+      "sentAt": "2026-05-18T20:46:54.883Z"
+    },
+    {
+      "to": "hello@cuckoo.so",
+      "subject": "Quick brand video idea for Cuckoo Labs",
+      "sentAt": "2026-05-18T20:46:56.987Z"
+    },
+    {
+      "to": "hello@mecha-health.ai",
+      "subject": "Quick brand video idea for Mecha Health",
+      "sentAt": "2026-05-18T20:46:59.130Z"
+    },
+    {
+      "to": "hello@gradewiz.ai",
+      "subject": "Quick brand video idea for GradeWiz",
+      "sentAt": "2026-05-18T20:47:01.364Z"
+    },
+    {
+      "to": "hello@gethealthkey.com",
+      "subject": "Quick brand video idea for HealthKey",
+      "sentAt": "2026-05-18T20:47:03.477Z"
+    },
+    {
+      "to": "hello@mosaicco.com",
+      "subject": "Quick brand video idea for Mosaic",
+      "sentAt": "2026-05-18T20:47:05.599Z"
+    },
+    {
+      "to": "hello@zeroentropy.dev",
+      "subject": "Quick brand video idea for ZeroEntropy",
+      "sentAt": "2026-05-18T20:47:07.746Z"
+    },
+    {
+      "to": "hello@cardamon.ai",
+      "subject": "Quick brand video idea for Cardamon",
+      "sentAt": "2026-05-18T20:47:09.906Z"
+    },
+    {
+      "to": "hello@tryamby.com",
+      "subject": "Quick brand video idea for Amby Health",
+      "sentAt": "2026-05-18T20:47:12.059Z"
+    },
+    {
+      "to": "hello@carecycle.ai",
+      "subject": "Quick brand video idea for careCycle",
+      "sentAt": "2026-05-18T20:47:14.150Z"
+    },
+    {
+      "to": "hello@heysift.com",
+      "subject": "Quick brand video idea for Sift Dev",
+      "sentAt": "2026-05-18T20:47:16.256Z"
+    },
+    {
+      "to": "hello@maive.ai",
+      "subject": "Quick brand video idea for Maive",
+      "sentAt": "2026-05-18T20:47:18.368Z"
+    },
+    {
+      "to": "hello@caseflood.ai",
+      "subject": "Quick brand video idea for Caseflood",
+      "sentAt": "2026-05-18T20:47:20.452Z"
+    },
+    {
+      "to": "hello@trytejas.ai",
+      "subject": "Quick brand video idea for Tejas AI",
+      "sentAt": "2026-05-18T20:47:22.560Z"
+    },
+    {
+      "to": "hello@usevora.ai",
+      "subject": "Quick brand video idea for Vora AI",
+      "sentAt": "2026-05-18T20:47:24.813Z"
+    },
+    {
+      "to": "hello@maritimefusion.com",
+      "subject": "Quick brand video idea for Maritime Fusion",
+      "sentAt": "2026-05-18T20:47:26.915Z"
+    },
+    {
+      "to": "hello@a1base.com",
+      "subject": "Quick brand video idea for A1Base",
+      "sentAt": "2026-05-18T20:47:29.093Z"
+    },
+    {
+      "to": "hello@verbiflow.com",
+      "subject": "Quick brand video idea for Verbiflow",
+      "sentAt": "2026-05-18T20:47:31.215Z"
+    },
+    {
+      "to": "hello@toothy.ai",
+      "subject": "Quick brand video idea for Toothy AI",
+      "sentAt": "2026-05-18T20:47:33.475Z"
+    },
+    {
+      "to": "hello@rocketable.com",
+      "subject": "Quick brand video idea for Rocketable",
+      "sentAt": "2026-05-18T20:47:35.559Z"
+    },
+    {
+      "to": "hello@sublingual.ai",
+      "subject": "Quick brand video idea for Sublingual",
+      "sentAt": "2026-05-18T20:47:37.674Z"
+    },
+    {
+      "to": "hello@contrario.ai",
+      "subject": "Quick brand video idea for Contrario",
+      "sentAt": "2026-05-18T20:47:39.765Z"
+    },
+    {
+      "to": "hello@ovlo.ai",
+      "subject": "Quick brand video idea for Ovlo",
+      "sentAt": "2026-05-18T20:47:41.883Z"
+    },
+    {
+      "to": "hello@trytruffle.ai",
+      "subject": "Quick brand video idea for Truffle AI",
+      "sentAt": "2026-05-18T20:47:43.997Z"
+    },
+    {
+      "to": "hello@superglue.ai",
+      "subject": "Quick brand video idea for superglue",
+      "sentAt": "2026-05-18T20:47:46.097Z"
+    },
+    {
+      "to": "hello@closure-intel.com",
+      "subject": "Quick brand video idea for Closure",
+      "sentAt": "2026-05-18T20:47:48.211Z"
+    },
+    {
+      "to": "hello@gopromptless.ai",
+      "subject": "Quick brand video idea for Promptless",
+      "sentAt": "2026-05-18T20:47:50.296Z"
+    },
+    {
+      "to": "hello@scoutforschools.com",
+      "subject": "Quick brand video idea for Scout",
+      "sentAt": "2026-05-18T20:47:52.393Z"
+    },
+    {
+      "to": "hello@subtrace.dev",
+      "subject": "Quick brand video idea for Subtrace",
+      "sentAt": "2026-05-18T20:47:54.482Z"
+    },
+    {
+      "to": "hello@vocalityhealth.com",
+      "subject": "Quick brand video idea for Vocality Health",
+      "sentAt": "2026-05-18T20:47:56.621Z"
+    },
+    {
+      "to": "hello@astroenergy.ai",
+      "subject": "Quick brand video idea for Astro",
+      "sentAt": "2026-05-18T20:47:58.738Z"
+    },
+    {
+      "to": "hello@dollyglot.com",
+      "subject": "Quick brand video idea for Dollyglot",
+      "sentAt": "2026-05-18T20:48:02.080Z"
+    },
+    {
+      "to": "hello@stampmail.ai",
+      "subject": "Quick brand video idea for Stamp",
+      "sentAt": "2026-05-18T20:48:04.190Z"
+    },
+    {
+      "to": "hello@guse.io",
+      "subject": "Quick brand video idea for Guse",
+      "sentAt": "2026-05-18T20:48:06.290Z"
+    },
+    {
+      "to": "hello@subimage.io",
+      "subject": "Quick brand video idea for SubImage",
+      "sentAt": "2026-05-18T20:48:08.399Z"
+    },
+    {
+      "to": "hello@nextbyte.ai",
+      "subject": "Quick brand video idea for NextByte",
+      "sentAt": "2026-05-18T20:48:10.506Z"
+    },
+    {
+      "to": "hello@leapingai.com",
+      "subject": "Quick brand video idea for Leaping AI",
+      "sentAt": "2026-05-18T20:48:12.587Z"
+    },
+    {
+      "to": "hello@bild.ai",
+      "subject": "Quick brand video idea for Bild AI",
+      "sentAt": "2026-05-18T20:48:14.695Z"
+    }
+  ]
+}

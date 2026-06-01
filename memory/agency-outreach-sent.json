@@ -1,0 +1,564 @@
+{
+  "sent": [
+    {
+      "email": "info@webtmize.com",
+      "agency": "Webtmize",
+      "source": "clutch",
+      "resendId": "e3f3f7fc-dd43-4cc1-a4eb-1721181ade1a",
+      "sentAt": "2026-05-23T18:57:27.920Z"
+    },
+    {
+      "email": "hello@searchbloom.com",
+      "agency": "Searchbloom",
+      "source": "clutch",
+      "resendId": "51c160ad-70f9-4532-acaf-9d86092dde20",
+      "sentAt": "2026-05-23T18:57:30.544Z"
+    },
+    {
+      "email": "hello@dnhq.com.au",
+      "agency": "Digital Nomads HQ",
+      "source": "clutch",
+      "resendId": "24655b99-de23-436d-ad49-dec195401b78",
+      "sentAt": "2026-05-23T18:57:33.126Z"
+    },
+    {
+      "email": "sales@simpletiger.com",
+      "agency": "SimpleTiger LLC",
+      "source": "clutch",
+      "resendId": "ce2da0af-1f37-4f6a-8594-4392ef957627",
+      "sentAt": "2026-05-23T18:57:35.752Z"
+    },
+    {
+      "email": "opportunity@ignitevisibility.com",
+      "agency": "Ignite Visibility",
+      "source": "clutch",
+      "resendId": "4cfeb0ca-12e4-45a1-bc2e-32b73db1ba4e",
+      "sentAt": "2026-05-23T18:57:38.341Z"
+    },
+    {
+      "email": "contact@launchonline.co.uk",
+      "agency": "Launch Online",
+      "source": "clutch",
+      "resendId": "cbbbeb9f-d709-431b-930c-98af3d601e0b",
+      "sentAt": "2026-05-23T18:57:40.959Z"
+    },
+    {
+      "email": "hello@ninjapromo.io",
+      "agency": "Ninja Promo",
+      "source": "clutch",
+      "resendId": "ff52ea53-c33a-4037-aaea-b07505b47d67",
+      "sentAt": "2026-05-23T18:57:43.556Z"
+    },
+    {
+      "email": "office@kiplar.bg",
+      "agency": "KIPLAR",
+      "source": "clutch",
+      "resendId": "c476d9d7-3972-41a9-bed8-929adab33c30",
+      "sentAt": "2026-05-23T18:57:46.138Z"
+    },
+    {
+      "email": "support@rso-consulting.com",
+      "agency": "RSO Consulting",
+      "source": "clutch",
+      "resendId": "f1d8f759-5e4f-4492-9fd4-5557a2cb0b21",
+      "sentAt": "2026-05-23T18:57:48.750Z"
+    },
+    {
+      "email": "hello@glidedesign.com",
+      "agency": "GLIDE®",
+      "source": "clutch",
+      "resendId": "ac56779b-bc89-4bd0-8e3a-86cb91adf08c",
+      "sentAt": "2026-05-23T18:57:51.342Z"
+    },
+    {
+      "email": "support@adverio.io",
+      "agency": "Adverio - Growth Optimizers",
+      "source": "clutch",
+      "resendId": "9bda42c3-9edb-415c-8095-4c563205844a",
+      "sentAt": "2026-05-23T18:57:53.932Z"
+    },
+    {
+      "email": "hello@herdl.com",
+      "agency": "Herdl",
+      "source": "clutch",
+      "resendId": "3e81d792-7d62-4e72-a66f-39b17853446b",
+      "sentAt": "2026-05-23T18:57:56.553Z"
+    },
+    {
+      "email": "admin@webspero.com",
+      "agency": "WebSpero Solutions",
+      "source": "clutch",
+      "resendId": "32d789c8-14ab-4bcd-88b2-ecff32539163",
+      "sentAt": "2026-05-23T18:57:59.139Z"
+    },
+    {
+      "email": "help@jaxmediateam.com",
+      "agency": "Jax Media Team",
+      "source": "clutch",
+      "resendId": "ad0cfdbe-2093-439b-b1da-4598055d24d3",
+      "sentAt": "2026-05-23T18:58:01.724Z"
+    },
+    {
+      "email": "hi@topgrowthmarketing.com",
+      "agency": "Top Growth Marketing INC",
+      "source": "clutch",
+      "resendId": "11589dc0-a837-4fce-89ef-514efd322a4b",
+      "sentAt": "2026-05-23T18:58:04.359Z"
+    },
+    {
+      "email": "office@scaledon.com",
+      "agency": "ScaledOn",
+      "source": "clutch",
+      "resendId": "65087490-96a5-4f94-b009-2fcd574301a7",
+      "sentAt": "2026-05-23T18:58:06.948Z"
+    },
+    {
+      "email": "info@directom.com",
+      "agency": "Direct Online Marketing",
+      "source": "clutch",
+      "resendId": "9c52d677-4c3f-4d1f-830a-c30dc5626faa",
+      "sentAt": "2026-05-23T18:58:09.597Z"
+    },
+    {
+      "email": "info@elevationweb.org",
+      "agency": "Elevation",
+      "source": "clutch",
+      "resendId": "e616a6bd-04f5-406e-af1a-aaeb489f62f3",
+      "sentAt": "2026-05-23T18:58:12.197Z"
+    },
+    {
+      "email": "office@expandx.com",
+      "agency": "ExpandX Marketing & Web",
+      "source": "clutch",
+      "resendId": "e76ff4ff-e29e-4d46-966b-992e7bf45b93",
+      "sentAt": "2026-05-23T18:58:14.817Z"
+    },
+    {
+      "email": "ninfo@dnovogroup.com",
+      "agency": "dNOVO - Digital Marketing & SEO Agency",
+      "source": "clutch",
+      "resendId": "2e1579d0-25de-40c4-b313-b3b9a96ada55",
+      "sentAt": "2026-05-23T18:58:17.422Z"
+    },
+    {
+      "email": "info@strikedigital.ie",
+      "agency": "Strike Digital",
+      "source": "clutch",
+      "resendId": "c452ee26-8a61-4953-8b69-61e795f00a89",
+      "sentAt": "2026-05-23T18:58:20.035Z"
+    },
+    {
+      "email": "info@eaccountable.com",
+      "agency": "eAccountable",
+      "source": "clutch",
+      "resendId": "395c213e-ccab-4488-9b2a-589a98a5d1c3",
+      "sentAt": "2026-05-23T18:58:22.673Z"
+    },
+    {
+      "email": "hello@upwardengine.com",
+      "agency": "Upward Engine",
+      "source": "clutch",
+      "resendId": "6ada3a73-c43d-43e6-9706-38745cc71ee6",
+      "sentAt": "2026-05-23T18:58:25.320Z"
+    },
+    {
+      "email": "info@chatterkick.com",
+      "agency": "Chatterkick",
+      "source": "clutch",
+      "resendId": "26972a5c-0c50-4cc3-94a7-d0f37cc02785",
+      "sentAt": "2026-05-23T18:58:27.923Z"
+    },
+    {
+      "email": "info@delante.co",
+      "agency": "Delante",
+      "source": "clutch",
+      "resendId": "168f5d61-2441-4198-b191-bab5ccb839ce",
+      "sentAt": "2026-05-23T18:58:30.515Z"
+    },
+    {
+      "email": "info@lyfemarketing.com",
+      "agency": "LYFE Marketing",
+      "source": "clutch",
+      "resendId": "c0000261-1d6f-4548-8d3f-a9e0e0f1c4d3",
+      "sentAt": "2026-05-23T18:58:33.152Z"
+    },
+    {
+      "email": "human@xplora.bg",
+      "agency": "XploraBG",
+      "source": "clutch",
+      "resendId": "28c3d8f0-ca94-4ff1-bb42-23dcc786eb11",
+      "sentAt": "2026-05-23T18:58:35.737Z"
+    },
+    {
+      "email": "info@socialmedia55.com",
+      "agency": "Social Media 55",
+      "source": "clutch",
+      "resendId": "3dfb5dca-e46b-4edf-af60-08dc99a35c2c",
+      "sentAt": "2026-05-23T18:58:38.357Z"
+    },
+    {
+      "email": "info@twotreesppc.com",
+      "agency": "Two Trees PPC",
+      "source": "clutch",
+      "resendId": "a7264a0a-6fbb-4652-a249-13f0e89893a5",
+      "sentAt": "2026-05-23T18:58:40.966Z"
+    },
+    {
+      "email": "sales@cayk.ca",
+      "agency": "CAYK Marketing Inc.",
+      "source": "clutch",
+      "resendId": "41d3cf43-a2cf-459a-8466-3c536d32f06b",
+      "sentAt": "2026-05-23T18:58:43.576Z"
+    },
+    {
+      "email": "friends@klientboost.com",
+      "agency": "KlientBoost",
+      "source": "clutch",
+      "resendId": "1af33860-438f-46f8-b93e-8d1addf25b01",
+      "sentAt": "2026-05-23T18:58:46.291Z"
+    },
+    {
+      "email": "info@blackpropeller.com",
+      "agency": "Black Propeller",
+      "source": "clutch",
+      "resendId": "a7aec403-5c2a-49c1-858f-302df89f63d9",
+      "sentAt": "2026-05-23T18:58:48.899Z"
+    },
+    {
+      "email": "fraud@amazongrowthlab.com",
+      "agency": "Amazon Growth Lab",
+      "source": "clutch",
+      "resendId": "c2b47ba4-0364-4848-a6bd-dcf39689101e",
+      "sentAt": "2026-05-23T18:58:51.511Z"
+    },
+    {
+      "email": "info@discovermybusiness.co",
+      "agency": "DiscoverMyBusiness",
+      "source": "clutch",
+      "resendId": "53687654-42d2-493a-93dc-27aa7662ebd9",
+      "sentAt": "2026-05-23T18:58:54.111Z"
+    },
+    {
+      "email": "sales@openmoves.com",
+      "agency": "OpenMoves",
+      "source": "clutch",
+      "resendId": "79648741-a799-4791-ac28-d81430f2b5be",
+      "sentAt": "2026-05-23T18:58:56.732Z"
+    },
+    {
+      "email": "contact@smartsites.com",
+      "agency": "SmartSites",
+      "source": "clutch",
+      "resendId": "002ccace-17ae-4611-af7f-dc1733bae6a1",
+      "sentAt": "2026-05-23T18:58:59.353Z"
+    },
+    {
+      "email": "contact@promodo.com",
+      "agency": "Promodo",
+      "source": "clutch",
+      "resendId": "5e67e1ee-4eec-4318-b46c-e3efc2bd23da",
+      "sentAt": "2026-05-23T18:59:01.983Z"
+    },
+    {
+      "email": "info@hustlemarketers.com",
+      "agency": "Hustle Marketers",
+      "source": "clutch",
+      "resendId": "95eb7c2d-89a9-49d3-8bd9-486e98490d51",
+      "sentAt": "2026-05-23T18:59:04.591Z"
+    },
+    {
+      "email": "ryan@nuancedmedia.com",
+      "agency": "Nuanced Media",
+      "source": "clutch",
+      "resendId": "a433848e-338f-4959-ae93-55f22056ee14",
+      "sentAt": "2026-05-23T18:59:07.185Z"
+    },
+    {
+      "email": "customer@unitix.pro",
+      "agency": "Unitix",
+      "source": "clutch",
+      "resendId": "df14f001-807c-48f4-b098-2d9c904fd23c",
+      "sentAt": "2026-05-23T18:59:09.804Z"
+    },
+    {
+      "email": "office@excellappc.com",
+      "agency": "Excella PPC",
+      "source": "clutch",
+      "resendId": "6277d8b2-5b43-4176-9b6f-fff3fc323027",
+      "sentAt": "2026-05-23T18:59:12.524Z"
+    },
+    {
+      "email": "sales@42dm.net",
+      "agency": "42DM | Your B2B Growth Marketing Partner",
+      "source": "clutch",
+      "resendId": "52ab1fe5-fc74-4f74-a999-6fe52de0bba0",
+      "sentAt": "2026-05-23T18:59:15.142Z"
+    },
+    {
+      "email": "sales@outerbox.com",
+      "agency": "OuterBox",
+      "source": "clutch",
+      "resendId": "467f6618-6300-41c5-8446-61d1b865af67",
+      "sentAt": "2026-05-23T18:59:17.742Z"
+    },
+    {
+      "email": "hello@scubemarketing.com",
+      "agency": "SCUBE Marketing",
+      "source": "clutch",
+      "resendId": "7d70d280-5139-435f-a7e5-e2b4a6adbea5",
+      "sentAt": "2026-05-23T18:59:20.339Z"
+    },
+    {
+      "email": "info@anavigator.co",
+      "agency": "aNavigator",
+      "source": "clutch",
+      "resendId": "587e7fb1-c70e-48dc-b8ec-cf9f54d63dfa",
+      "sentAt": "2026-05-23T18:59:22.977Z"
+    },
+    {
+      "email": "hello@bind.media",
+      "agency": "Bind Media",
+      "source": "clutch",
+      "resendId": "ce009a97-d415-44ef-9127-450f9dfaaf69",
+      "sentAt": "2026-05-23T18:59:25.579Z"
+    },
+    {
+      "email": "info@passion.digital",
+      "agency": "Passion Digital",
+      "source": "clutch",
+      "resendId": "d10da83f-d301-4825-a407-d16fc209b642",
+      "sentAt": "2026-05-23T18:59:28.181Z"
+    },
+    {
+      "email": "drew@digitaldrewsem.com",
+      "agency": "Digital Drew SEM",
+      "source": "clutch",
+      "resendId": "4f0aa780-c685-4f7f-8de4-49effd04a88e",
+      "sentAt": "2026-05-23T18:59:30.794Z"
+    },
+    {
+      "email": "team@setsail.ca",
+      "agency": "Setsail Marketing",
+      "source": "clutch",
+      "resendId": "160ee1e0-a307-48ee-b321-261d2fa01cfd",
+      "sentAt": "2026-05-23T18:59:33.377Z"
+    },
+    {
+      "email": "admin@soupagency.com.au",
+      "agency": "Soup Agency",
+      "source": "clutch",
+      "resendId": "aff8f626-50ee-4c48-b997-a52db3049534",
+      "sentAt": "2026-05-23T18:59:35.997Z"
+    },
+    {
+      "email": "contact@netrocket.pro",
+      "agency": "Netrocket",
+      "source": "clutch",
+      "resendId": "a62c31d3-9999-42fc-9e69-fc7261b95867",
+      "sentAt": "2026-05-23T18:59:38.593Z"
+    },
+    {
+      "email": "info@comradeweb.com",
+      "agency": "Comrade Digital Marketing Agency",
+      "source": "clutch",
+      "resendId": "c427d6e3-b244-4b7f-b26f-1617484637d9",
+      "sentAt": "2026-05-23T18:59:41.192Z"
+    },
+    {
+      "email": "info@plaudit.com",
+      "agency": "Plaudit Design",
+      "source": "clutch",
+      "resendId": "c4d94904-c3d3-4ed3-94bc-0393d05b9ad0",
+      "sentAt": "2026-05-23T18:59:43.799Z"
+    },
+    {
+      "email": "info@klikdigital.nl",
+      "agency": "Klik Digital",
+      "source": "clutch",
+      "resendId": "c76c4e69-f046-4c80-85e0-69d8213cd201",
+      "sentAt": "2026-05-23T18:59:46.407Z"
+    },
+    {
+      "email": "info@opace.co.uk",
+      "agency": "Opace Digital Agency",
+      "source": "clutch",
+      "resendId": "c0a07547-fade-42c3-a753-75ebd7ae5c91",
+      "sentAt": "2026-05-23T18:59:48.992Z"
+    },
+    {
+      "email": "hello@storals.com",
+      "agency": "ShootOrder",
+      "source": "clutch",
+      "resendId": "b634d2ad-1798-4de4-b7fd-5d05707779db",
+      "sentAt": "2026-05-23T18:59:51.595Z"
+    },
+    {
+      "email": "info@wizardagency.gr",
+      "agency": "Wizard Digital Marketing Agency",
+      "source": "clutch",
+      "resendId": "09930619-198b-4a73-add3-0873339a85c9",
+      "sentAt": "2026-05-23T18:59:54.198Z"
+    },
+    {
+      "email": "info@lcgnewmedia.cz",
+      "agency": "LCG New Media",
+      "source": "clutch",
+      "resendId": "b4bc5c1f-5dc4-4814-b6bf-15359e709e88",
+      "sentAt": "2026-05-23T18:59:56.892Z"
+    },
+    {
+      "email": "info@94n.digital",
+      "agency": "94n Digital",
+      "source": "clutch",
+      "resendId": "ee7134b0-716a-4ea9-8dc8-41347e19214f",
+      "sentAt": "2026-05-23T18:59:59.517Z"
+    },
+    {
+      "email": "info@jivesmedia.com",
+      "agency": "Jives Media",
+      "source": "clutch",
+      "resendId": "5f8abac9-e352-4dcc-ac4f-b2bc2c1708e8",
+      "sentAt": "2026-05-23T19:00:02.153Z"
+    },
+    {
+      "email": "andrew@volterradigital.com",
+      "agency": "Volterra",
+      "source": "clutch",
+      "resendId": "c6b9e005-75b2-4ab2-8cd5-245bd2c5ad60",
+      "sentAt": "2026-05-23T19:00:04.847Z"
+    },
+    {
+      "email": "info@sociallyin.com",
+      "agency": "Sociallyin",
+      "source": "clutch",
+      "resendId": "1fe0920a-4ce3-4472-a56d-6aac263d0dd9",
+      "sentAt": "2026-05-23T19:00:07.536Z"
+    },
+    {
+      "email": "hello@ourownbrand.co",
+      "agency": "OOB",
+      "source": "clutch",
+      "resendId": "5c81c404-acff-4b39-bade-5cd36b1f00c3",
+      "sentAt": "2026-05-23T19:00:10.150Z"
+    },
+    {
+      "email": "hello@lilosocial.com",
+      "agency": "Lilo Social",
+      "source": "clutch",
+      "resendId": "6da12c88-ae52-4d82-b964-462ab151d9f9",
+      "sentAt": "2026-05-23T19:00:12.789Z"
+    },
+    {
+      "email": "rwi@runwayinfluence.com",
+      "agency": "Runway Influence",
+      "source": "clutch",
+      "resendId": "8c6987ba-9200-4ea5-9c5c-79a065822691",
+      "sentAt": "2026-05-23T19:00:15.389Z"
+    },
+    {
+      "email": "yulia.vishchuk@nordleaf.com",
+      "agency": "NORDLEAF",
+      "source": "clutch",
+      "resendId": "34cd263c-4233-4290-8aa4-bd1f17e538de",
+      "sentAt": "2026-05-23T19:00:18.026Z"
+    },
+    {
+      "email": "rfp@wearesculpt.com",
+      "agency": "Sculpt",
+      "source": "clutch",
+      "resendId": "cc85560c-dee9-4c36-8541-126bec171fc1",
+      "sentAt": "2026-05-23T19:00:20.633Z"
+    },
+    {
+      "email": "alex@kingpinservices.com",
+      "agency": "KingPin Services",
+      "source": "clutch",
+      "resendId": "39a4f389-a8d3-4ee6-add4-9186f6e00150",
+      "sentAt": "2026-05-23T19:00:23.378Z"
+    },
+    {
+      "email": "hello@socialistics.com",
+      "agency": "Socialistics",
+      "source": "clutch",
+      "resendId": "75cf631a-15bf-4ba6-974c-466152769109",
+      "sentAt": "2026-05-23T19:00:25.997Z"
+    },
+    {
+      "email": "info@bluebearcreative.co",
+      "agency": "Blue Bear Creative",
+      "source": "clutch",
+      "resendId": "455579bc-a0bf-4115-a631-78e22314df07",
+      "sentAt": "2026-05-23T19:00:28.619Z"
+    },
+    {
+      "email": "contact@higharcmedia.com",
+      "agency": "High Arc Media Inc.",
+      "source": "clutch",
+      "resendId": "d1dedb05-3945-482e-9e35-9a8fb27c4822",
+      "sentAt": "2026-05-23T19:00:31.231Z"
+    },
+    {
+      "email": "hello@v9digital.com",
+      "agency": "Volume Nine",
+      "source": "clutch",
+      "resendId": "f26b0e59-082f-4c60-a4b5-d74f527b6f33",
+      "sentAt": "2026-05-23T19:00:33.976Z"
+    },
+    {
+      "email": "info@cavesocial.com",
+      "agency": "Cave Social",
+      "source": "clutch",
+      "resendId": "3c8cd35f-e32c-4c34-b1a5-211d4c7ae38a",
+      "sentAt": "2026-05-23T19:00:36.608Z"
+    },
+    {
+      "email": "coach@uptown.com",
+      "agency": "Uptown Creation",
+      "source": "clutch",
+      "resendId": "691744d5-ad23-44de-982c-c6b29aa0326f",
+      "sentAt": "2026-05-23T19:00:39.273Z"
+    },
+    {
+      "email": "sales@icuc.social",
+      "agency": "icuc.social",
+      "source": "clutch",
+      "resendId": "ec8dae32-92ab-4433-8e35-03cc9911a791",
+      "sentAt": "2026-05-23T19:00:41.862Z"
+    },
+    {
+      "email": "hello@7wonders.com",
+      "agency": "7 Wonders Cinema",
+      "source": "clutch",
+      "resendId": "e53ac6d1-9eba-4a98-8f7e-aa3b9c35447d",
+      "sentAt": "2026-05-23T19:00:44.462Z"
+    },
+    {
+      "email": "info@gen3marketing.com",
+      "agency": "Gen3 Marketing",
+      "source": "clutch",
+      "resendId": "0d2a6ef9-aaad-4e06-8a9d-5cf79645f8ce",
+      "sentAt": "2026-05-23T19:00:47.134Z"
+    },
+    {
+      "email": "sales@cazbah.net",
+      "agency": "Cazbah",
+      "source": "clutch",
+      "resendId": "a4b6b271-0754-47a1-9c0f-550a43a30c36",
+      "sentAt": "2026-05-23T19:00:49.756Z"
+    },
+    {
+      "email": "info@ajmarketing.io",
+      "agency": "AJ Marketing",
+      "source": "clutch",
+      "resendId": "7800c89a-9c0d-4e57-81c1-80fde73f7880",
+      "sentAt": "2026-05-23T19:00:52.415Z"
+    },
+    {
+      "email": "info@rprfirm.com",
+      "agency": "R Public Relations",
+      "source": "clutch",
+      "resendId": "a97ff2cd-fd02-4dc8-a8ac-5edc77b8e704",
+      "sentAt": "2026-05-23T19:00:55.017Z"
+    }
+  ]
+}

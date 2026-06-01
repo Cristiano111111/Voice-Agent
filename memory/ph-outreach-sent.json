@@ -1,0 +1,108 @@
+{
+  "sent": [
+    {
+      "email": "hello@lobehub.com",
+      "name": "René Wang",
+      "company": "LobeHub",
+      "phSlug": "lobehub-2",
+      "resendId": "c8066830-9f6c-462e-bb5f-416dfe7e4548",
+      "sentAt": "2026-05-23T17:09:43.893Z"
+    },
+    {
+      "email": "hi@searchad.ai",
+      "name": "İrfan",
+      "company": "Searchad.ai",
+      "phSlug": "searchad-ai",
+      "resendId": "020269b9-4845-4a9c-ad7a-76456aa8975f",
+      "sentAt": "2026-05-23T17:09:46.983Z"
+    },
+    {
+      "email": "hello@findorigio.com",
+      "name": "Shlok Mestry",
+      "company": "Origio",
+      "phSlug": "origio",
+      "resendId": "bb4c660c-d6af-4d98-bd48-040030b98c85",
+      "sentAt": "2026-05-23T17:09:50.079Z"
+    },
+    {
+      "email": "contact@sizzleair.app",
+      "name": "Mariusz Jankowski",
+      "company": "SizzleAir",
+      "phSlug": "sizzleair",
+      "resendId": "3100326f-ec8e-4dc9-87c1-0c689c5f7b85",
+      "sentAt": "2026-05-23T17:09:53.252Z"
+    },
+    {
+      "email": "contact@trychert.com",
+      "name": "Gary Gao",
+      "company": "Chert",
+      "phSlug": "chert",
+      "resendId": "23b2b0cd-dfc6-4684-8096-74748756c534",
+      "sentAt": "2026-05-23T17:09:56.365Z"
+    },
+    {
+      "email": "daniel@useomnia.com",
+      "name": "Ivan Malagon",
+      "company": "Omnia",
+      "phSlug": "insights-by-omnia",
+      "resendId": "72c28e73-0af6-421a-b4e3-df632b8b39c8",
+      "sentAt": "2026-05-23T17:09:59.448Z"
+    },
+    {
+      "email": "hello@learnhouse.app",
+      "name": "Badr B.",
+      "company": "LearnHouse",
+      "phSlug": "learnhouse-2",
+      "resendId": "bc1d50e6-afe6-439b-956e-b11429c7456a",
+      "sentAt": "2026-05-23T17:10:02.530Z"
+    },
+    {
+      "email": "contact@themailx.com",
+      "name": "Naim Azoutar",
+      "company": "mailX by mailwarm",
+      "phSlug": "mailx-by-mailwarm",
+      "resendId": "6758ec76-a948-4d9a-b2b7-aab547ce3409",
+      "sentAt": "2026-05-23T17:10:05.625Z"
+    },
+    {
+      "email": "founders@generalcompute.com",
+      "name": "Jason Goodison",
+      "company": "General Compute",
+      "phSlug": "general-compute",
+      "resendId": "d2c65a9f-7f1b-4770-bb65-8099148d5110",
+      "sentAt": "2026-05-23T17:10:08.722Z"
+    },
+    {
+      "email": "contact@autoposts.io",
+      "name": "Rashid Khasanov",
+      "company": "Auto Posts",
+      "phSlug": "auto-posts",
+      "resendId": "91a11cd4-7f7c-46f0-897d-0720afe533b3",
+      "sentAt": "2026-05-23T17:10:11.829Z"
+    },
+    {
+      "email": "hello@nugget.ai",
+      "name": "Brodie",
+      "company": "Nugget AI",
+      "phSlug": "nugget-ai",
+      "resendId": "8006a010-14ab-48ef-91f4-ac2f9893b059",
+      "sentAt": "2026-05-23T17:10:14.919Z"
+    },
+    {
+      "email": "hello@tryprosed.com",
+      "name": "Elise",
+      "company": "Prosed",
+      "phSlug": "prosed",
+      "resendId": "83595847-5280-4454-a63c-79d9283a49a8",
+      "sentAt": "2026-05-23T17:10:18.017Z"
+    },
+    {
+      "email": "nick@motionvid.ai",
+      "name": "JustKay",
+      "company": "Motionvid.ai",
+      "phSlug": "motionvid-ai-2",
+      "resendId": "61a04b1a-c33b-4994-ba6e-b18023181845",
+      "sentAt": "2026-05-23T17:10:21.100Z"
+    }
+  ]
+}
