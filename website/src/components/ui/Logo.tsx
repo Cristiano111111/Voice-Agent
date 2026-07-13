@@ -16,6 +16,7 @@ export function Logo({ variant = "icon", className, priority }: LogoProps) {
         width={900}
         height={900}
         priority={priority}
+        unoptimized
         className={className ?? "h-auto w-full max-w-md"}
       />
     );
@@ -28,6 +29,7 @@ export function Logo({ variant = "icon", className, priority }: LogoProps) {
       width={500}
       height={348}
       priority={priority}
+      unoptimized
       className={className ?? "h-14 w-auto"}
     />
   );
