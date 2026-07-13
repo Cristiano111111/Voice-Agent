@@ -118,9 +118,51 @@ app.post('/voice/status', (req, res) => {
   res.sendStatus(200);
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`\nVoice agent running on port ${PORT}`);
-  console.log(`Business: ${business.name}`);
-  console.log(`\nSet your Twilio webhook to: https://YOUR-NGROK-URL/voice\n`);
+// Root route — health check / landing page
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>${business.name} — AI Receptionist</title>
+      <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+               background: #0a0a0a; color: #f0f0f0; display: flex;
+               align-items: center; justify-content: center; min-height: 100vh; }
+        .card { text-align: center; padding: 3rem 2rem; max-width: 480px; }
+        .dot { width: 12px; height: 12px; background: #22c55e; border-radius: 50%;
+               display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+        h1 { font-size: 2rem; font-weight: 700; margin: 1rem 0 .5rem; }
+        p  { color: #888; font-size: 1rem; line-height: 1.6; }
+        .badge { display: inline-block; margin-top: 2rem; padding: .4rem 1rem;
+                 background: #1a1a1a; border: 1px solid #333; border-radius: 999px;
+                 font-size: .8rem; color: #666; }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <span class="dot"></span><span style="color:#22c55e;font-size:.9rem">Active</span>
+        <h1>${business.name}</h1>
+        <p>AI-powered receptionist — ready to answer calls 24/7.</p>
+        <div class="badge">jayrx.net</div>
+      </div>
+    </body>
+    </html>
+  `);
 });
+
+// Only start HTTP server in local dev — Vercel handles this in production
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => {
+    console.log(`\nVoice agent running on port ${PORT}`);
+    console.log(`Business: ${business.name}`);
+    console.log(`\nSet your Twilio webhook to: https://YOUR-DOMAIN/voice\n`);
+  });
+}
+
+export default app;
