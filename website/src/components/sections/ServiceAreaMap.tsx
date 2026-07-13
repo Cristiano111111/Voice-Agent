@@ -99,7 +99,7 @@ export function ServiceAreaMap() {
             container node on hydration and orphan the Leaflet instance) */}
         <div
           ref={mapEl}
-          className="h-[380px] w-full overflow-hidden rounded-2xl border border-white/10 md:h-[520px]"
+          className="relative z-0 h-[380px] w-full isolate overflow-hidden rounded-2xl border border-white/10 md:h-[520px]"
           style={{ background: "#0d120d" }}
         />
 
