@@ -5,6 +5,7 @@ import { MotionConfigProvider } from "@/components/providers/MotionConfigProvide
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { CursorGlow } from "@/components/ui/CursorGlow";
 
 const display = Big_Shoulders({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
       >
         <MotionConfigProvider>
           <SmoothScrollProvider>
+            <CursorGlow />
             <Nav />
             {children}
             <Footer />
