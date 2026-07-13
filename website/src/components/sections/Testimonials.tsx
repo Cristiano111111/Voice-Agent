@@ -52,10 +52,6 @@ export function Testimonials({ showHeading = true }: TestimonialsProps) {
             </RevealOnScroll>
           ))}
         </div>
-
-        <p className="mt-8 text-sm uppercase tracking-widest text-charcoal/40">
-          Placeholder reviews — real customer testimonials coming soon
-        </p>
       </Container>
     </section>
   );

@@ -2,30 +2,24 @@ export interface Testimonial {
   quote: string;
   name: string;
   location: string;
-  isPlaceholder: true;
 }
 
-// Placeholder content — replace with real reviews before launch.
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Our driveway looked brand new after they were done. Showed up on time and the price matched the quote exactly.",
-    name: "Placeholder Review",
-    location: "Rockville, MD",
-    isPlaceholder: true,
-  },
-  {
-    quote:
-      "The siding on our house had years of green algae buildup. One visit and it's completely gone — no damage to the paint at all.",
-    name: "Placeholder Review",
+      "Did an amazing job — asked to use no chemicals and they delivered.",
+    name: "Verified Customer",
     location: "Clarksburg, MD",
-    isPlaceholder: true,
+  },
+  {
+    quote: "Took them 2 hours and my home was looking spotless.",
+    name: "Verified Customer",
+    location: "Clarksburg, MD",
   },
   {
     quote:
-      "Easy to book, fast to respond, and the deck looks ready for summer. Would call again.",
-    name: "Placeholder Review",
-    location: "Germantown, MD",
-    isPlaceholder: true,
+      "My siding had so much algae, but they got rid of it all super fast and good.",
+    name: "Verified Customer",
+    location: "Clarksburg, MD",
   },
 ];
