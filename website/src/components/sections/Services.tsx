@@ -137,17 +137,6 @@ function ServicesImmersive({ showHeading }: { showHeading: boolean }) {
                 unoptimized
                 className="h-full w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]"
               />
-              {/* Spray mist at the nozzle tip */}
-              <motion.div
-                aria-hidden
-                className="absolute bottom-[-3%] left-[48%] h-44 w-44 -translate-x-1/2 rounded-full blur-2xl"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(27,98,232,0.55) 0%, rgba(27,98,232,0.18) 45%, transparent 70%)",
-                }}
-                animate={{ opacity: [0.35, 0.7, 0.35], scale: [0.9, 1.2, 0.9] }}
-                transition={{ repeat: Infinity, duration: 2.6, ease: "easeInOut" }}
-              />
             </motion.div>
           </div>
 

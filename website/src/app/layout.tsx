@@ -6,6 +6,7 @@ import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvide
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { CursorGlow } from "@/components/ui/CursorGlow";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
 
 const display = Big_Shoulders({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${body.variable} font-body bg-stone text-charcoal`}
       >
+        <LoadingScreen />
         <MotionConfigProvider>
           <SmoothScrollProvider>
             <CursorGlow />
