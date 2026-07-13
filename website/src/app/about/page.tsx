@@ -25,11 +25,12 @@ export default function AboutPage() {
         <Container className="text-center">
           <RevealOnScroll>
             <h2 className="text-balance font-display text-3xl font-extrabold uppercase tracking-tight lg:text-4xl">
-              Serving Montgomery County, MD
+              Serving Rockville, Clarksburg, and nearby
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-mud">
-              From Clarksburg and Rockville to Bethesda and Silver Spring — see
-              the full map and check if your home is in our zone.
+              Centered on Rockville and Clarksburg, plus the surrounding
+              Montgomery County communities — see the full map and check if
+              your home is in our zone.
             </p>
             <Link
               href="/service-area"

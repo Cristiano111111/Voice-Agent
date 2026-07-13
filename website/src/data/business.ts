@@ -15,13 +15,8 @@ export const business = {
     "Potomac",
     "Montgomery Village",
     "Boyds",
-    "Damascus",
-    "Bethesda",
-    "Chevy Chase",
-    "Silver Spring",
-    "Olney",
   ],
-  serviceAreaNote: "Proudly serving Montgomery County, Maryland",
+  serviceAreaNote: "Proudly serving Rockville, Clarksburg, and nearby Montgomery County, MD",
   bookingInfo:
     "We offer free flat-rate quotes. Request one below or call/text us directly.",
   pricingInfo:

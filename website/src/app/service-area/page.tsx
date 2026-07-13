@@ -14,7 +14,7 @@ export default function ServiceAreaPage() {
       <PageHero
         eyebrow="Where We Work"
         title="Service area"
-        description="We cover Clarksburg, Rockville, and most of Montgomery County, MD. Check the map or enter your address below."
+        description="Centered on Rockville and Clarksburg, plus the nearby Montgomery County communities. Check the map or enter your address below."
       />
       <ServiceAreaMap />
     </main>
