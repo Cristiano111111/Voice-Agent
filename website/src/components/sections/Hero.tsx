@@ -27,7 +27,7 @@ export function Hero() {
 
       <Container className="relative z-10 py-32">
         <RevealOnScroll y={16}>
-          <div className="mb-8 w-40 md:w-48">
+          <div className="mb-8 w-56 md:w-72">
             <Logo variant="full" priority />
           </div>
         </RevealOnScroll>

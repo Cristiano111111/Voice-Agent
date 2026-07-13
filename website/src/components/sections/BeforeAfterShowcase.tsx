@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
+import { BeforeAfterReveal } from "@/components/ui/BeforeAfterReveal";
 import { beforeAfterPairs } from "@/data/before-after-pairs";
 
 interface BeforeAfterShowcaseProps {
@@ -34,13 +34,13 @@ export function BeforeAfterShowcase({
             <SectionHeading
               eyebrow="The Rabbit Difference"
               title="See it before you believe it"
-              description="Drag the slider to see what a single visit does. No filters, no staging — just before and after."
+              description="Scroll to see what a single visit does. No filters, no staging — just before and after."
             />
           </RevealOnScroll>
         )}
 
         <RevealOnScroll delay={0.1} className={showHeading ? "mt-12" : ""}>
-          <BeforeAfterSlider
+          <BeforeAfterReveal
             before={active.before}
             after={active.after}
             alt={active.alt}
