@@ -14,6 +14,20 @@ export const beforeAfterPairs: BeforeAfterPair[] = [
     before: "/images/before-1.jpg",
     after: "/images/after-1.jpg",
     alt: "Driveway before and after pressure washing",
-    caption: "Driveway — Rockville, MD",
+    caption: "Concrete Driveway",
+  },
+  {
+    id: "2",
+    before: "/images/before-2.jpg",
+    after: "/images/after-2.jpg",
+    alt: "Stained driveway before and after pressure washing",
+    caption: "Stained Driveway",
+  },
+  {
+    id: "3",
+    before: "/images/before-3.jpg",
+    after: "/images/after-3.jpg",
+    alt: "Vinyl siding before and after soft washing",
+    caption: "Vinyl Siding",
   },
 ];
