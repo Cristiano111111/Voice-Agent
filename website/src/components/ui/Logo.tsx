@@ -11,7 +11,7 @@ export function Logo({ variant = "icon", className, priority }: LogoProps) {
   if (variant === "full") {
     return (
       <Image
-        src="/logo-full.png"
+        src="/logo-full.webp"
         alt="Rabbit Pressure Washing"
         width={900}
         height={900}
@@ -23,7 +23,7 @@ export function Logo({ variant = "icon", className, priority }: LogoProps) {
 
   return (
     <Image
-      src="/logo-icon.png"
+      src="/logo-icon.webp"
       alt="Rabbit Pressure Washing"
       width={500}
       height={348}
