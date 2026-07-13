@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { BeforeAfterReveal } from "@/components/ui/BeforeAfterReveal";
+import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { beforeAfterPairs } from "@/data/before-after-pairs";
 
 interface BeforeAfterShowcaseProps {
@@ -34,19 +35,33 @@ export function BeforeAfterShowcase({
             <SectionHeading
               eyebrow="The Rabbit Difference"
               title="See it before you believe it"
-              description="Scroll to see what a single visit does. No filters, no staging — just before and after."
+              description={
+                variant === "teaser"
+                  ? "Scroll to see what a single visit does. No filters, no staging — just before and after."
+                  : "Drag to see what a single visit does. No filters, no staging — just before and after."
+              }
             />
           </RevealOnScroll>
         )}
 
         <RevealOnScroll delay={0.1} className={showHeading ? "mt-12" : ""}>
-          <BeforeAfterReveal
-            before={active.before}
-            after={active.after}
-            alt={active.alt}
-            caption={active.caption}
-            priority
-          />
+          {variant === "teaser" ? (
+            <BeforeAfterReveal
+              before={active.before}
+              after={active.after}
+              alt={active.alt}
+              caption={active.caption}
+              priority
+            />
+          ) : (
+            <BeforeAfterSlider
+              before={active.before}
+              after={active.after}
+              alt={active.alt}
+              caption={active.caption}
+              priority
+            />
+          )}
         </RevealOnScroll>
 
         {showTabs && (

@@ -14,7 +14,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Real Results"
         title="Before & after"
-        description="Scroll to see what a single visit does. No filters, no staging — just before and after."
+        description="Drag to see what a single visit does. No filters, no staging — just before and after."
       />
       <BeforeAfterShowcase variant="full" showHeading={false} />
     </main>
