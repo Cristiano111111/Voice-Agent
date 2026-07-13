@@ -20,5 +20,5 @@ export const business = {
   bookingInfo:
     "We offer free flat-rate quotes. Request one below or call/text us directly.",
   pricingInfo:
-    "Flat-rate quotes, no hourly surprises. Most driveway cleanings start around $150.",
+    "Flat-rate quotes, no hourly surprises. Most house washes start at $150.",
 } as const;
