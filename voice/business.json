@@ -1,8 +1,20 @@
 {
-  "name": "Test Business",
-  "type": "local business",
-  "hours": "Monday through Saturday, 9am to 7pm",
-  "address": "123 Main Street, Rockville, MD",
-  "services": ["service one", "service two", "service three"],
-  "booking_info": "You can book online at our website or I can take a message for the team."
+  "name": "Rabbit Pressure Washing",
+  "type": "pressure washing service",
+  "phone": "301-799-7475",
+  "website": "jayrx.net",
+  "hours": "Monday through Saturday, 8am to 6pm",
+  "address": "Rockville, MD",
+  "service_area": "Rockville, Clarksburg, Gaithersburg, Germantown, North Potomac, Potomac, Montgomery Village, Boyds, Damascus, Bethesda, Chevy Chase, Silver Spring, and Olney in Montgomery County, Maryland",
+  "services": [
+    "driveway cleaning",
+    "house washing",
+    "deck and patio cleaning",
+    "concrete flatwork",
+    "fence washing",
+    "roof soft wash"
+  ],
+  "booking_info": "We offer free flat-rate quotes. You can request a quote at jayrx.net or I can take your name and number and have someone call you back shortly.",
+  "pricing_info": "We provide flat-rate quotes — no hourly surprises. Most driveway cleanings start around $150. For an exact quote, we just need your address and the service you need.",
+  "response_style": "friendly and professional, like a local business that takes pride in its work"
 }

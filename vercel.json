@@ -3,13 +3,13 @@
   "builds": [
     {
       "src": "voice/server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["public/**", "voice/business.json"]
+      }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "voice/server.js"
-    }
+    { "src": "/(.*)", "dest": "voice/server.js" }
   ]
 }

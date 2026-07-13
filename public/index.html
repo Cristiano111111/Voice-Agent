@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rabbit Pressure Washing | Rockville &amp; Clarksburg, MD</title>
+  <meta name="description" content="Professional pressure washing in Rockville, Clarksburg, Gaithersburg and surrounding Montgomery County. Free flat-rate quotes. Same-week scheduling.">
+  <meta name="theme-color" content="#131A13">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+
+  <style>
+    /* ─── Design tokens ──────────────────────────────────────────── */
+    :root {
+      --stone:   #F5F4F0;
+      --deep:    #131A13;
+      --water:   #1B62E8;
+      --mist:    #E8F0FD;
+      --mud:     #7A8C7A;
+      --text:    #131A13;
+      --text-2:  #566256;
+      --bg:      #F5F4F0;
+      --surface: #FAFAF8;
+      --border:  rgba(19,26,19,0.10);
+      --nav-h:   70px;
+    }
+    @media (prefers-color-scheme: dark) { :root {
+      --text:    #E8E6E0;
+      --text-2:  #8A9E8A;
+      --bg:      #0d1310;
+      --surface: #121913;
+      --stone:   #0d1310;
+      --border:  rgba(232,230,224,0.08);
+    }}
+    :root[data-theme="dark"]  { --text:#E8E6E0; --text-2:#8A9E8A; --bg:#0d1310; --surface:#121913; --stone:#0d1310; --border:rgba(232,230,224,0.08); }
+    :root[data-theme="light"] { --text:#131A13; --text-2:#566256; --bg:#F5F4F0; --surface:#FAFAF8; --stone:#F5F4F0; --border:rgba(19,26,19,0.10); }
+
+    /* ─── Reset ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    *:focus-visible { outline: 2px solid var(--water); outline-offset: 3px; }
+
+    /* ─── Type ───────────────────────────────────────────────────── */
+    .disp {
+      font-family: 'Big Shoulders Display', system-ui, sans-serif;
+      font-weight: 900;
+      line-height: 0.9;
+      text-wrap: balance;
+      letter-spacing: -0.01em;
+    }
+    .disp-xl  { font-size: clamp(4.5rem, 11vw, 10rem); }
+    .disp-lg  { font-size: clamp(2.8rem, 6vw, 5rem); }
+    .disp-md  { font-size: clamp(2rem, 4vw, 3.2rem); }
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    /* ─── Buttons ────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.5rem;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .btn-blue   { background: var(--water); color: #fff; }
+    .btn-blue:hover { background: #1452cc; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(27,98,232,0.35); }
+    .btn-ghost  { border: 1.5px solid rgba(255,255,255,0.28); color: #fff; }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+    .btn-outline { border: 1.5px solid var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: var(--water); color: var(--water); }
+
+    /* ─── Nav ────────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      padding: 0 5vw;
+      transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      background: rgba(13, 19, 13, 0.9);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      background: var(--water);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-phone {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+    .nav-phone:hover { color: #fff; }
+
+    /* ─── Hero ───────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 5vw calc(9vh + var(--nav-h));
+      overflow: hidden;
+      background: var(--deep);
+    }
+
+    /* Before background: dirty concrete texture */
+    .hero-before-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 120px 80px at 15% 35%, rgba(85,72,55,0.5) 0%, transparent 65%),
+        radial-gradient(ellipse 80px 100px at 58% 18%, rgba(70,62,48,0.4) 0%, transparent 65%),
+        radial-gradient(ellipse 150px 60px at 82% 72%, rgba(78,68,50,0.45) 0%, transparent 65%),
+        radial-gradient(ellipse 60px 90px at 42% 80%, rgba(60,52,40,0.35) 0%, transparent 65%),
+        radial-gradient(ellipse 90px 50px at 70% 42%, rgba(65,58,44,0.3) 0%, transparent 65%),
+        linear-gradient(168deg, #2a2419 0%, #38302400 30%, #221d14 55%, #2d261a 80%, #1e1a10 100%),
+        url('/images/before-driveway.jpg') center/cover no-repeat;
+      background-color: #2a2419;
+    }
+
+    /* After background: clean concrete — starts hidden, reveals on load */
+    .hero-after-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100px 70px at 25% 30%, rgba(215,210,200,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 80px 120px at 72% 55%, rgba(195,190,180,0.25) 0%, transparent 60%),
+        linear-gradient(168deg, #b4b0a8 0%, #c4c0b8 35%, #ccc8c0 60%, #b8b4ac 100%),
+        url('/images/after-driveway.jpg') center/cover no-repeat;
+      background-color: #c4c0b8;
+      clip-path: inset(0 0 0 100%);
+      transition: clip-path 1.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    .hero-after-bg.on { clip-path: inset(0 0 0 50%); }
+
+    /* Spray line at the division */
+    .spray-line {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(27,98,232,0.7) 15%,
+        rgba(255,255,255,0.95) 48%,
+        rgba(27,98,232,0.7) 85%,
+        transparent 100%
+      );
+      filter: blur(0.4px);
+      box-shadow: 0 0 16px rgba(27,98,232,0.7), 0 0 40px rgba(27,98,232,0.3);
+      opacity: 0;
+      transition: opacity 0.25s;
+      z-index: 3;
+    }
+    .spray-line.on { opacity: 1; }
+
+    /* Gradient overlays for text readability */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(13,19,13,0.82) 0%,
+        rgba(13,19,13,0.4) 42%,
+        rgba(13,19,13,0.4) 58%,
+        rgba(13,19,13,0.72) 100%
+      );
+      z-index: 2;
+    }
+    .hero-overlay-btm {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 55%;
+      background: linear-gradient(to top, rgba(13,19,13,0.8) 0%, transparent 100%);
+      z-index: 2;
+    }
+
+    /* Spray particles canvas */
+    #sprayCanvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    /* Before/After badge */
+    .ba-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.4s 1.1s;
+    }
+    .ba-badge.gone { opacity: 0; }
+    .ba-badge-pill {
+      background: rgba(27,98,232,0.92);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.9rem;
+      border-radius: 99px;
+    }
+
+    /* Hero text content */
+    .hero-content {
+      position: relative;
+      z-index: 20;
+      max-width: 820px;
+    }
+    .hero-eyebrow {
+      color: var(--water);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadein 0.6s 0.2s forwards;
+    }
+    .hero-headline {
+      color: #fff;
+      opacity: 0;
+      animation: fadein 0.6s 0.4s forwards;
+    }
+    .hero-headline em {
+      font-style: normal;
+      color: var(--water);
+    }
+    .hero-sub {
+      margin-top: 1.4rem;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(232,230,224,0.65);
+      max-width: 460px;
+      opacity: 0;
+      animation: fadein 0.6s 0.6s forwards;
+    }
+    .hero-ctas {
+      margin-top: 2.2rem;
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadein 0.6s 0.8s forwards;
+    }
+    .hero-ctas .btn { padding: 0.85rem 2rem; font-size: 0.95rem; border-radius: 2px; }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow, .hero-headline, .hero-sub, .hero-ctas { animation: none; opacity: 1; }
+      .hero-after-bg { transition: none; }
+    }
+
+    /* ─── Scroll reveals ─────────────────────────────────────────── */
+    .rv {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .rv.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+
+    /* ─── Sections ───────────────────────────────────────────────── */
+    .sec { padding: 7rem 5vw; }
+    .sec-inner { max-width: 1200px; margin: 0 auto; }
+    .sec-head { margin-bottom: 3.5rem; }
+    .sec-head .eyebrow { color: var(--mud); display: block; margin-bottom: 0.6rem; }
+    .sec-head .disp    { color: var(--text); }
+
+    /* ─── Services ───────────────────────────────────────────────── */
+    .services { background: var(--stone); }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1.5px solid var(--border);
+      gap: 1.5px;
+      background: var(--border);
+    }
+    .svc-card {
+      background: var(--surface);
+      padding: 2.25rem 2.25rem 2.5rem;
+      transition: background 0.18s;
+    }
+    .svc-card:hover { background: var(--mist); }
+    .svc-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--mist);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--water);
+      margin-bottom: 1.4rem;
+    }
+    .svc-card h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.15;
+    }
+    .svc-card p {
+      font-size: 0.88rem;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+
+    /* ─── Stats ──────────────────────────────────────────────────── */
+    .stats-band {
+      background: var(--deep);
+      padding: 3.5rem 5vw;
+    }
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .stat-num .accent { color: var(--water); }
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(232,230,224,0.4);
+      font-weight: 400;
+      margin-top: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Before / After slider ──────────────────────────────────── */
+    .ba-sec {
+      background: var(--deep);
+      padding: 7rem 5vw;
+    }
+    .ba-inner { max-width: 1100px; margin: 0 auto; }
+    .ba-head { margin-bottom: 2.5rem; }
+    .ba-head .eyebrow { color: var(--water); display: block; margin-bottom: 0.6rem; }
+    .ba-head .disp { color: #fff; }
+    .ba-head p {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: rgba(232,230,224,0.45);
+      line-height: 1.6;
+    }
+    .ba-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      max-height: 520px;
+      border-radius: 3px;
+      overflow: hidden;
+      cursor: col-resize;
+      user-select: none;
+      touch-action: none;
+    }
+    .ba-before-layer, .ba-after-layer {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+    .ba-before-layer {
+      /* CSS-simulated dirty concrete; replace by adding background-image: url('/images/before-driveway.jpg') */
+      background:
+        radial-gradient(ellipse 100px 70px at 18% 40%, rgba(80,65,45,0.6) 0%, transparent 60%),
+        radial-gradient(ellipse 60px 80px at 62% 25%, rgba(65,55,38,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 80px 50px at 78% 68%, rgba(72,62,44,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 40px 70px at 35% 78%, rgba(55,48,34,0.4) 0%, transparent 55%),
+        linear-gradient(155deg, #2c2419 0%, #35291a 30%, #281f12 55%, #2e241a 80%, #221a0e 100%);
+      background-color: #2a2117;
+      background-image: url('/images/before-driveway.jpg');
+    }
+    .ba-after-layer {
+      /* CSS-simulated clean concrete; replace by adding background-image: url('/images/after-driveway.jpg') */
+      background:
+        radial-gradient(ellipse 100px 80px at 28% 35%, rgba(210,205,195,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 80px 100px at 68% 55%, rgba(195,190,180,0.28) 0%, transparent 60%),
+        linear-gradient(155deg, #b2aea6 0%, #c0bcb4 35%, #cacac0 60%, #b6b2aa 100%);
+      background-color: #bfbbb3;
+      background-image: url('/images/after-driveway.jpg');
+      clip-path: inset(0 50% 0 0);
+    }
+    .ba-divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #fff;
+      transform: translateX(-50%);
+      z-index: 10;
+      pointer-events: none;
+    }
+    .ba-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 11;
+      pointer-events: none;
+    }
+    .ba-knob svg { flex-shrink: 0; }
+    .ba-lbl {
+      position: absolute;
+      bottom: 1.25rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2px;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .ba-lbl-before { left: 1.25rem;  background: rgba(0,0,0,0.55);         color: rgba(255,255,255,0.8); }
+    .ba-lbl-after  { right: 1.25rem; background: rgba(27,98,232,0.85);     color: #fff; }
+    .ba-caption {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: rgba(232,230,224,0.3);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ─── Why Rabbit ─────────────────────────────────────────────── */
+    .why-sec { background: var(--stone); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem 5rem;
+      margin-top: 3rem;
+    }
+    .why-item {}
+    .why-n {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      color: var(--water);
+      opacity: 0.2;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .why-item h3 {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text);
+      margin-bottom: 0.55rem;
+      line-height: 1.2;
+    }
+    .why-item p {
+      font-size: 0.88rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    /* ─── Map section ────────────────────────────────────────────── */
+    .map-sec { background: var(--surface); }
+    .map-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.65fr;
+      gap: 4.5rem;
+      align-items: start;
+    }
+    .map-info .eyebrow { color: var(--mud); display: block; margin-bottom: 0.6rem; }
+    .map-info .disp-md { color: var(--text); line-height: 1.05; }
+    .map-info > p {
+      margin-top: 1.1rem;
+      font-size: 0.88rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+    .area-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+    }
+    .area-pill {
+      background: var(--mist);
+      color: var(--water);
+      border: 1px solid rgba(27,98,232,0.18);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.3rem 0.85rem;
+      border-radius: 2px;
+    }
+    .map-wrap {
+      height: 460px;
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      flex-shrink: 0;
+    }
+    #map { width: 100%; height: 100%; }
+
+    /* ─── Contact ────────────────────────────────────────────────── */
+    .contact-sec {
+      background: var(--deep);
+      padding: 7rem 5vw;
+    }
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 7rem;
+      align-items: start;
+    }
+    .contact-lhs .eyebrow { color: rgba(232,230,224,0.35); display: block; margin-bottom: 0.6rem; }
+    .contact-lhs .disp-lg { color: #fff; line-height: 0.95; }
+    .contact-lhs > p {
+      margin-top: 1.3rem;
+      font-size: 0.88rem;
+      color: rgba(232,230,224,0.4);
+      line-height: 1.7;
+      max-width: 300px;
+    }
+    .phone-big {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      color: #fff;
+      letter-spacing: 0.01em;
+      margin-top: 2.5rem;
+      display: block;
+      line-height: 1;
+    }
+    .phone-big:hover { color: var(--water); }
+    .phone-note {
+      font-size: 0.78rem;
+      color: rgba(232,230,224,0.3);
+      margin-top: 0.45rem;
+      line-height: 1.5;
+    }
+    .form-wrap {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 3px;
+      padding: 2.5rem;
+    }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .f-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .f-group label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(232,230,224,0.35);
+    }
+    .f-group input,
+    .f-group select,
+    .f-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      padding: 0.72rem 1rem;
+      transition: border-color 0.18s, background 0.18s;
+      width: 100%;
+      outline: none;
+      appearance: none;
+    }
+    .f-group input::placeholder,
+    .f-group textarea::placeholder { color: rgba(255,255,255,0.18); }
+    .f-group input:focus,
+    .f-group select:focus,
+    .f-group textarea:focus {
+      border-color: var(--water);
+      background: rgba(27,98,232,0.07);
+    }
+    .f-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .f-group select option { background: #1a241a; }
+    .f-group textarea { min-height: 100px; resize: vertical; line-height: 1.5; }
+    .btn-submit {
+      width: 100%;
+      padding: 0.95rem;
+      background: var(--water);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 2px;
+      letter-spacing: 0.03em;
+      transition: all 0.18s;
+      margin-top: 0.4rem;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-submit:hover:not(:disabled) { background: #1452cc; transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+    .form-msg {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 0.9rem;
+      min-height: 1.4em;
+      line-height: 1.4;
+    }
+    .form-msg.ok  { color: #5eead4; }
+    .form-msg.err { color: #f87171; }
+
+    /* ─── Footer ─────────────────────────────────────────────────── */
+    .footer {
+      background: #090d09;
+      padding: 2rem 5vw;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-logo {
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-right {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.2);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-right a { color: rgba(255,255,255,0.35); transition: color 0.15s; }
+    .footer-right a:hover { color: #fff; }
+
+    /* ─── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+      .map-layout { grid-template-columns: 1fr; }
+      .map-info > p { max-width: none; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3.5rem; }
+      .contact-lhs > p { max-width: none; }
+    }
+    @media (max-width: 640px) {
+      .nav-phone { display: none; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .f-row { grid-template-columns: 1fr; }
+      .sec { padding: 5rem 5vw; }
+      .ba-sec, .contact-sec { padding: 5rem 5vw; }
+      .form-wrap { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════ -->
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="Rabbit Pressure Washing home">
+      <span class="logo-mark" aria-hidden="true">🐇</span>
+      Rabbit Pressure Washing
+    </a>
+    <div class="nav-right">
+      <a href="tel:3017997475" class="nav-phone">301-799-7475</a>
+      <a href="#contact" class="btn btn-blue">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-before-bg" aria-hidden="true"></div>
+  <div class="hero-after-bg"  aria-hidden="true" id="heroAfter"></div>
+  <div class="spray-line"     aria-hidden="true" id="sprayLine"></div>
+  <canvas id="sprayCanvas"    aria-hidden="true"></canvas>
+  <div class="hero-overlay"   aria-hidden="true"></div>
+  <div class="hero-overlay-btm" aria-hidden="true"></div>
+
+  <div class="ba-badge" id="baBadge" aria-hidden="true">
+    <span class="ba-badge-pill">Before → After</span>
+  </div>
+
+  <div class="hero-content">
+    <p class="eyebrow hero-eyebrow">Rockville &amp; Clarksburg, MD</p>
+    <h1 class="disp disp-xl hero-headline">
+      Spotless.<br><em>Every</em> Time.
+    </h1>
+    <p class="hero-sub">
+      Professional pressure washing for driveways, siding, decks, and concrete across Montgomery County.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-blue">Get a Free Quote</a>
+      <a href="tel:3017997475" class="btn btn-ghost">Call 301-799-7475</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══════════════════════════════════════════════════ -->
+<section class="sec services rv" id="services">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="eyebrow">What we clean</span>
+      <h2 class="disp disp-lg">Built for every surface</h2>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card rv">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3>Driveway Cleaning</h3>
+        <p>Oil stains, tire tracks, algae, and winter salt damage — lifted and gone. We restore your concrete or asphalt to like-new.</p>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/>
+          </svg>
+        </div>
+        <h3>House Washing</h3>
+        <p>Low-pressure soft wash clears dirt, mildew, and oxidation from vinyl, brick, and stucco — no surface damage.</p>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17h18M5 17V7h14v10"/><line x1="9" y1="17" x2="9" y2="12"/><line x1="15" y1="17" x2="15" y2="12"/>
+          </svg>
+        </div>
+        <h3>Deck &amp; Patio</h3>
+        <p>Wood, composite, pavers — cleaned and prepped for your next season. Perfect prep before sealing or staining.</p>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="1"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="2" y1="14" x2="22" y2="14"/>
+          </svg>
+        </div>
+        <h3>Concrete Flatwork</h3>
+        <p>Sidewalks, pool decks, walkways. Even passes, no streaking, no spots where the wand missed.</p>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="4" x2="4" y2="20"/><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/><line x1="20" y1="4" x2="20" y2="20"/>
+          </svg>
+        </div>
+        <h3>Fence Washing</h3>
+        <p>Wood or vinyl — remove the grime that builds up year after year before it permanently stains the material.</p>
+      </div>
+
+      <div class="svc-card rv">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l9 4.5V12a9 9 0 0 1-9 9 9 9 0 0 1-9-9V6.5L12 2z"/>
+          </svg>
+        </div>
+        <h3>Roof Soft Wash</h3>
+        <p>Low-pressure treatment removes black streaks and moss without lifting shingles or voiding your warranty.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══════════════════════════════════════════════════════ -->
+<div class="stats-band" aria-label="Key facts">
+  <div class="stats-inner">
+    <div class="rv">
+      <div class="stat-num"><span class="accent">500</span>+</div>
+      <div class="stat-label">Jobs completed in Montgomery County</div>
+    </div>
+    <div class="rv">
+      <div class="stat-num"><span class="accent">5</span>★</div>
+      <div class="stat-label">Average customer rating</div>
+    </div>
+    <div class="rv">
+      <div class="stat-num">Same<span class="accent">‑</span>Week</div>
+      <div class="stat-label">Scheduling available most weeks</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BEFORE / AFTER ═════════════════════════════════════════════ -->
+<section class="ba-sec" id="results" aria-label="Before and after results">
+  <div class="ba-inner">
+    <div class="ba-head section-head">
+      <span class="eyebrow">Real results</span>
+      <h2 class="disp disp-lg">The Rabbit difference</h2>
+      <p>Drag the slider to see what a single visit does. No filters, no staging — just before and after.</p>
+    </div>
+
+    <div class="ba-wrap rv" id="baSlider" role="img" aria-label="Drag slider to compare before and after pressure washing">
+      <div class="ba-before-layer" id="baBeforeLayer"></div>
+      <div class="ba-after-layer"  id="baAfterLayer"></div>
+      <div class="ba-divider"      id="baDivider">
+        <div class="ba-knob" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.2" stroke-linecap="round">
+            <polyline points="15,18 9,12 15,6"/><polyline points="9,18 15,12 9,6" transform="translate(4,0)"/>
+          </svg>
+        </div>
+      </div>
+      <span class="ba-lbl ba-lbl-before" aria-hidden="true">Before</span>
+      <span class="ba-lbl ba-lbl-after"  aria-hidden="true">After</span>
+    </div>
+    <p class="ba-caption">Concrete driveway, Rockville MD — same day, single visit</p>
+  </div>
+</section>
+
+<!-- ═══ WHY RABBIT ════════════════════════════════════════════════ -->
+<section class="sec why-sec rv" id="about">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="eyebrow">Why Rabbit</span>
+      <h2 class="disp disp-lg">Local. Honest. Thorough.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item rv">
+        <div class="why-n">01</div>
+        <h3>Surface-right pressure</h3>
+        <p>We dial the PSI and technique per material. Decks get soft wash. Concrete gets full pressure. No single setting that quietly damages what you're paying us to clean.</p>
+      </div>
+      <div class="why-item rv">
+        <div class="why-n">02</div>
+        <h3>Clean exit every time</h3>
+        <p>Runoff gets directed, plants get covered, nearby drains stay clear. Your yard doesn't pay for the driveway job.</p>
+      </div>
+      <div class="why-item rv">
+        <div class="why-n">03</div>
+        <h3>Flat-rate quotes, no surprises</h3>
+        <p>We price the job up front. What we quote is exactly what you pay. No hourly overruns, no add-on charges when we show up.</p>
+      </div>
+      <div class="why-item rv">
+        <div class="why-n">04</div>
+        <h3>Montgomery County locals</h3>
+        <p>We live in the area we serve. We know what Maryland winters do to concrete driveways, and we know exactly how to fix it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAP ════════════════════════════════════════════════════════ -->
+<section class="sec map-sec rv" id="service-area">
+  <div class="sec-inner">
+    <div class="map-layout">
+      <div class="map-info">
+        <span class="eyebrow">Where we work</span>
+        <h2 class="disp disp-md">Serving all of Montgomery County</h2>
+        <p>Based in Rockville and Clarksburg, we cover the entire county and nearby communities. If you can see it on the map, we can get there — usually same week.</p>
+        <div class="area-pills">
+          <span class="area-pill">Rockville</span>
+          <span class="area-pill">Clarksburg</span>
+          <span class="area-pill">Gaithersburg</span>
+          <span class="area-pill">Germantown</span>
+          <span class="area-pill">North Potomac</span>
+          <span class="area-pill">Potomac</span>
+          <span class="area-pill">Montgomery Village</span>
+          <span class="area-pill">Boyds</span>
+          <span class="area-pill">Damascus</span>
+          <span class="area-pill">Bethesda</span>
+          <span class="area-pill">Chevy Chase</span>
+          <span class="area-pill">Silver Spring</span>
+          <span class="area-pill">Olney</span>
+        </div>
+        <a href="#contact" class="btn btn-blue" style="margin-top: 2rem;">Check my address →</a>
+      </div>
+      <div class="map-wrap rv">
+        <div id="map" aria-label="Service area map"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ════════════════════════════════════════════════════ -->
+<section class="contact-sec" id="contact" aria-label="Contact and quote request">
+  <div class="contact-inner">
+    <div class="contact-lhs rv">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="disp disp-lg">Ready for a spotless result?</h2>
+      <p>Fill out the form and we'll respond within a few hours with a flat-rate quote. Most jobs don't require a walkthrough — address and details are usually enough.</p>
+      <a href="tel:3017997475" class="phone-big">301-799-7475</a>
+      <p class="phone-note">Available Mon–Sat, 8am–6pm<br>Leave a message any time — we'll call back.</p>
+    </div>
+    <div class="form-wrap rv">
+      <form id="quoteForm" novalidate>
+        <div class="f-row">
+          <div class="f-group">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+          </div>
+          <div class="f-group">
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="(301) 555-0100" autocomplete="tel">
+          </div>
+        </div>
+        <div class="f-group">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+        </div>
+        <div class="f-group">
+          <label for="f-service">Service needed</label>
+          <select id="f-service" name="service">
+            <option value="">Select a service…</option>
+            <option>Driveway Cleaning</option>
+            <option>House Washing</option>
+            <option>Deck &amp; Patio</option>
+            <option>Concrete Flatwork</option>
+            <option>Fence Washing</option>
+            <option>Roof Soft Wash</option>
+            <option>Multiple / Not sure</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label for="f-msg">Address &amp; details</label>
+          <textarea id="f-msg" name="message" placeholder="Your address and any details that help us quote accurately (square footage, surface type, last cleaned, etc.)…"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">Send Quote Request</button>
+        <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">Rabbit Pressure Washing</span>
+    <div class="footer-right">
+      <a href="tel:3017997475">301-799-7475</a>
+      <span>Rockville &amp; Clarksburg, MD</span>
+      <span>© 2025</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
+<script>
+/* ─── Nav scroll effect ───────────────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 50);
+}, { passive: true });
+
+/* ─── Hero: dirty→clean reveal animation ─────────────────────── */
+(function() {
+  const after = document.getElementById('heroAfter');
+  const line  = document.getElementById('sprayLine');
+  const badge = document.getElementById('baBadge');
+
+  setTimeout(() => {
+    line.classList.add('on');
+    setTimeout(() => {
+      after.classList.add('on');
+      badge.classList.add('gone');
+      setTimeout(() => { line.classList.remove('on'); }, 800);
+    }, 350);
+  }, 1100);
+})();
+
+/* ─── Spray particle burst ────────────────────────────────────── */
+(function() {
+  const canvas = document.getElementById('sprayCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let pts = [];
+  let raf = null;
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth  || window.innerWidth;
+    canvas.height = canvas.offsetHeight || window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  function burst(x, y) {
+    for (let i = 0; i < 40; i++) {
+      const a = (Math.random() - 0.5) * Math.PI * 1.1 - Math.PI / 2;
+      const s = 2 + Math.random() * 6;
+      pts.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, l: 1, r: 1 + Math.random() * 2 });
+    }
+    if (!raf) tick();
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pts = pts.filter(p => p.l > 0.02);
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.vy += 0.1; p.l -= 0.03;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(80,150,255,${p.l * 0.7})`;
+      ctx.fill();
+    });
+    raf = pts.length ? requestAnimationFrame(tick) : null;
+  }
+
+  setTimeout(() => {
+    const w = canvas.width, h = canvas.height;
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => burst(w * 0.5 + (Math.random() - 0.5) * 30, h * (0.15 + Math.random() * 0.65)), i * 70);
+    }
+  }, 1100);
+})();
+
+/* ─── Scroll reveal ───────────────────────────────────────────── */
+(function() {
+  const els = document.querySelectorAll('.rv');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => io.observe(el));
+})();
+
+/* ─── Before / After slider ───────────────────────────────────── */
+(function() {
+  const wrap   = document.getElementById('baSlider');
+  const after  = document.getElementById('baAfterLayer');
+  const divider = document.getElementById('baDivider');
+  if (!wrap) return;
+
+  let pos = 50;
+  let active = false;
+
+  function setPos(pct) {
+    pos = Math.min(94, Math.max(6, pct));
+    /* BEFORE occupies 0..pos%, AFTER clips to show right (pos..100%) */
+    after.style.clipPath = `inset(0 0 0 ${pos}%)`;
+    divider.style.left = pos + '%';
+  }
+  setPos(50);
+
+  function fromEvent(e) {
+    const rect = wrap.getBoundingClientRect();
+    const x = (e.clientX ?? e.touches?.[0]?.clientX) - rect.left;
+    setPos((x / rect.width) * 100);
+  }
+
+  wrap.addEventListener('mousedown',  e => { active = true; fromEvent(e); });
+  wrap.addEventListener('touchstart', e => { active = true; fromEvent(e); }, { passive: true });
+  window.addEventListener('mousemove',  e => { if (active) fromEvent(e); });
+  window.addEventListener('touchmove',  e => { if (active) fromEvent(e); }, { passive: true });
+  window.addEventListener('mouseup',    () => { active = false; });
+  window.addEventListener('touchend',   () => { active = false; });
+})();
+
+/* ─── Leaflet service area map ────────────────────────────────── */
+(function() {
+  const map = L.map('map', {
+    center: [39.13, -77.18],
+    zoom: 11,
+    scrollWheelZoom: false,
+    zoomControl: true,
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '© <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  /* Approximate Montgomery County service polygon */
+  L.polygon([
+    [39.330, -77.360],
+    [39.330, -76.965],
+    [38.975, -76.965],
+    [38.975, -77.360],
+  ], {
+    color: '#1B62E8',
+    fillColor: '#1B62E8',
+    fillOpacity: 0.10,
+    weight: 2,
+    dashArray: '6 4',
+  }).addTo(map);
+
+  const dot = L.divIcon({
+    className: '',
+    html: '<div style="width:9px;height:9px;background:#1B62E8;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.4)"></div>',
+    iconSize:   [9, 9],
+    iconAnchor: [4, 4],
+  });
+
+  [
+    ['Rockville',          39.0840, -77.1528],
+    ['Clarksburg',         39.2015, -77.2664],
+    ['Gaithersburg',       39.1434, -77.2014],
+    ['Germantown',         39.1732, -77.2717],
+    ['North Potomac',      39.0820, -77.2275],
+    ['Potomac',            39.0179, -77.2097],
+    ['Montgomery Village', 39.1771, -77.2053],
+    ['Boyds',              39.2090, -77.3231],
+    ['Damascus',           39.2862, -77.0583],
+    ['Bethesda',           38.9847, -77.0946],
+    ['Olney',              39.1531, -77.0666],
+    ['Silver Spring',      38.9907, -77.0261],
+  ].forEach(([name, lat, lng]) => {
+    L.marker([lat, lng], { icon: dot, title: name })
+      .addTo(map)
+      .bindTooltip(name, { permanent: false, direction: 'top', offset: [0, -7] });
+  });
+})();
+
+/* ─── Contact form ────────────────────────────────────────────── */
+document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = document.getElementById('submitBtn');
+  const msg  = document.getElementById('formMsg');
+
+  const body = {
+    name:    form.name.value.trim(),
+    email:   form.email.value.trim(),
+    phone:   form.phone.value.trim(),
+    service: form.service.value,
+    message: form.message.value.trim(),
+  };
+
+  if (!body.name || !body.email) {
+    msg.textContent = 'Please fill in your name and email.';
+    msg.className = 'form-msg err';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  msg.textContent = '';
+  msg.className = 'form-msg';
+
+  try {
+    const res  = await fetch('/api/contact', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (data.success) {
+      msg.textContent = '✓ Request received — we\'ll be in touch within a few hours.';
+      msg.className = 'form-msg ok';
+      form.reset();
+    } else {
+      throw new Error(data.error || 'Server error');
+    }
+  } catch {
+    msg.textContent = 'Something went wrong. Call us directly at 301-799-7475.';
+    msg.className = 'form-msg err';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Quote Request';
+  }
+});
+</script>
+</body>
+</html>

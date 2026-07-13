@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import twilio from 'twilio';
+import { Resend } from 'resend';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -9,10 +10,12 @@ import { getReceptionistResponse } from './receptionist.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const business = JSON.parse(readFileSync(join(__dirname, 'business.json'), 'utf8'));
 const VoiceResponse = twilio.twiml.VoiceResponse;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static(join(__dirname, '..', 'public')));
 
 // In-memory conversation store: callSid → messages[]
 const conversations = new Map();
@@ -118,41 +121,36 @@ app.post('/voice/status', (req, res) => {
   res.sendStatus(200);
 });
 
-// Root route — health check / landing page
-app.get('/', (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>${business.name} — AI Receptionist</title>
-      <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-               background: #0a0a0a; color: #f0f0f0; display: flex;
-               align-items: center; justify-content: center; min-height: 100vh; }
-        .card { text-align: center; padding: 3rem 2rem; max-width: 480px; }
-        .dot { width: 12px; height: 12px; background: #22c55e; border-radius: 50%;
-               display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
-        h1 { font-size: 2rem; font-weight: 700; margin: 1rem 0 .5rem; }
-        p  { color: #888; font-size: 1rem; line-height: 1.6; }
-        .badge { display: inline-block; margin-top: 2rem; padding: .4rem 1rem;
-                 background: #1a1a1a; border: 1px solid #333; border-radius: 999px;
-                 font-size: .8rem; color: #666; }
-      </style>
-    </head>
-    <body>
-      <div class="card">
-        <span class="dot"></span><span style="color:#22c55e;font-size:.9rem">Active</span>
-        <h1>${business.name}</h1>
-        <p>AI-powered receptionist — ready to answer calls 24/7.</p>
-        <div class="badge">jayrx.net</div>
-      </div>
-    </body>
-    </html>
-  `);
+// Contact form → Resend email
+app.post('/api/contact', async (req, res) => {
+  const { name, email, phone, service, message } = req.body;
+  if (!name || !email) return res.status(400).json({ error: 'Name and email are required.' });
+
+  try {
+    await resend.emails.send({
+      from: 'Rabbit Pressure Washing <outreach@jayrx.net>',
+      to:   'jayrx16@gmail.com',
+      replyTo: email,
+      subject: `Quote Request from ${name}${service ? ` — ${service}` : ''}`,
+      html: `
+        <div style="font-family:sans-serif;max-width:560px;color:#111">
+          <h2 style="margin:0 0 1.5rem;font-size:1.4rem">New Quote Request</h2>
+          <table style="border-collapse:collapse;width:100%">
+            <tr><td style="padding:0.5rem 0;color:#666;width:90px">Name</td><td style="padding:0.5rem 0;font-weight:600">${name}</td></tr>
+            <tr><td style="padding:0.5rem 0;color:#666">Email</td><td style="padding:0.5rem 0"><a href="mailto:${email}">${email}</a></td></tr>
+            ${phone ? `<tr><td style="padding:0.5rem 0;color:#666">Phone</td><td style="padding:0.5rem 0"><a href="tel:${phone}">${phone}</a></td></tr>` : ''}
+            ${service ? `<tr><td style="padding:0.5rem 0;color:#666">Service</td><td style="padding:0.5rem 0">${service}</td></tr>` : ''}
+          </table>
+          ${message ? `<div style="margin-top:1.5rem;padding:1rem;background:#f5f5f5;border-radius:4px;white-space:pre-wrap;font-size:0.9rem">${message}</div>` : ''}
+          <p style="margin-top:2rem;font-size:0.8rem;color:#999">Sent from jayrx.net contact form</p>
+        </div>
+      `,
+    });
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Resend error:', err.message);
+    res.status(500).json({ error: 'Failed to send message.' });
+  }
 });
 
 // Only start HTTP server in local dev — Vercel handles this in production
