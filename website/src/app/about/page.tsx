@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 import { Process } from "@/components/sections/Process";
-import { ServiceArea } from "@/components/sections/ServiceArea";
+import { Container } from "@/components/ui/Container";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "About | Rabbit Pressure Washing",
   description:
-    "How Rabbit Pressure Washing works, and the Montgomery County, MD communities we serve.",
+    "How Rabbit Pressure Washing works — a straightforward, no-surprises process from quote to reveal across Montgomery County, MD.",
 };
 
 export default function AboutPage() {
@@ -15,10 +17,29 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Rabbit"
         title="Fast, clean, thorough"
-        description="A straightforward process and a service area built around Montgomery County, MD."
+        description="A straightforward, no-surprises process from quote to reveal."
       />
       <Process />
-      <ServiceArea />
+
+      <section className="bg-charcoal py-20 text-stone md:py-24">
+        <Container className="text-center">
+          <RevealOnScroll>
+            <h2 className="text-balance font-display text-3xl font-extrabold uppercase tracking-tight lg:text-4xl">
+              Serving Montgomery County, MD
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-mud">
+              From Clarksburg and Rockville to Bethesda and Silver Spring — see
+              the full map and check if your home is in our zone.
+            </p>
+            <Link
+              href="/service-area"
+              className="mt-8 inline-block rounded-full bg-ember px-8 py-4 text-base font-bold text-white transition-transform hover:scale-105 active:scale-95"
+            >
+              View Service Area
+            </Link>
+          </RevealOnScroll>
+        </Container>
+      </section>
     </main>
   );
 }

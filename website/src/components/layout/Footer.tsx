@@ -8,6 +8,7 @@ import { business } from "@/data/business";
 const pageLinks = [
   { href: "/gallery", label: "Before & After" },
   { href: "/services", label: "Services" },
+  { href: "/service-area", label: "Service Area" },
   { href: "/about", label: "About" },
   { href: "/reviews", label: "Reviews" },
   { href: "/contact", label: "Contact" },
