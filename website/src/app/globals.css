@@ -5,7 +5,10 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* clip (not hidden) so overflow-y stays visible — hidden would force
+     overflow-y:auto, making body a scroll container and breaking
+     position: sticky (the pinned services stage). */
+  overflow-x: clip;
 }
 
 body {

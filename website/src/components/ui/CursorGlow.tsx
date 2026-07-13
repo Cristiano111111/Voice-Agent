@@ -64,10 +64,10 @@ export function CursorGlow() {
     <div
       ref={glowRef}
       aria-hidden
-      className="pointer-events-none fixed left-0 top-0 z-30 hidden h-[600px] w-[600px] rounded-full opacity-0 mix-blend-screen transition-opacity duration-500 md:block"
+      className="pointer-events-none fixed left-0 top-0 z-30 hidden h-[320px] w-[320px] rounded-full opacity-0 mix-blend-screen transition-opacity duration-500 md:block"
       style={{
         background:
-          "radial-gradient(circle, rgba(27,98,232,0.22) 0%, rgba(27,98,232,0.10) 35%, transparent 65%)",
+          "radial-gradient(circle, rgba(27,98,232,0.26) 0%, rgba(27,98,232,0.11) 38%, transparent 66%)",
       }}
     />
   );
