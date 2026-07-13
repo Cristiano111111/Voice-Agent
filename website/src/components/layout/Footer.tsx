@@ -1,15 +1,24 @@
+import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Container } from "@/components/ui/Container";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/SocialIcons";
 import { business } from "@/data/business";
 
+const pageLinks = [
+  { href: "/gallery", label: "Before & After" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/contact", label: "Contact" },
+];
+
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="bg-charcoal text-stone">
-      <Container className="grid gap-10 py-16 md:grid-cols-3">
+      <Container className="grid gap-10 py-16 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
             <Logo variant="icon" className="h-12 w-auto" />
@@ -21,6 +30,24 @@ export function Footer() {
             Fast, clean, thorough pressure washing for driveways, siding,
             decks, and more across Montgomery County, MD.
           </p>
+        </div>
+
+        <div>
+          <h3 className="font-display text-sm font-bold uppercase tracking-widest text-emberLight">
+            Explore
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm">
+            {pageLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-stone/90 transition-colors hover:text-water"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>

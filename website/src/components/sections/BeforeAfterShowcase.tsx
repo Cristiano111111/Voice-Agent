@@ -1,31 +1,45 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { beforeAfterPairs } from "@/data/before-after-pairs";
 
-export function BeforeAfterShowcase() {
+interface BeforeAfterShowcaseProps {
+  variant?: "teaser" | "full";
+  showHeading?: boolean;
+}
+
+export function BeforeAfterShowcase({
+  variant = "full",
+  showHeading = true,
+}: BeforeAfterShowcaseProps) {
   const [activeId, setActiveId] = useState(beforeAfterPairs[0]?.id);
   const active =
     beforeAfterPairs.find((p) => p.id === activeId) ?? beforeAfterPairs[0];
 
   if (!active) return null;
 
+  const showTabs = variant === "full" && beforeAfterPairs.length > 1;
+
   return (
     <section id="results" className="bg-stone py-24 md:py-32">
       <Container>
-        <RevealOnScroll>
-          <SectionHeading
-            eyebrow="The Rabbit Difference"
-            title="See it before you believe it"
-            description="Drag the slider to see what a single visit does. No filters, no staging — just before and after."
-          />
-        </RevealOnScroll>
+        {showHeading && (
+          <RevealOnScroll>
+            <SectionHeading
+              eyebrow="The Rabbit Difference"
+              title="See it before you believe it"
+              description="Drag the slider to see what a single visit does. No filters, no staging — just before and after."
+            />
+          </RevealOnScroll>
+        )}
 
-        <RevealOnScroll delay={0.1} className="mt-12">
+        <RevealOnScroll delay={0.1} className={showHeading ? "mt-12" : ""}>
           <BeforeAfterSlider
             before={active.before}
             after={active.after}
@@ -35,7 +49,7 @@ export function BeforeAfterShowcase() {
           />
         </RevealOnScroll>
 
-        {beforeAfterPairs.length > 1 && (
+        {showTabs && (
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {beforeAfterPairs.map((pair) => (
               <button
@@ -51,6 +65,18 @@ export function BeforeAfterShowcase() {
                 {pair.caption ?? `Pair ${pair.id}`}
               </button>
             ))}
+          </div>
+        )}
+
+        {variant === "teaser" && (
+          <div className="mt-8 text-center">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 text-base font-semibold text-charcoal transition-colors hover:text-water"
+            >
+              See more transformations
+              <ArrowRight size={18} />
+            </Link>
           </div>
         )}
       </Container>

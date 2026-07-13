@@ -1,36 +1,51 @@
-import { Quote, Star } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { testimonials } from "@/data/testimonials";
 
-export function Testimonials() {
+interface TestimonialsProps {
+  showHeading?: boolean;
+}
+
+export function Testimonials({ showHeading = true }: TestimonialsProps) {
   return (
     <section className="bg-stone py-24 md:py-32">
       <Container>
-        <RevealOnScroll>
-          <SectionHeading
-            eyebrow="Customer Reviews"
-            title="What neighbors are saying"
-            align="center"
-          />
-        </RevealOnScroll>
+        {showHeading && (
+          <RevealOnScroll>
+            <SectionHeading
+              eyebrow="Customer Reviews"
+              title="What neighbors are saying"
+            />
+          </RevealOnScroll>
+        )}
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div
+          className={`max-w-3xl border-t border-charcoal/10 ${showHeading ? "mt-14" : ""}`}
+        >
           {testimonials.map((t, i) => (
-            <RevealOnScroll key={t.name + i} delay={i * 0.08}>
-              <div className="relative h-full rounded-2xl bg-white p-7 shadow-sm">
-                <Quote className="text-water/30" size={28} />
-                <p className="mt-4 text-charcoal/80">&ldquo;{t.quote}&rdquo;</p>
-                <div className="mt-6 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-charcoal">{t.name}</p>
-                    <p className="text-sm text-charcoal/50">{t.location}</p>
-                  </div>
-                  <div className="flex gap-0.5 text-ember">
-                    {Array.from({ length: 5 }).map((_, idx) => (
-                      <Star key={idx} size={14} fill="currentColor" />
-                    ))}
+            <RevealOnScroll key={t.name + i} delay={i * 0.06}>
+              <div className="flex flex-col gap-4 border-b border-charcoal/10 py-10 md:flex-row md:gap-10">
+                <span
+                  aria-hidden
+                  className="font-display text-6xl leading-none text-ember/30 md:text-7xl"
+                >
+                  &ldquo;
+                </span>
+                <div>
+                  <p className="font-body text-xl italic leading-snug text-charcoal md:text-2xl">
+                    {t.quote}
+                  </p>
+                  <div className="mt-5 flex items-baseline gap-3">
+                    <span className="text-sm font-semibold uppercase tracking-wide text-charcoal">
+                      {t.name}
+                    </span>
+                    <span className="text-sm text-charcoal/50">
+                      {t.location}
+                    </span>
+                    <span className="text-sm font-semibold uppercase tracking-wide text-ember">
+                      5.0
+                    </span>
                   </div>
                 </div>
               </div>
@@ -38,7 +53,7 @@ export function Testimonials() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-xs uppercase tracking-widest text-charcoal/40">
+        <p className="mt-8 text-sm uppercase tracking-widest text-charcoal/40">
           Placeholder reviews — real customer testimonials coming soon
         </p>
       </Container>

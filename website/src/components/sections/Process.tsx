@@ -33,12 +33,12 @@ export function Process() {
             const Icon = stepIcons[i];
             return (
               <RevealOnScroll key={step.number} delay={i * 0.08}>
-                <div className="relative">
-                  <span className="font-display text-6xl font-extrabold text-charcoal/10">
-                    {step.number}
-                  </span>
-                  <div className="-mt-8 flex h-12 w-12 items-center justify-center rounded-xl bg-water text-white">
-                    <Icon size={22} />
+                <div className="border-t-2 border-water/30 pt-6">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-display text-5xl font-extrabold text-charcoal/10">
+                      {step.number}
+                    </span>
+                    <Icon size={22} className="text-water" />
                   </div>
                   <h3 className="mt-4 font-display text-xl font-bold uppercase tracking-tight text-charcoal">
                     {step.title}

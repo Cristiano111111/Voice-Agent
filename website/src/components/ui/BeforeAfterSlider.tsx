@@ -81,7 +81,7 @@ export function BeforeAfterSlider({
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
         onKeyDown={handleKeyDown}
-        className="relative aspect-[4/3] md:aspect-[16/9] max-h-[520px] w-full touch-none select-none overflow-hidden rounded-2xl shadow-xl outline-none ring-water/60 focus-visible:ring-4"
+        className="relative aspect-[4/3] md:aspect-[16/9] max-h-[520px] w-full touch-none select-none overflow-hidden rounded-2xl shadow-[0_24px_60px_-16px_rgba(19,26,19,0.5)] outline-none ring-water/60 focus-visible:ring-4"
       >
         <Image
           src={after}

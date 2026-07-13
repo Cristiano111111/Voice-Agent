@@ -71,7 +71,7 @@ export function ContactForm() {
         <RevealOnScroll delay={0.1}>
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-7"
+            className="space-y-4 border-t-2 border-ember bg-black/20 p-7"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="relative">
@@ -151,7 +151,7 @@ export function ContactForm() {
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-ember px-6 py-4 text-base font-bold text-white transition-transform hover:scale-[1.02] disabled:opacity-60"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-ember px-6 py-4 text-base font-bold text-white transition-transform hover:scale-[1.02] active:scale-95 disabled:opacity-60"
             >
               <Send size={18} />
               {status === "submitting" ? "Sending..." : "Request Free Quote"}

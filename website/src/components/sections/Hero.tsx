@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
@@ -32,7 +33,7 @@ export function Hero() {
         </RevealOnScroll>
 
         <RevealOnScroll delay={0.1}>
-          <h1 className="max-w-3xl font-display text-5xl font-extrabold uppercase leading-[0.92] tracking-tight md:text-7xl">
+          <h1 className="max-w-3xl text-balance font-display text-5xl font-extrabold uppercase leading-[0.92] tracking-tight md:text-7xl">
             Fast. Clean.
             <br />
             <span className="text-water">Thorough.</span>
@@ -49,12 +50,12 @@ export function Hero() {
 
         <RevealOnScroll delay={0.3}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <ScrollLink
-              href="#contact"
-              className="rounded-full bg-ember px-8 py-4 text-base font-bold text-white shadow-lg transition-transform hover:scale-105"
+            <Link
+              href="/contact"
+              className="rounded-full bg-ember px-8 py-4 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
             >
               Get a Free Quote
-            </ScrollLink>
+            </Link>
             <a
               href={business.phoneHref}
               className="flex items-center gap-2 rounded-full border border-stone/30 px-6 py-4 text-base font-semibold text-stone transition-colors hover:border-water hover:text-water"
