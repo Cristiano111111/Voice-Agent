@@ -1,6 +1,7 @@
 "use client";
 
 import Lenis from "lenis";
+import { usePathname } from "next/navigation";
 import {
   createContext,
   useContext,
@@ -27,6 +28,16 @@ export function useLenis() {
 
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
+
+  // Lenis owns the visual scroll position independently of the browser's
+  // native scroll, so Next's default "scroll to top on navigation" doesn't
+  // reach it — without this, landing on a new page keeps you wherever you
+  // were scrolled to on the last one.
+  useEffect(() => {
+    lenisRef.current?.scrollTo(0, { immediate: true });
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
