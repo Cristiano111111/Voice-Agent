@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Logo } from "@/components/ui/Logo";
+import { HeroLogoAnimation } from "@/components/ui/HeroLogoAnimation";
 import { ScrollLink } from "@/components/ui/ScrollLink";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { business } from "@/data/business";
@@ -28,7 +28,7 @@ export function Hero() {
       <Container className="relative z-10 py-32">
         <RevealOnScroll y={16}>
           <div className="mb-8 w-56 md:w-72">
-            <Logo variant="full" priority />
+            <HeroLogoAnimation />
           </div>
         </RevealOnScroll>
 
