@@ -6,7 +6,9 @@ import { Logo } from "@/components/ui/Logo";
 
 const FRAME_COUNT = 54;
 // How many pixels of scroll it takes to play through the whole sequence.
-const SCRUB_DISTANCE = 700;
+// Kept short so it finishes before the hero logo scrolls under the
+// sticky nav and out of view.
+const SCRUB_DISTANCE = 250;
 
 const framePath = (i: number) =>
   `/logo-anim/frame-${String(i).padStart(3, "0")}.webp`;
