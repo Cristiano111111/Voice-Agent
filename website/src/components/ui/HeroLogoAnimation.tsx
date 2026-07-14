@@ -5,7 +5,8 @@ import { useReducedMotion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
 
 const FRAME_COUNT = 54;
-const FPS = 20;
+// How many pixels of scroll it takes to play through the whole sequence.
+const SCRUB_DISTANCE = 700;
 
 const framePath = (i: number) =>
   `/logo-anim/frame-${String(i).padStart(3, "0")}.webp`;
@@ -14,10 +15,9 @@ interface HeroLogoAnimationProps {
   className?: string;
 }
 
-// Plays the rabbit-spraying-the-badge sequence on a loop. Frames are
-// preloaded once, then drawn to a canvas at a fixed rate (independent of
-// display refresh rate) so it stays smooth without re-triggering React
-// renders every frame.
+// The rabbit-spraying-the-badge sequence, scrubbed directly by scroll
+// position: scrolling down plays it forward, scrolling up reverses it,
+// and it holds still at whatever frame matches the current scroll depth.
 export function HeroLogoAnimation({ className }: HeroLogoAnimationProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
@@ -60,32 +60,24 @@ export function HeroLogoAnimation({ className }: HeroLogoAnimationProps) {
     canvas.height = size * dpr;
     ctx.scale(dpr, dpr);
 
-    let rafId = 0;
-    let last = 0;
-    let frame = 0;
-    const interval = 1000 / FPS;
-
-    const tick = (t: number) => {
-      if (t - last >= interval) {
-        last = t;
-        ctx.clearRect(0, 0, size, size);
-        ctx.drawImage(imagesRef.current[frame], 0, 0, size, size);
-        frame = (frame + 1) % FRAME_COUNT;
-      }
-      rafId = requestAnimationFrame(tick);
+    let rafPending = false;
+    const draw = () => {
+      rafPending = false;
+      const progress = Math.min(1, Math.max(0, window.scrollY / SCRUB_DISTANCE));
+      const frame = Math.round(progress * (FRAME_COUNT - 1));
+      ctx.clearRect(0, 0, size, size);
+      ctx.drawImage(imagesRef.current[frame], 0, 0, size, size);
     };
-    rafId = requestAnimationFrame(tick);
+    draw();
 
-    const onVisibility = () => {
-      cancelAnimationFrame(rafId);
-      if (!document.hidden) rafId = requestAnimationFrame(tick);
+    const onScroll = () => {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(draw);
     };
-    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-    return () => {
-      cancelAnimationFrame(rafId);
-      document.removeEventListener("visibilitychange", onVisibility);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, [ready, reduceMotion]);
 
   // Reduced motion, or still preloading: show the static brand mark.
